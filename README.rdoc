@@ -1,4 +1,4 @@
-An open source project to help people find the nearest retail marijuana stores in their neighborhood. Users can see information about the strains available at their local shops.
+An app that helps people find the nearest retail marijuana stores in their neighborhood. Users can see information about the strains available at their local shops, reviews, and what people are saying about the shops on Twitter.
 
 Currently, support is only available for Denver.
 
