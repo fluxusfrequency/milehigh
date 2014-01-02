@@ -14,13 +14,17 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'guard'
-  gem 'guard-rspec'
   gem 'quiet_assets'
   gem 'database_cleaner'
   gem 'cane'
   gem 'reek'
   gem 'brakeman', :require => false
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cane'
+  gem 'guard-reek', git: 'git://github.com/pericles/guard-reek.git'
+  gem 'guard-brakeman'
 end
 
 group :test do
