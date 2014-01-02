@@ -1,0 +1,17 @@
+An open source project to help people find the nearest retail marijuana stores in their neighborhood. Users can see information about the strains available at their local shops.
+
+Currently, support is only available for Denver.
+
+The app uses these apis:
+
+Leafly
+http://www.leafly.com/api/documentation
+
+Seedfinder
+http://www.programmableweb.com/api/seedfinder
+
+Yelp
+http://www.yelp.com/developers/documentation
+
+Twitter
+https://dev.twitter.com/
