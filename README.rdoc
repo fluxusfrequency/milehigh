@@ -7,9 +7,6 @@ The app uses these apis:
 Leafly
 http://www.leafly.com/api/documentation
 
-Seedfinder
-http://www.programmableweb.com/api/seedfinder
-
 Yelp
 http://www.yelp.com/developers/documentation
 
