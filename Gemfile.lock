@@ -141,9 +141,11 @@ GEM
       rspec (>= 2.14, < 4.0)
     haml (4.0.4)
       tilt
+    hashie (2.0.5)
     highline (1.6.20)
     hike (1.2.3)
     hirb (0.7.1)
+    httpauth (0.2.0)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -152,6 +154,12 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    jwt (0.1.8)
+      multi_json (>= 1.5)
+    koala (1.8.0rc1)
+      addressable
+      faraday
+      multi_json
     launchy (2.4.2)
       addressable (~> 2.3)
     listen (2.4.0)
@@ -172,6 +180,20 @@ GEM
     net-http-pipeline (1.0.1)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-facebook (1.5.1)
+      omniauth-oauth2 (~> 1.1.0)
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
     parallel (0.9.1)
     pg (0.17.1)
     polyglot (0.3.3)
@@ -324,6 +346,8 @@ DEPENDENCIES
   jazz_hands!
   jbuilder (~> 1.2)
   jquery-rails
+  koala (~> 1.8.0rc1)
+  omniauth-facebook
   pg
   pry-byebug
   puma
