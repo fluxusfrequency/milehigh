@@ -1,7 +1,20 @@
 class User < ActiveRecord::Base
-  validates_presence_of :full_name
-  validates_presence_of :display_name
-  validates_format_of   :email,
-                        :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-  validates             :email, uniqueness: true
+
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
+  end
+
+  def find_avatar
+    graph = Koala::Facebook::API.new
+    avatar_path = graph.get_picture(uid, :type => 'square')
+    self.update_attributes(:avatar => avatar_path)
+  end
 end
+

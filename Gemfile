@@ -8,6 +8,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'travis'
 gem 'puma'
+gem 'omniauth-facebook'
+gem "koala", "~> 1.8.0rc1"
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
