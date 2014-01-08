@@ -10,7 +10,8 @@ gem 'travis'
 gem 'puma'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
-gem 'rolling_paper', github: 'BryanaKnight/rolling_paper'
+gem 'rolling_paper'
+gem 'leafly', path: './engines/Leafly'
 
 
 group :development, :test do
