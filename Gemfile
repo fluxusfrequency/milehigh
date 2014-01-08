@@ -10,9 +10,9 @@ gem 'travis'
 gem 'puma'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
+
 gem 'rolling_paper'
 gem 'leafly', path: './engines/Leafly'
-
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
