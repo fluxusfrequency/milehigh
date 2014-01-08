@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107003125) do
+ActiveRecord::Schema.define(version: 20140108014417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,18 +22,27 @@ ActiveRecord::Schema.define(version: 20140107003125) do
     t.datetime "updated_at"
   end
 
+  create_table "leafly_stores", force: true do |t|
+    t.string   "slug"
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "hours"
+    t.string   "website"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "menu"
+  end
+
   create_table "users", force: true do |t|
     t.string   "full_name"
     t.string   "display_name"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.string   "avatar"
   end
 
 end
