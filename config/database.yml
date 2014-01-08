@@ -22,5 +22,5 @@ production:
   encoding: unicode
   database: milehigh_production
   pool: 5
-  username:
-  password:
+  username: gschool
+  password: gschool
