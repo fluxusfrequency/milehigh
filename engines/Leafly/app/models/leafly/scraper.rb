@@ -1,4 +1,3 @@
-require 'pry'
 require 'mechanize'
 require 'open-uri'
 
@@ -15,8 +14,7 @@ module Leafly
     end
 
     def self.scrape_stores
-      stores = []
-      strains = []
+      results = {:stores => []}
 
       dispensary_urls.each_with_index do |url, i|
         begin
@@ -31,7 +29,19 @@ module Leafly
           hours = page.css(".dispensary-info-box").first.children[1].children[1].children[1].children[0].children[1].text
           website = page.css(".dispensary-info-box").first.children[1].children[1].children[1].children[4].children[2].attributes["href"].value
           phone_number = page.css(".dispensary-info-box").first.children[1].children[1].children[1].children[2].children[2].children[0].text
-          stores << {
+          menu = []
+
+          begin
+            menu_page = Nokogiri::HTML(open("http://www.leafly.com" + url + "/menu"))
+            menu_page.css('.description').length.times do |i|
+              menu << menu_page.css('.description')[i].children[1].children[0].children[0].text
+            end
+            menu
+          rescue
+            puts "Failed to load menu for #{url} :<"
+          end
+
+          results[:stores] << {
             :slug => slug,
             :name => name,
             :address => address,
@@ -40,22 +50,17 @@ module Leafly
             :zipcode => zipcode,
             :hours => hours,
             :website => website,
-            :phone_number => phone_number}
+            :phone_number => phone_number,
+            :menu => menu.to_s || nil }
 
-          menu = Nokogiri::HTML(open("http://www.leafly.com" + url + "/menu"))
-          menu.css('.description').length.times do |i|
-            strains << menu.css('.description')[i].children[1].children[0].children[0].text
-          end
         rescue
-          puts "Failed to load store #{i} - #{url} :("
+          puts "Failed to fully load store #{i} - #{url} :("
         end
       end
 
-      [stores, strains]
+      results
 
     end
 
   end
 end
-
-Leafly::Scraper.scrape_stores
