@@ -5,8 +5,10 @@ module Leafly
 
     def self.scrape_and_save_to_database
       stores = Leafly::Scraper.scrape_stores[:stores]
-      puts stores
-      stores.each {|store| create(store)}
+      stores.each_with_index do |store, index| 
+        create(store)
+        puts "created store #{index}"
+      end
     end
 
     def menu_to_array
