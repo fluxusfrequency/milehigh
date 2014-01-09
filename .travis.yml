@@ -8,4 +8,8 @@ script:
   - bundle exec rspec
   - cd engines/Leafly
   - bundle
+  - cd test/dummy
+  - bundle
+  - rake db:create db:migrate
+  - cd ../..
   - bundle exec rspec
