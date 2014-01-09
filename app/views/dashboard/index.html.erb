@@ -1,0 +1,9 @@
+<div role="main" class="container topstories" id="content">
+  <div class="row" >
+    <% 3.times do %>
+      <%= render "reviews/review" %>
+    <% end %>
+  </div>
+  <%= render "reviews/new" %>
+  <%= render "search/search" %>
+</div>
