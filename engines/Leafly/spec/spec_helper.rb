@@ -9,6 +9,7 @@ require 'capybara/rails'
 require 'capybara/rspec'
 require 'mechanize'
 require 'webmock'
+require 'factory_girl_rails'
 
 ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
 
@@ -27,3 +28,5 @@ end
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
 end
+FactoryGirl.definition_file_paths = [File.expand_path('../factories', __FILE__)]
+FactoryGirl.find_definitions

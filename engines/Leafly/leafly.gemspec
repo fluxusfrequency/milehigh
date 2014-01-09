@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = "Uses Leafly information for the Mile High app"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
-  s.test_files = Dir["test/**/*"]
+  s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 4.0.2"
 
@@ -22,5 +22,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'rolling_paper'
   s.add_development_dependency "rspec-rails"
   s.add_runtime_dependency 'mechanize'
-
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'capybara'
+  s.add_development_dependency 'factory_girl_rails'
 end
