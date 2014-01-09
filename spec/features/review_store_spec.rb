@@ -41,7 +41,7 @@ describe "review section" do
     select("snoop's house", :from => "Store")
     fill_in('Title', :with => 'hoooorrible')
     fill_in('Body', :with => 'truuuuuly horrible nug')
-    find('#thumbs-up').click
+    find('#thumbs-down').click
     expect(page).to have_content("Your review of #{store2.name} was created.")
     within('#review-feed') do
       # Add user name and validation
