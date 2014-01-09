@@ -35,7 +35,8 @@ p { text-align: justify;}
 footer { background-color: #AAB1B3; margin-top: 30px; padding-top: 10px; text-align: center; bottom: 0px; position: relative;}
 footer .container { background-color:  #AAB1B3;}
 
-#new-review { margin: 10px 0 20px 0; padding: 0;}
+#new-review { margin: 60px 0; padding: 15px;}
+#new-review h2 { margin: 0px 0 20px 0; padding: 0;}
 
 #logo-image { display: inline; margin: 10px 0 10px 0; padding: 0;}
 #logo-banner { display: inline; margin: 0 0 0 10px; padding: 0;}
