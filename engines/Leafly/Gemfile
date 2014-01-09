@@ -10,5 +10,10 @@ gemspec
 # Git. Remember to move these dependencies to your gemspec before releasing
 # your gem to rubygems.org.
 
+group :test do
+  gem 'capybara'
+  gem 'vcr'
+  gem 'webmock'
+end
 # To use debugger
 # gem 'debugger'

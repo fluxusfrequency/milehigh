@@ -207,6 +207,7 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
+    minitest-stub_any_instance (1.0.0)
     multi_json (1.8.2)
     multipart-post (1.2.0)
     net-http-digest_auth (1.4)
@@ -396,6 +397,7 @@ DEPENDENCIES
   jquery-rails
   koala (~> 1.8.0rc1)
   leafly!
+  minitest-stub_any_instance
   omniauth-facebook
   pg
   pry-byebug
