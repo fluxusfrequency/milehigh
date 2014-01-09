@@ -6,3 +6,6 @@ script:
   - bundle exec rake leafly:install:migrations
   - bundle exec rake db:migrate RAILS_ENV=test
   - bundle exec rspec
+  - cd engines/Leafly
+  - bundle
+  - bundle exec rspec

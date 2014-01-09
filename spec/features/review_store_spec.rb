@@ -22,7 +22,6 @@ describe "review section" do
     fill_in('Body', :with => 'truuuuuly horrible nug')
     find('#thumbs-up').click
     expect(page).to have_content("Your review of #{store2.name} was created.")
-    save_and_open_page
     within('#review-feed') do
       # Add user name and validation
       expect(page).to have_content('hoooorrible')
