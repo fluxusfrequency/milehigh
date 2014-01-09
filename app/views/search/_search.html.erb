@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row longstory" >
   <h3 class="span12">A Normal Story Headline Goes Here!</h3>
   <div class="span4" >
@@ -5,6 +6,10 @@
     <div class="well" >
       <a href="#" >Comments (0)</a>
       &bullet;
+      <%= form_tag("/search", method: :get) do %>
+      <%= text_field_tag :query %>
+      <%= submit_tag "Store search" %>
+      <% end %>
       <a href="#" >More by this Author</a>
     </div>
   </div>
@@ -16,3 +21,4 @@
     <a href="#" class="pull-right btn btn-inverse" >Read More <i class="icon-hand-right" ></i></a>
   </div>
 </div>
+

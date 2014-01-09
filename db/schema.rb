@@ -50,12 +50,6 @@ ActiveRecord::Schema.define(version: 20140109164230) do
   create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
-    t.string   "avatar"
   end
 
 end
