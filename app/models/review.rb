@@ -6,7 +6,6 @@ class Review < ActiveRecord::Base
   validates_inclusion_of :rating, :in => ['Thumbs Up', 'Thumbs Down']
 
   def self.most_recent(number)
-    reviews = all.sort_by {|review| review.created_at}.reverse
-    reviews.take(number)
+    all.order(created_at: :desc).limit(number)
   end
 end
