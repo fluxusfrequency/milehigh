@@ -8,4 +8,16 @@ class Review < ActiveRecord::Base
   def self.most_recent(number)
     all.order(created_at: :desc).limit(number)
   end
+
+  def store_name
+
+  end
+
+    def category_name
+    category.try(:name)
+  end
+
+  def category_name=(name)
+    self.category = Category.find_by_name(name) if name.present?
+  end
 end

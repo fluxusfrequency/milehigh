@@ -6,7 +6,7 @@
       
       <p>
         <%= f.label :store %>
-        <%= f.select :store, @store_names %>
+        <%= f.text_field :store_name %>
       </p>
 
       <p>
@@ -16,7 +16,7 @@
 
       <p>
         <%= f.label :body %>
-        <%= f.text_field :body %>
+        <%= f.text_field :body, id: 'review-body-field' %>
       </p>
 
       <p>
