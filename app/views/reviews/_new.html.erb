@@ -1,32 +1,45 @@
+<div class="row" id="new-review">
+  <h2>Review a Store</h2>
 
-<div class="row" >
-  <div class="span12 categories" >
-    <h3>Review a store</h3>
-    <%= form_for Review.new do |f| %>
-      
-      <p>
-        <%= f.label :store %>
-        <%= f.select :store, @store_names %>
-      </p>
+  <!-- Button trigger modal -->
+  <button class="btn btn-inverse btn-lg" data-toggle="modal" data-target="#myModal">
+    Review a Store
+  </button>
 
-      <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
-      </p>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Reviewing a store</h4>
+        </div>
+        <div class="modal-body">
+          <%= form_for Review.new do |f| %>
 
-      <p>
-        <%= f.label :body %>
-        <%= f.text_field :body %>
-      </p>
+            <p>
+              <%= f.label :store %>
+              <%= f.select :store, @store_names %>
+            </p>
 
-      <p>
-        <%= f.submit 'Thumbs Up', id: 'thumbs-up' %>
-      </p>
+            <p>
+              <%= f.label :title %>
+              <%= f.text_field :title %>
+            </p>
 
-      <p>
-        <%= f.submit 'Thumbs Down', id: 'thumbs-down' %>
-      </p>
+            <p>
+              <%= f.label :body %>
+              <%= f.text_field :body %>
+            </p>
 
-    <% end %>
-  </div>
+        </div>
+        <div class="modal-footer">
+            <%= f.submit 'Thumbs Up', class:"btn btn-success", id: 'thumbs-up' %>
+            <%= f.submit 'Thumbs Down', class:"btn btn-danger", id: 'thumbs-down' %>
+          <% end %>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
 </div>

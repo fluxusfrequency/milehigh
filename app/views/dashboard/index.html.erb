@@ -2,7 +2,8 @@
   <div class="row" id='review-feed'>
     <%= render @reviews %>
   </div>
+
   <%= render "reviews/new", :locals => {review: @review} %>
-    
+
   <%= render "search/search" %>
 </div>
