@@ -37,4 +37,5 @@ group :test do
   gem 'simplecov', :require => false, :group => :test
   gem 'database_cleaner', :require => false, :group => :test
   gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
 end
