@@ -654,3 +654,55 @@ Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.1ms)
   [1m[35m (0.7ms)[0m  rollback transaction
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
   [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (34.0ms)[0m  [1mINSERT INTO "leafly_stores" ("address", "city", "created_at", "hours", "menu", "name", "phone_number", "slug", "state", "updated_at", "website", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "123 High St"], ["city", "Denver"], ["created_at", Thu, 09 Jan 2014 20:30:08 UTC +00:00], ["hours", "8-6pm"], ["menu", "purple kush, ak-47"], ["name", "High Zone"], ["phone_number", "302-123-1234"], ["slug", "high-zone"], ["state", "CO"], ["updated_at", Thu, 09 Jan 2014 20:30:08 UTC +00:00], ["website", "www.high-zone.com"], ["zipcode", "80206"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/leafly/stores/1" for 127.0.0.1 at 2014-01-09 13:30:08 -0700
+Processing by Leafly::StoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLeafly::Store Load (0.1ms)[0m  [1mSELECT "leafly_stores".* FROM "leafly_stores" WHERE "leafly_stores"."id" = 1 LIMIT 1[0m
+  Rendered /Users/benhorne/Ruby/rails/milehigh/engines/Leafly/app/views/leafly/stores/show.html.erb within layouts/leafly/application (4.2ms)
+Completed 500 Internal Server Error in 12ms
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (32.0ms)[0m  [1mINSERT INTO "leafly_stores" ("address", "city", "created_at", "hours", "menu", "name", "phone_number", "slug", "state", "updated_at", "website", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "123 High St"], ["city", "Denver"], ["created_at", Thu, 09 Jan 2014 20:31:38 UTC +00:00], ["hours", "8-6pm"], ["menu", "purple kush, ak-47"], ["name", "High Zone"], ["phone_number", "302-123-1234"], ["slug", "high-zone"], ["state", "CO"], ["updated_at", Thu, 09 Jan 2014 20:31:38 UTC +00:00], ["website", "www.high-zone.com"], ["zipcode", "80206"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/leafly/stores/1" for 127.0.0.1 at 2014-01-09 13:31:38 -0700
+Processing by Leafly::StoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLeafly::Store Load (0.1ms)[0m  [1mSELECT "leafly_stores".* FROM "leafly_stores" WHERE "leafly_stores"."id" = 1 LIMIT 1[0m
+  Rendered /Users/benhorne/Ruby/rails/milehigh/engines/Leafly/app/views/leafly/stores/show.html.erb within layouts/leafly/application (1.0ms)
+Completed 200 OK in 51ms (Views: 47.0ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (30.5ms)[0m  [1mINSERT INTO "leafly_stores" ("address", "city", "created_at", "hours", "menu", "name", "phone_number", "slug", "state", "updated_at", "website", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "123 High St"], ["city", "Denver"], ["created_at", Thu, 09 Jan 2014 20:31:48 UTC +00:00], ["hours", "8-6pm"], ["menu", "purple kush, ak-47"], ["name", "High Zone"], ["phone_number", "302-123-1234"], ["slug", "high-zone"], ["state", "CO"], ["updated_at", Thu, 09 Jan 2014 20:31:48 UTC +00:00], ["website", "www.high-zone.com"], ["zipcode", "80206"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/leafly/stores/1" for 127.0.0.1 at 2014-01-09 13:31:48 -0700
+Processing by Leafly::StoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLeafly::Store Load (0.1ms)[0m  [1mSELECT "leafly_stores".* FROM "leafly_stores" WHERE "leafly_stores"."id" = 1 LIMIT 1[0m
+  Rendered /Users/benhorne/Ruby/rails/milehigh/engines/Leafly/app/views/leafly/stores/show.html.erb within layouts/leafly/application (1.6ms)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (31.3ms)[0m  [1mINSERT INTO "leafly_stores" ("address", "city", "created_at", "hours", "menu", "name", "phone_number", "slug", "state", "updated_at", "website", "zipcode") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["address", "123 High St"], ["city", "Denver"], ["created_at", Thu, 09 Jan 2014 20:32:02 UTC +00:00], ["hours", "8-6pm"], ["menu", "purple kush, ak-47"], ["name", "High Zone"], ["phone_number", "302-123-1234"], ["slug", "high-zone"], ["state", "CO"], ["updated_at", Thu, 09 Jan 2014 20:32:02 UTC +00:00], ["website", "www.high-zone.com"], ["zipcode", "80206"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/leafly/stores/1" for 127.0.0.1 at 2014-01-09 13:32:02 -0700
+Processing by Leafly::StoresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLeafly::Store Load (0.1ms)[0m  [1mSELECT "leafly_stores".* FROM "leafly_stores" WHERE "leafly_stores"."id" = 1 LIMIT 1[0m
+  Rendered /Users/benhorne/Ruby/rails/milehigh/engines/Leafly/app/views/leafly/stores/show.html.erb within layouts/leafly/application (1.3ms)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
