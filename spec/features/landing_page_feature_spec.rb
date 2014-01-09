@@ -8,7 +8,7 @@ require 'spec_helper'
       expect(page).to have_content 'Mile High'
     end
 
-    it "displays footer" do 
+    it "displays footer" do
       visit '/'
       expect(page).to have_content 'Github'
     end
