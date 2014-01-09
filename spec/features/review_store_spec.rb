@@ -18,11 +18,31 @@ describe "review section" do
 
     visit home_path
     select("snoop's house", :from => "Store")
+    fill_in('Title', :with => 'awwwwwwwwesohm')
+    fill_in('Body', :with => 'truuuuuly delish nug')
+    find('#thumbs-up').click
+    expect(page).to have_content("Your review of #{store2.name} was created.")
+    within('#review-feed') do
+      # Add user name and validation
+      expect(page).to have_content('awwwwwwwwesohm')
+      expect(page).to have_content('truuuuuly delish nug')
+    end
+  end
+
+  it "can create a new negative review" do
+
+    store = FactoryGirl.create(:store)
+    store2 = FactoryGirl.create(:store, name: "snoop's house")
+    FactoryGirl.create(:review)
+    FactoryGirl.create(:review)
+    FactoryGirl.create(:review)
+
+    visit home_path
+    select("snoop's house", :from => "Store")
     fill_in('Title', :with => 'hoooorrible')
     fill_in('Body', :with => 'truuuuuly horrible nug')
     find('#thumbs-up').click
     expect(page).to have_content("Your review of #{store2.name} was created.")
-    save_and_open_page
     within('#review-feed') do
       # Add user name and validation
       expect(page).to have_content('hoooorrible')
