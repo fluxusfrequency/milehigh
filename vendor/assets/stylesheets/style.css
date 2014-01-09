@@ -14,16 +14,16 @@ body { background: url("../img/bg.png"); border-top: 11px solid #333;}
 .container { background-color: #fff; border-left: 0px solid #fff; border-right: 0px solid #fff;}
 
 header { padding-bottom: 15px; margin-bottom: 10px;}
-header h1 { margin: 10px; margin-top: 35px;font-size: 3em; }
+header h1 { margin: 10px 10px 10px 0px; margin-top: 35px; padding-left: 0; font-size: 4em; }
 header .menu { float: right; margin-top: 40px; border-top: 1px solid #C9D1D3; border-bottom: 1px solid #C9D1D3; padding: 8px; }
 header .menu a { margin-right: 10px; margin-left: 10px; }
-header .tagline {  margin-left: 10px; }
 
 .topstories .story img { border: 1px solid #333; padding: 3px; width: 290px; margin-bottom: 5px;}
 
 
-.categories { background-color: #AAB1B3;  margin-top: 15px; margin-bottom: 15px; color: #333; text-align: center; font-size: 1.2em;}
+.categories { background-color: #AAB1B3;  margin-top: 15px; margin-bottom: 15px; padding-left: 10px; color: #333; text-align: center; font-size: 1.2em;}
 .categories a { display: inline-block; color: #333; margin-right: 20px; margin-left: 20px; padding: 10px; }
+.categories h2 { display: block; text-align: left; }
 
 h3 { line-height: 30px; margin: 2px;}
 .tagline { color: #AAB1B3; }
@@ -34,3 +34,9 @@ p { text-align: justify;}
 
 footer { background-color: #AAB1B3; margin-top: 30px; padding-top: 10px; text-align: center; bottom: 0px; position: relative;}
 footer .container { background-color:  #AAB1B3;}
+
+#new-review { margin: 60px 0; padding: 15px;}
+#new-review h2 { margin: 0px 0 20px 0; padding: 0;}
+
+#logo-image { display: inline; margin: 10px 0 10px 0; padding: 0;}
+#logo-banner { display: inline; margin: 0 0 0 10px; padding: 0;}
