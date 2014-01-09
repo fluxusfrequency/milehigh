@@ -1,0 +1,15 @@
+<header class="container">
+  <span class="menu" >
+    <% if current_user %>
+      <%= image_tag current_user.avatar %>
+      <%= current_user.name %>
+      <%= link_to "Sign out", signout_path, id: "sign_out" %>
+    <% else %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+  </span>
+  <h1>Newspaper</h1>
+  <span class="tagline" >
+    What's black, white and <s>read</s> red all over?
+  </span>
+</header>
