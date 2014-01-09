@@ -6,7 +6,7 @@ Milehigh::Application.routes.draw do
   get 'auth/failure', to: redirect('/')
   get 'signout' => 'sessions#destroy', only: %i(get delete), as: :signout
 
-
+end
   # resources :articles, only: [:index, :show]
 
   # get 'articles' => 'articles#index'
@@ -17,7 +17,7 @@ Milehigh::Application.routes.draw do
   # put 'articles/:article' => 'articles#update'
   # delete 'articles/:article' => 'articles#destroy'
 
-end
+
 
 
 # class ArticlesController < ActionController::Base
