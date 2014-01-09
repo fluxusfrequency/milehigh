@@ -9,3 +9,4 @@ mount Leafly::Engine, at: "leafly"
   get 'signout' => 'sessions#destroy', only: %i(get delete), as: :signout
 
 end
+
