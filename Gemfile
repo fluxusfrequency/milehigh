@@ -24,12 +24,13 @@ group :development, :test do
   gem 'cane'
   gem 'reek'
   gem 'brakeman', :require => false
-
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-cane'
   gem 'guard-reek', git: 'git://github.com/pericles/guard-reek.git'
   gem 'guard-brakeman'
+  gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
+
 end
 
 group :test do
