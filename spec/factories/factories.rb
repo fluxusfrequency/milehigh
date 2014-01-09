@@ -7,3 +7,5 @@ FactoryGirl.define do
     body "Really, it's that great"
   end
 end
+
+
