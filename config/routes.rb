@@ -1,5 +1,7 @@
 Milehigh::Application.routes.draw do
 
+mount Leafly::Engine, at: "leafly"
+
   root 'welcome#index'
 
   get 'auth/:provider/callback' => 'sessions#create', only: %i(get post)
