@@ -12,4 +12,5 @@ script:
   - bundle
   - rake db:create db:migrate
   - cd ../..
+  - bundle exec rake db:migrate RAILS_ENV=test
   - bundle exec rspec
