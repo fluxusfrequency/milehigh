@@ -1,8 +1,6 @@
 <div role="main" class="container topstories" id="content">
   <div class="row" id='review-feed'>
-    <% 3.times do %>
-      <%= render @reviews %>
-    <% end %>
+    <%= render @reviews %>
   </div>
   <%= render "reviews/new", :locals => {review: @review} %>
     
