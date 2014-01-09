@@ -49,6 +49,11 @@ GEM
     domain_name (0.5.15)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
+    factory_girl (4.3.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.3.0)
+      factory_girl (~> 4.3.0)
+      railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
     hike (1.2.3)
@@ -151,6 +156,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  factory_girl_rails (~> 4.0)
   leafly!
   rspec-rails
   sqlite3
