@@ -22,6 +22,13 @@
 
 <body>
   <%= render "layouts/header" %>
+  <div id="flash-section">
+    <% flash.each do |name, msg| %>
+      <% unless msg == true %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+    <% end %>
+  </div>
   <%= yield %>  
   <%= render 'layouts/footer' %>
 

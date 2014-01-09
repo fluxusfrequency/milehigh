@@ -10,5 +10,6 @@ mount Leafly::Engine, at: "leafly"
   get 'auth/failure', to: redirect('/')
   get 'signout' => 'sessions#destroy', only: %i(get delete), as: :signout
 
+  resources :reviews
 end
 

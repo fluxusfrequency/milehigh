@@ -1,11 +1,32 @@
+
 <div class="row" >
   <div class="span12 categories" >
-    <a href="#" >Joints</a>
-    &bullet;
-    <a href="#" >Bowls</a>
-    &bullet;
-    <a href="#" >Bongs</a>
-    &bullet;
-    <a href="#" >Hackey Sacks</a>
+    <h3>Review a store</h3>
+    <%= form_for Review.new do |f| %>
+      
+      <p>
+        <%= f.label :store %>
+        <%= f.select :store, @store_names %>
+      </p>
+
+      <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </p>
+
+      <p>
+        <%= f.label :body %>
+        <%= f.text_field :body %>
+      </p>
+
+      <p>
+        <%= f.submit 'Thumbs Up', id: 'thumbs-up' %>
+      </p>
+
+      <p>
+        <%= f.submit 'Thumbs Down', id: 'thumbs-down' %>
+      </p>
+
+    <% end %>
   </div>
 </div>
