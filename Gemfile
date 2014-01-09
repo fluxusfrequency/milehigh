@@ -40,3 +40,7 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
 end
+
+group :production do
+  gem 'rails_12factor'
+end

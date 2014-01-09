@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
+
+
+
 <head>
-  <title>Milehigh</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="Mile High Marijuana Store and Dispensary Reviews">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Mile High</title>
+
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 </head>
-<body>
-  <div id="user_nav">
-    <% if current_user %>
-      <%= image_tag current_user.avatar %>
-      <%= current_user.name %>
-      <%= link_to "Sign out", signout_path, id: "sign_out" %>
-    <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-    <% end %>
-  </div>
 
+
+
+<body>
+  <%= render "layouts/header" %>
   <%= yield %>
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>
