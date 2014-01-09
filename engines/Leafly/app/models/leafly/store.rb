@@ -2,6 +2,7 @@ require 'json'
 
 module Leafly
   class Store < ActiveRecord::Base
+    has_many :reviews
 
     def self.scrape_and_save_to_database
       stores = Leafly::Scraper.scrape_stores[:stores]
