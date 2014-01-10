@@ -3,14 +3,5 @@ rvm:
   - "2.0.0-p353"
 script:
   - bundle exec rake db:create
-  - bundle exec rake leafly:install:migrations
-  - bundle exec rake db:migrate RAILS_ENV=test
-  - bundle exec rspec
-  - cd engines/Leafly
-  - bundle
-  - cd test/dummy
-  - bundle
-  - rake db:create db:migrate
-  - cd ../..
   - bundle exec rake db:migrate RAILS_ENV=test
   - bundle exec rspec
