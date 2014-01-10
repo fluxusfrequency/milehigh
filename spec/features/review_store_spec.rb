@@ -4,7 +4,7 @@ require 'spec_helper'
 describe "review section" do
   it "appears" do
     store = FactoryGirl.create(:store)
-    visit home_path
+    visit root_path
     expect(page).to have_content("Review a store")
   end
 
@@ -16,7 +16,7 @@ describe "review section" do
     FactoryGirl.create(:review)
     FactoryGirl.create(:review)
 
-    visit home_path
+    visit root_path
     select("snoop's house", :from => "Store")
     fill_in('Title', :with => 'awwwwwwwwesohm')
     fill_in('Body', :with => 'truuuuuly delish nug')
@@ -37,7 +37,7 @@ describe "review section" do
     FactoryGirl.create(:review)
     FactoryGirl.create(:review)
 
-    visit home_path
+    visit root_path
     select("snoop's house", :from => "Store")
     fill_in('Title', :with => 'hoooorrible')
     fill_in('Body', :with => 'truuuuuly horrible nug')
