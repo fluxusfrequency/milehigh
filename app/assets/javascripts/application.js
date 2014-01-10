@@ -15,6 +15,5 @@
 //= require jquery-ui
 //= require jquery.ui.autocomplete
 //= require bootstrap
-//= require script
 //= require libs/modernizr-2.5.3-respond-1.1.0.min
 //= require_tree .

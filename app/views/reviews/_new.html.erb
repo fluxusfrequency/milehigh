@@ -1,17 +1,14 @@
 <div class="row well" id="new-review">
-  <h2>Review a Store</h2>
+  <h2>Review Store</h2>
 
-  <div class="row" >
-    <div class="span12 categories" >
       <%= form_for Leafly::Store.new, url: root_path do |f| %>
 
         <%= f.text_field :store_name, id: 'store-name' %>
 
-        <%= f.submit 'Review a Store', {:class => "btn btn-inverse btn-lg", 'data-toggle' => "modal", 'data-target' => '#myModal'} %>
+        <div id="placeholder"> </div>
+        <%= f.submit 'Review Store', {:class => "btn btn-inverse btn-lg", :id => 'review-modal-button', 'data-toggle' => "modal", 'data-target' => '#myModal'} %>
 
       <% end %>
-    </div>
-  </div>
 
   <!-- Button trigger modal -->
 
@@ -27,8 +24,8 @@
           <%= form_for Review.new do |f| %>
 
             <p>
-              <%= f.label :store %>
-              <%= f.select :store, @store_names %>
+              <%# f.label :store %>
+              <%# f.select :store, @store_names %>
             </p>
 
             <p>
