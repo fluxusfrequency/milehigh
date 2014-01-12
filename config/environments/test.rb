@@ -35,7 +35,9 @@ Milehigh::Application.configure do
   config.active_support.deprecation = :stderr
 
   Capybara.register_driver :webkit do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
-end
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  end
+
+  Capybara.javascript_driver = :webkit
 
 end
