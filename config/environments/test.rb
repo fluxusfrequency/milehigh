@@ -33,4 +33,9 @@ Milehigh::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  Capybara.register_driver :webkit do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
+
 end
