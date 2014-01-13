@@ -17,6 +17,7 @@ module Milehigh
                                  'script.js', 'jquery.ui.autocomplete.js', 'style.css', 'splash-style.css',
                                  'landing-page.css', 'font-awesome.css', 'font-awesome-ie7.css',
                                  'bootstrap.css']
+    config.assets.precompile += %w[*.jpg]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
