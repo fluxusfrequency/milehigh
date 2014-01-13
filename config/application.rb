@@ -13,12 +13,7 @@ Bundler.require(:default, Rails.env)
 
 module Milehigh
   class Application < Rails::Application
-    config.assets.precompile += ['dashboard.js.erb', 'bootstrap.js', 'jquery-1.9.1.js', 'jquery-ui.js',
-                                 'script.js', 'jquery.ui.autocomplete.js', 'style.css', 'splash-style.css',
-                                 'landing-page.css', 'font-awesome.css', 'font-awesome-ie7.css',
-                                 'bootstrap.css' 'intro-bg.jpg', 'logo-leaf.jpg', 'marijuana.jpg',
-                                 'weed-bg.jpg', 'weed.jpg']
-    config.assets.precompile += %w[*.jpg]
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -30,5 +25,20 @@ module Milehigh
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.assets.precompile << Proc.new do |path|
+      if path =~ /\.(css|js|jpg)\z/
+        full_path = Rails.application.assets.resolve(path).to_path
+        app_assets_path = Rails.root.join('app', 'assets').to_path
+        if full_path.starts_with? app_assets_path
+          puts "including asset: " + full_path
+          true
+        else
+          puts "excluding asset: " + full_path
+          false
+        end
+      else
+        false
+      end
+    end
   end
 end
