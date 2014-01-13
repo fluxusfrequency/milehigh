@@ -13,7 +13,7 @@ class Review < ActiveRecord::Base
 
   end
 
-    def category_name
+  def category_name
     category.try(:name)
   end
 

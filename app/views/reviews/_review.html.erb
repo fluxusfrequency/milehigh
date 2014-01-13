@@ -9,6 +9,44 @@
     <p>
       <%= review.rating %>
     </p>
-    <a href="#" class="btn btn-inverse pull-left" >Store Details <i class="icon-hand-right" ></i></a>
+    <a href="#" class="btn btn-inverse pull-left" id='review-modal-button' data-toggle="modal" data-target='#storeShowModal'>Store Details</a>
   </div>
 </div>
+
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="storeShowModal" tabindex="-1" role="dialog" aria-labelledby="storeShowModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 class="modal-title" id="storeShowModalLabel"><%= review.store.name %>: Store Details</h3>
+        </div>
+        <div class="modal-body">
+          <div id="store-info">
+            <img src="http://www.placekitten.com/250/250" id="store-show-image"/>
+            <p>Address:<br/> 
+            <%= review.store.address %><br/>
+            <%= review.store.city %><br/>
+            <%= review.store.state %><br/>
+            <%= review.store.zipcode %></p>
+
+            <p>Hours: <%= review.store.hours %></p>
+            <p>Website: <%= review.store.website %></p>
+            <p>Phone Number: <%= review.store.phone_number %></p>
+          </div>
+          <div id="store-menu">
+            <br>
+            <hr/>
+            <h3>Menu</h3>
+            <% JSON.parse(review.store.menu).each do |strain| %>
+              <p><%= strain %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
