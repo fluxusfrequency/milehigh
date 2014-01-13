@@ -13,6 +13,10 @@ Bundler.require(:default, Rails.env)
 
 module Milehigh
   class Application < Rails::Application
+    config.assets.precompile += ['dashboard.js.erb', 'bootstrap.js', 'jquery-1.9.1.js', 'jquery-ui.js',
+                                 'script.js', 'jquery.ui.autocomplete.js', 'style.css', 'splash-style.css',
+                                 'landing-page.css', 'font-awesome.css', 'font-awesome-ie7.css',
+                                 'bootstrap.css']
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
