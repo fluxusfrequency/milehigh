@@ -10,6 +10,8 @@ gem 'travis'
 gem 'puma'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
+gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
+
 
 gem 'rolling_paper'
 gem 'leafly', path: './engines/Leafly'
@@ -29,7 +31,6 @@ group :development, :test do
   gem 'guard-cane'
   gem 'guard-reek', git: 'git://github.com/pericles/guard-reek.git'
   gem 'guard-brakeman'
-  gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 
 end
 
