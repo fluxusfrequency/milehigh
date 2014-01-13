@@ -16,7 +16,8 @@ module Milehigh
     config.assets.precompile += ['dashboard.js.erb', 'bootstrap.js', 'jquery-1.9.1.js', 'jquery-ui.js',
                                  'script.js', 'jquery.ui.autocomplete.js', 'style.css', 'splash-style.css',
                                  'landing-page.css', 'font-awesome.css', 'font-awesome-ie7.css',
-                                 'bootstrap.css']
+                                 'bootstrap.css' 'intro-bg.jpg', 'logo-leaf.jpg', 'marijuana.jpg',
+                                 'weed-bg.jpg', 'weed.jpg']
     config.assets.precompile += %w[*.jpg]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
