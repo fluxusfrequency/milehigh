@@ -60,6 +60,12 @@ Milehigh::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
+  # config.assets.precompile += ['dashboard.js.erb', 'bootstrap.js', 'jquery-1.9.1.js', 'jquery-ui.js',
+  #                                'script.js', 'jquery.ui.autocomplete.js', 'style.css', 'splash-style.css',
+  #                                'landing-page.css', 'font-awesome.css', 'font-awesome-ie7.css',
+  #                                'bootstrap.css' 'intro-bg.jpg', 'logo-leaf.jpg', 'marijuana.jpg',
+  #                                'weed-bg.jpg', 'weed.jpg']
+  # config.assets.precompile += %w[*.jpg]
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
