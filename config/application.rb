@@ -28,7 +28,7 @@ module Milehigh
     config.assets.precompile << Proc.new do |path|
       if path =~ /\.(css|js|jpg)\z/
         full_path = Rails.application.assets.resolve(path).to_path
-        app_assets_path = Rails.root.join('app', 'assets').to_path
+        app_assets_path = Rails.root.join('app', 'assets', 'images').to_path
         if full_path.starts_with? app_assets_path
           puts "including asset: " + full_path
           true
