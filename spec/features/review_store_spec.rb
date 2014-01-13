@@ -2,13 +2,13 @@ require 'spec_helper'
 
 
 describe "review section" do
-  it "appears" do
+  xit "appears" do
     store = FactoryGirl.create(:store)
     visit root_path
     expect(page).to have_content("Review a store")
   end
 
-  it "can create a new positive review" do
+  xit "can create a new positive review" do
 
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
@@ -29,7 +29,7 @@ describe "review section" do
     end
   end
 
-  it "can create a new negative review" do
+  xit "can create a new negative review" do
 
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")

@@ -135,6 +135,7 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.3)
     formatador (0.2.4)
+    fuzzy_match (2.0.4)
     gh (0.13.0)
       addressable
       backports
@@ -386,6 +387,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails (~> 4.0)
+  fuzzy_match
   guard
   guard-brakeman
   guard-cane
