@@ -19,5 +19,10 @@ module Leafly
     def store_name
       self.try(:name)
     end
+
+    searchable do
+      text :name, :address, :menu,
+           :city, :hours, :zipcode
+    end
   end
 end

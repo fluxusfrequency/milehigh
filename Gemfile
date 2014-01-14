@@ -12,6 +12,8 @@ gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 gem 'fuzzy_match'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 
 gem 'rolling_paper'
@@ -36,6 +38,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'simplecov', :require => false, :group => :test
   gem 'database_cleaner', :require => false, :group => :test

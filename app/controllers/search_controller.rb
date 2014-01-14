@@ -1,12 +1,14 @@
 class SearchController < ApplicationController
+  respond_to :json
 
   def new
-    store = Leafly::Store.find_by(name: params[:query])
-    if store
-      redirect_to "/leafly/stores/#{store.id}"
-    else
-      redirect_to :back
-    end
+    @results = Search.by(params[:query])
+  end
+
+  def index
+    @result = Search.by(params["queryData"])
+    response = @result.collect{ |store| [store.name, store.slug] }
+    render :json => response
   end
 
 end

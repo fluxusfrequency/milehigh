@@ -3,7 +3,9 @@ class DashboardController < ApplicationController
     if current_user
       @review = Review.new
       @reviews = Review.most_recent(3)
+
       @store_names = Leafly::Store.all.collect {|n| n.name}
+      @search_results = Search.by(params[:query])
     else
       redirect_to welcome_path
     end
