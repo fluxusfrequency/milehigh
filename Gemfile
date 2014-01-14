@@ -14,7 +14,8 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 gem 'fuzzy_match'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
-
+gem 'capistrano', '~> 3.0'
+gem 'capistrano-rails', '~> 1.1'
 
 gem 'rolling_paper'
 gem 'leafly', path: './engines/Leafly'
