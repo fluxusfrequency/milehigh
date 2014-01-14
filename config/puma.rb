@@ -1,9 +1,9 @@
-root = "/home/gschool/milehigh"
-working_directory root
-pid "#{root}/tmp/pids/puma.pid"
-stderr_path "#{root}/log/puma.log"
-stdout_path "#{root}/log/puma.log"
+rails_env = ENV['RAILS_ENV'] || 'development'
 
-listen "/tmp/puma.blog.sock"
-worker_processes 2
-timeout 30
+threads 4,4
+
+bind "unix:///home/gschool/milehigh/tmp/puma/milehigh-puma.sock"
+pidfile "/home/gschool/milehigh/tmp/puma/pid"
+pidfile "/home/gschool/milehigh/tmp/puma/state"
+
+activate_control_app
