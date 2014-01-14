@@ -5,7 +5,7 @@ $(function() {
       'id="review-modal-button" data-toggle="modal" data-target="#storeShowModal" ' +
       '">' + name + '</a>'
   };
-  
+
 
   $("#search-button").click(function(e) {
     e.prevent_default;
@@ -26,12 +26,14 @@ $(function() {
         }
       }
     }).done(function(response) {
-      // var i = 0;
-      //   debugger
       for (store in response) {
-        var storeName = response[store][0]
-        var storeSlug = response[store][1]
-        $('#search-results').append(resultElement(storeName, storeSlug) + "<br />")
+        debugger;
+        var storeSlug = response[store]["slug"];
+        var storeName = response[store]["name"];
+        var storeName = response[store]["name"];
+        var storeName = response[store]["name"];
+        var storeName = response[store]["name"];
+        $('#search-results').append(resultElement(response[store]) + "<br />")
       }
     });
   });

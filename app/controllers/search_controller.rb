@@ -7,8 +7,7 @@ class SearchController < ApplicationController
 
   def index
     @result = Search.by(params["queryData"])
-    response = @result.collect{ |store| [store.name, store.slug] }
-    render :json => response
+    render :json => @result
   end
 
 end
