@@ -2,7 +2,7 @@
   <span class="menu">
     <% if current_user %>
       <%= image_tag current_user.avatar %>
-      <%= link_to current_user.name, "#" %>
+      <%= render "users/user" %>
       <%= link_to "Sign out", '/signout', id: "sign_out" %>
     <% else %>
       <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
