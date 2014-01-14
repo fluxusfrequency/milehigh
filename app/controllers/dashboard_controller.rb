@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
 
       @search_results = Search.by(params[:query])
 
-      @user = current_user
+      # @user = current_user
       @thumbs_up_review_count = current_user.reviews.where(rating: "Thumbs Up").count
       @thumbs_down_review_count = current_user.reviews.where(rating: "Thumbs Down").count
     else

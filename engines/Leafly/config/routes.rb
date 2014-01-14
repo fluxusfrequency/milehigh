@@ -1,3 +1,3 @@
-Leafly::Engine.routes.draw do
-  resources :stores
-end
+# Leafly::Engine.routes.draw do
+#   resources :stores
+# end
