@@ -1,5 +1,6 @@
 <div class="row well" id="new-review">
   <h2>Review Store</h2>
+  <%= Leafly::Store.all %>
 
       <%= form_for Leafly::Store.new, url: root_path do |f| %>
 
