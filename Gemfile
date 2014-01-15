@@ -46,7 +46,7 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'sunspot_test'
   gem 'vcr'
-  gem 'webmock'
+  # gem 'webmock'
 end
 
 group :production do
