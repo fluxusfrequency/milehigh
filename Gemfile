@@ -14,7 +14,6 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 gem 'fuzzy_match'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
-gem 'rails_12factor'
 
 
 
@@ -49,4 +48,8 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'sunspot_test'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
