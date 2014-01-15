@@ -6,6 +6,7 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
 require 'fuzzy_match'
+require 'rails'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -14,6 +15,7 @@ Bundler.require(:default, Rails.env)
 
 module Milehigh
   class Application < Rails::Application
+  config.assets.initialize_on_precompile = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -26,20 +28,20 @@ module Milehigh
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.assets.precompile << Proc.new do |path|
-      if path =~ /\.(css|js|jpg)\z/
-        full_path = Rails.application.assets.resolve(path).to_path
-        app_assets_path = Rails.root.join('app', 'assets', 'images').to_path
-        if full_path.starts_with? app_assets_path
-          puts "including asset: " + full_path
-          true
-        else
-          puts "excluding asset: " + full_path
-          false
-        end
-      else
-        false
-      end
-    end
+    # config.assets.precompile << Proc.new do |path|
+    #   if path =~ /\.(css|js|jpg)\z/
+    #     full_path = Rails.application.assets.resolve(path).to_path
+    #     app_assets_path = Rails.root.join('app', 'assets', 'images').to_path
+    #     if full_path.starts_with? app_assets_path
+    #       puts "including asset: " + full_path
+    #       true
+    #     else
+    #       puts "excluding asset: " + full_path
+    #       false
+    #     end
+    #   else
+    #     false
+    #   end
+    # end
   end
 end

@@ -39,11 +39,14 @@ end
 
 group :test do
   gem 'selenium-webdriver'
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'rspec-rails'
   gem 'simplecov', :require => false, :group => :test
   gem 'database_cleaner', :require => false, :group => :test
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'sunspot_test'
 end
 
 group :production do
