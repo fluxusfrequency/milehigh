@@ -1,0 +1,22 @@
+<header class="container">
+  <span class="menu">
+    <% if current_user %>
+      <%= image_tag current_user.avatar %>
+      <%= render "users/user" %>
+      <%= link_to "Sign out", '/signout', id: "sign_out" %>
+    <% else %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+  </span>
+  <div class="row">
+    <div class="span-4">
+      <%= image_tag 'logo-leaf.jpg', size:'90x90', id:'logo-image' %>
+    </div>
+    <div class="span-8" id="logo-banner">
+      <h1><%= link_to 'Mile High', '/' %></h1>
+      <span class="tagline">
+        Weed... It's green, sticky and <s>illegal</s> legal in Colorado!
+      </span>
+    </div>
+  </div>
+</header>

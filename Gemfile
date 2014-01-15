@@ -10,6 +10,11 @@ gem 'travis'
 gem 'puma'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
+gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
+gem 'fuzzy_match'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
 
 gem 'rolling_paper'
 gem 'leafly', path: './engines/Leafly'
@@ -24,18 +29,26 @@ group :development, :test do
   gem 'cane'
   gem 'reek'
   gem 'brakeman', :require => false
-
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-cane'
   gem 'guard-reek', git: 'git://github.com/pericles/guard-reek.git'
   gem 'guard-brakeman'
+
 end
 
 group :test do
+  gem 'selenium-webdriver'
+  gem 'poltergeist'
+  gem 'phantomjs', :require => 'phantomjs/poltergeist'
   gem 'rspec-rails'
   gem 'simplecov', :require => false, :group => :test
   gem 'database_cleaner', :require => false, :group => :test
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'sunspot_test'
+end
+
+group :production do
+  gem 'rails_12factor'
 end

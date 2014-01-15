@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     user.find_avatar
@@ -8,6 +9,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to root_path
+    redirect_to welcome_path
   end
 end
