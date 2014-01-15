@@ -15,6 +15,7 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'mechanize'
 gem 'rolling_paper'
+gem 'json'
 gem 'leafly', path: './engines/Leafly'
 
 group :development, :test do

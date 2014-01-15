@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   def create
     respond_to do |format|
       format.html do
-        store = Leafly::Store.find_by(name: params[:review][:store])
+        store = Store.find_by(name: params[:review][:store])
         if store
           review = store.reviews.create(review_params)
           review.update_attributes(rating: params[:commit])
@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
         redirect_to root_path
       end
       format.json do
-        found_store = Leafly::Store.find_by(name: params[:review][:store])
+        found_store = Store.find_by(name: params[:review][:store])
         if found_store
           review = found_store.reviews.build(
             title: params[:review][:title],
