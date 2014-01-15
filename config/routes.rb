@@ -1,7 +1,5 @@
 Milehigh::Application.routes.draw do
 
-mount Leafly::Engine, at: "leafly"
-
   root 'dashboard#index'
 
   get 'welcome' => 'welcome#index'

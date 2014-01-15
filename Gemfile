@@ -16,7 +16,6 @@ gem 'sunspot_solr'
 gem 'mechanize'
 gem 'rolling_paper'
 gem 'json'
-gem 'leafly', path: './engines/Leafly'
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'

@@ -30,15 +30,6 @@ GIT
       guard (>= 1.8)
       reek (~> 1.3.2)
 
-PATH
-  remote: ./engines/Leafly
-  specs:
-    leafly (0.0.1)
-      mechanize
-      rails (~> 4.0.2)
-      rolling_paper
-      sunspot_rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -433,7 +424,6 @@ DEPENDENCIES
   jquery-rails
   json
   koala (~> 1.8.0rc1)
-  leafly!
   mechanize
   omniauth-facebook
   pg

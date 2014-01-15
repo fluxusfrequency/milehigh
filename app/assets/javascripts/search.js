@@ -1,7 +1,7 @@
 $(function() {
   var queryString;
   var resultElement = function(name, slug) {
-      return '<a href="/leafly/stores/' + slug + '" ' +
+      return '<a href="/stores/' + slug + '" ' +
       'id="review-modal-button" data-toggle="modal" data-target="#storeShowModal" ' +
       '">' + name + '</a>'
   };
