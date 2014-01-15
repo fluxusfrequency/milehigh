@@ -9,7 +9,7 @@ describe "review section" do
   end
 
 
-  xit "can create a new positive review", :js => true do
+  it "can create a new positive review", :js => true do
     Capybara.current_driver = Capybara.javascript_driver
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
@@ -24,10 +24,9 @@ describe "review section" do
     fill_in('Title', :with => 'awwwwwwwwesohm')
     fill_in('review_body', :with => 'truuuuuly delish nug')
     find('#thumbs-up').click
-    expect(page).to have_content("Your review of #{store2.name} was created.")
-    puts current_page.path
     within('#review-feed') do
       # Add user name and validation
+      save_and_open_page
       expect(page).to have_content('awwwwwwwwesohm')
       expect(page).to have_content('truuuuuly delish nug')
     end

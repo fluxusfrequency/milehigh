@@ -11,6 +11,7 @@ mount Leafly::Engine, at: "leafly"
   get 'signout' => 'sessions#destroy', only: %i(get delete), as: :signout
   get '/search' => 'search#new'
   post '/search' => 'search#index'
+  resources :stores, only: [:show]
   resources :reviews
 end
 
