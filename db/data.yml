@@ -23,7 +23,7 @@ users:
     - http://profile.ak.fbcdn.net/hprofile-ak-ash2/1076807_1226190496_1136866552_q.jpg
 
 ---
-leafly_stores:
+stores:
   columns:
   - id
   - slug
