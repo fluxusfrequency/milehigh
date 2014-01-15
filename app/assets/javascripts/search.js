@@ -9,7 +9,7 @@ $(function() {
 
   $("#search-button").click(function(e) {
     e.prevent_default;
-    queryString = $("#search-form").val();
+    queryString = $(".search-form").val();
 
     var queryData;
     queryData = { query : queryString };

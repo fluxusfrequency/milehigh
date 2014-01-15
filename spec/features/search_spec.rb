@@ -13,6 +13,7 @@ describe Search do
         page.fill_in 'search-form', with: store.name
       end
       click_on 'Search'
+      save_and_open_page
       within('#search-results') do
         expect(page).to have_content(store.name)
       end
