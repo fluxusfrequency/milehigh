@@ -1,6 +1,29 @@
 
 ---
-leafly_stores:
+users:
+  columns:
+  - id
+  - created_at
+  - updated_at
+  - provider
+  - uid
+  - name
+  - oauth_token
+  - oauth_expires_at
+  - avatar
+  records: 
+  - - '1'
+    - '2014-01-14 20:40:37.146366'
+    - '2014-01-14 20:43:07.96811'
+    - facebook
+    - '1226190496'
+    - Bryana Knight
+    - CAAJp1xF4mB0BAHba3VRsV2ZAwf4axm8ZAsfJZCnlpPTDJ4hZB4Pf4zexxr3oQbYDXTZBC5An32STLsy8TEhdJFUiGRSr0f542dS79QjVkzjDHiooW9SCTzlwyqvKj83pBXR85nTWbaXZCPYHtLGi2QzkBZAhuTwFcKSiTEI9Ltq0609fwtebWV8btPK5fDEQsgZD
+    - '2014-03-14 22:05:07'
+    - http://profile.ak.fbcdn.net/hprofile-ak-ash2/1076807_1226190496_1136866552_q.jpg
+
+---
+stores:
   columns:
   - id
   - slug

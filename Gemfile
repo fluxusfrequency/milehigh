@@ -11,13 +11,11 @@ gem 'puma'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
-gem 'fuzzy_match'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
-
-
+gem 'mechanize'
 gem 'rolling_paper'
-gem 'leafly', path: './engines/Leafly'
+gem 'json'
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
@@ -47,6 +45,8 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'sunspot_test'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :production do

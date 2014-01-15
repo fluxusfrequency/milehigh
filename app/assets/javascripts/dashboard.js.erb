@@ -1,6 +1,6 @@
 $(function() {
   var availableTags, storeName;
-  availableTags = <%= Leafly::Store.all.collect {|n| n.name} %>;
+  availableTags = <%= Store.all.collect {|n| n.name} %>;
   $( "#store-name" ).autocomplete({
     source: availableTags
   });
