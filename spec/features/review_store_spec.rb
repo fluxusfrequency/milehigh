@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "review section" do
-  xit "appears" do
+  it "appears" do
     store = FactoryGirl.create(:store)
     visit root_path
     click_on 'Login With Facebook'
@@ -9,8 +9,7 @@ describe "review section" do
   end
 
 
-  it "can create a new positive review", :js => true do
-    Capybara.current_driver = Capybara.javascript_driver
+  it "can create a new positive review" do
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
     FactoryGirl.create(:review)
@@ -19,17 +18,16 @@ describe "review section" do
 
     visit root_path
     click_on 'Login With Facebook'
-    fill_in("store-name", :with => "snoop's house")
+    # save_and_open_page
+    fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
+    expect(page).to have_content("Review snoop's house")
     fill_in('Title', :with => 'awwwwwwwwesohm')
     fill_in('review_body', :with => 'truuuuuly delish nug')
     find('#thumbs-up').click
-    within('#review-feed') do
-      # Add user name and validation
-      # save_and_open_page
-      expect(page).to have_content('awwwwwwwwesohm')
-      expect(page).to have_content('truuuuuly delish nug')
-    end
+    # Add user name and validation
+    expect(page).to have_content('awwwwwwwwesohm')
+    expect(page).to have_content('truuuuuly delish nug')
   end
 
   xit "can create a new negative review" do
