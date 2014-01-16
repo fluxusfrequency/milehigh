@@ -12,7 +12,8 @@ Milehigh::Application.routes.draw do
   post '/search' => 'search#index', as: "strain"
   post '/' => 'reviews#new'
   get '/strain/:slug' => 'strains#show', as: "strain_show"
-  resources :stores, only: [:show, :index]
+  get '/stores/:slug' => 'stores#show', as: "store"
+  resources :stores, only: [:index]
   resources :reviews
 
 end

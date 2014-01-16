@@ -9,7 +9,7 @@
     <p>
       <%= review.rating %>
     </p>
-    <%= link_to 'Store Details', store_path(review.store), class: "btn btn-inverse pull-left" %>
+    <%= link_to 'Store Details', store_path(review.store.slug), class: "btn btn-inverse pull-left" %>
   </div>
 </div>
 

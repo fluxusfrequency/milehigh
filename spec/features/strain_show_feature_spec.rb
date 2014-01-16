@@ -11,15 +11,15 @@ describe "strain show" do
   it "is reachable from store's menu page" do
     store = FactoryGirl.create(:store)
     strain = MenuStrain.by_store(store).first
-    visit store_path(store)
+    visit store_path(store.slug)
     expect(page).to have_content(store.name)
-    within ('#store-menu') do 
+    within ('#store-menu') do
       click_link(strain.name)
     end
-    expect(current_path).to include(strain.key)    
+    expect(current_path).to include(strain.key)
     expect(page).to have_content(strain.name)
-    expect(page).to have_content(strain.category)    
-    expect(page).to have_content(strain.description)    
+    expect(page).to have_content(strain.category)
+    expect(page).to have_content(strain.description)
     expect(page).to have_content(strain.overview)
     expect(page).to have_content(strain.rating)
     expect(page).to have_content(strain.effects)
