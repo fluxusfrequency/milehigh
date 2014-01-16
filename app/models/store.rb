@@ -24,6 +24,14 @@ class Store < ActiveRecord::Base
     self.try(:name)
   end
 
+  def positive_count
+    reviews.positive.count
+  end
+
+  def negative_count
+    reviews.negative.count
+  end
+
   searchable do
     text :name, :address, :menu,
          :city, :hours, :zipcode
