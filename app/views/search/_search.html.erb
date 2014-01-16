@@ -7,12 +7,15 @@
         <input type="text" name='search-form' id="search-form">
         <input type="submit" id='search-button' value="Search">
       </form> -->
-      <textarea id='search-form'></textarea>
-      <button id='search-button'>Search</button>
-    </div>
-  </div>
-  <div class="span8" id='search-results'>
+      <!-- <textarea id='search-form'></textarea>
+      <button id='search-button'>Search</button> -->
 
+      <%= form_tag stores_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], id: "search-form" %>
+        <%= submit_tag 'Search', name: nil, id: "search-button" %>
+      <% end %>
+
+    </div>
   </div>
 
   <div id="search-modal"></div>
