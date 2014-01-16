@@ -49,5 +49,6 @@ group :test do
 end
 
 group :production do
+  gem 'sunspot_solr'
   gem 'rails_12factor'
 end
