@@ -1,5 +1,5 @@
 <div class="span8" id='search-results'>
   <% @stores.each do |store| %>
-    <%= link_to store.name %>
+    <%= link_to store.name, store_path(store.slug) %>
   <% end %>
 </div>
