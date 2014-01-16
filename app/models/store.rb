@@ -5,11 +5,15 @@ class Store < ActiveRecord::Base
   has_many :reviews
 
   def self.scrape_and_save_to_database
-    stores = Scraper.scrape_stores(Scraper.dispensary_urls)[:stores]
-    stores.each_with_index do |store, index|
-      create(store)
+    scraped = Scraper.scrape_stores(Scraper.dispensary_urls)[:stores]
+
+    stores = []
+    scraped.each_with_index do |store, index|
+      created = create(store)
+      stores << created
       puts "created store #{index}"
     end
+    stores
   end
 
   def menu_to_array

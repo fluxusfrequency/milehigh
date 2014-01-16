@@ -18,6 +18,7 @@
 #   it "should scrape store info" do
 #     VCR.use_cassette('store_link_list') do
 #       result = Scraper.scrape_stores(store_link_list)
+#       raise result.inspect
 #       expect(result[:stores][0][:address]).to eq('1 Broadway Suite A-150')
 #     end
 #   end
