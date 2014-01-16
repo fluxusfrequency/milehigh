@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
   belongs_to :user
-  belongs_to :store, class_name: Leafly::Store
+  belongs_to :store
 
   validates :store_id, :body, :title, presence: true
   validates_inclusion_of :rating, :in => ['Thumbs Up', 'Thumbs Down']

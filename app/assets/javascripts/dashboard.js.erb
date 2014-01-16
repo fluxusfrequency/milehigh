@@ -1,65 +1,65 @@
 $(function() {
   var availableTags, storeName;
-  availableTags = <%= Leafly::Store.all.collect {|n| n.name} %>;
+  availableTags = <%= Store.all.collect {|n| n.name} %>;
   $( "#store-name" ).autocomplete({
     source: availableTags
   });
-  $("#review-modal-button").click(function() {
-    storeName = $("#store-name").val();
-  });
-  $("#thumbs-up").click(function(e) {
-    e.prevent_default;
+  // $("#review-modal-button").click(function() {
+  //   storeName = $("#store-name").val();
+  // });
+  // $("#thumbs-up").click(function(e) {
+  //   e.prevent_default;
 
-    var reviewTitle, reviewBody, reviewRating, reviewData;
-    reviewTitle = $("#review_title").val();
-    reviewBody = $("#review_body").val();
-    reviewRating = "Thumbs Up";
-    reviewData = { review: { store: storeName , title: reviewTitle, body: reviewBody, rating: reviewRating } };
+  //   var reviewTitle, reviewBody, reviewRating, reviewData;
+  //   reviewTitle = $("#review_title").val();
+  //   reviewBody = $("#review_body").val();
+  //   reviewRating = "Thumbs Up";
+  //   reviewData = { review: { store: storeName , title: reviewTitle, body: reviewBody, rating: reviewRating } };
 
-    $.ajax({
-      url: '/reviews',
-      type: 'POST',
-      dataType: 'json',
-      data: reviewData,
-      success: function() {
-        window.history.back();
-      },
-      error: function() {
-        var errors = response.responseJSON;
-        if(errors) {
-          $('#flash-section').html(errors);
-        }
-      }
-    });
+  //   $.ajax({
+  //     url: '/reviews',
+  //     type: 'POST',
+  //     dataType: 'json',
+  //     data: reviewData,
+  //     success: function() {
+  //       window.history.back();
+  //     },
+  //     error: function() {
+  //       var errors = response.responseJSON;
+  //       if(errors) {
+  //         $('#flash-section').html(errors);
+  //       }
+  //     }
+  //   });
 
-  });
+  // });
 
-  $("#thumbs-down").click(function(e) {
-    e.prevent_default;
+  // $("#thumbs-down").click(function(e) {
+  //   e.prevent_default;
 
-    var reviewTitle, reviewBody, reviewRating, reviewData;
-    reviewTitle = $("#review_title").val();
-    reviewBody = $("#review_body").val();
-    reviewRating = "Thumbs Down";
-    reviewData = { review: { store: storeName , title: reviewTitle, body: reviewBody, rating: reviewRating } };
+  //   var reviewTitle, reviewBody, reviewRating, reviewData;
+  //   reviewTitle = $("#review_title").val();
+  //   reviewBody = $("#review_body").val();
+  //   reviewRating = "Thumbs Down";
+  //   reviewData = { review: { store: storeName , title: reviewTitle, body: reviewBody, rating: reviewRating } };
 
-    $.ajax({
-      url: '/reviews',
-      type: 'POST',
-      dataType: 'json',
-      data: reviewData,
-      success: function() {
-        window.history.back();
-      },
-      error: function() {
-        var errors = response.responseJSON;
-        if(errors) {
-          $('#flash-section').html(errors);
-        }
-      }
-    });
+  //   $.ajax({
+  //     url: '/reviews',
+  //     type: 'POST',
+  //     dataType: 'json',
+  //     data: reviewData,
+  //     success: function() {
+  //       window.history.back();
+  //     },
+  //     error: function() {
+  //       var errors = response.responseJSON;
+  //       if(errors) {
+  //         $('#flash-section').html(errors);
+  //       }
+  //     }
+  //   });
 
-  });
+  // });
 
 });
 

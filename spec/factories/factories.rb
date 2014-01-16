@@ -6,10 +6,8 @@ FactoryGirl.define do
     title "SOOOO GREAT!"
     body "Really, it's that great"
   end
-end
 
-FactoryGirl.define do
-  factory :store, class: Leafly::Store do
+  factory :store do
     slug "high-zone"
     name "High Zone"
     address "123 High St"

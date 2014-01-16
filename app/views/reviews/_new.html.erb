@@ -1,12 +1,10 @@
 <div class="row well" id="new-review">
   <h2>Review Store</h2>
 
-      <%= form_for Leafly::Store.new, url: root_path do |f| %>
+      <%= form_tag new_review_path, method: :get do %>
 
-        <%= f.text_field :store_name, id: 'store-name' %>
-
-        <div id="placeholder"> </div>
-        <%= f.submit 'Review Store', {:class => "btn btn-inverse btn-lg", :id => 'review-modal-button', 'data-toggle' => "modal", 'data-target' => '#myModal'} %>
+        <%= text_field_tag :store_name %>
+        <%= submit_tag 'Review Store' %>
 
       <% end %>
 

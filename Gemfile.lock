@@ -22,23 +22,6 @@ GIT
       pry-stack_explorer (~> 0.4.9)
       railties (>= 3.0, < 5.0)
 
-GIT
-  remote: git://github.com/pericles/guard-reek.git
-  revision: febe7ac4f4c6f029a30a9213e92bc1ba44b4e2d4
-  specs:
-    guard-reek (0.0.1)
-      guard (>= 1.8)
-      reek (~> 1.3.2)
-
-PATH
-  remote: ./engines/Leafly
-  specs:
-    leafly (0.0.1)
-      mechanize
-      rails (~> 4.0.2)
-      rolling_paper
-      sunspot_rails
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -139,7 +122,6 @@ GEM
     fastercsv (1.5.5)
     ffi (1.9.3)
     formatador (0.2.4)
-    fuzzy_match (2.0.4)
     gh (0.13.0)
       addressable
       backports
@@ -157,12 +139,6 @@ GEM
       lumberjack (~> 1.0)
       pry (>= 0.9.12)
       thor (>= 0.18.1)
-    guard-brakeman (0.8.1)
-      brakeman (>= 2.1.1)
-      guard (>= 1.1.0)
-    guard-cane (0.2.0)
-      cane
-      guard
     guard-rspec (4.2.3)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
@@ -398,6 +374,7 @@ GEM
     unf (0.1.3)
       unf_ext
     unf_ext (0.0.6)
+    vcr (2.8.0)
     webrobots (0.1.1)
     websocket (1.0.7)
     websocket-driver (0.3.2)
@@ -417,17 +394,14 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   factory_girl_rails (~> 4.0)
-  fuzzy_match
   guard
-  guard-brakeman
-  guard-cane
-  guard-reek!
   guard-rspec
   jazz_hands!
   jbuilder (~> 1.2)
   jquery-rails
+  json
   koala (~> 1.8.0rc1)
-  leafly!
+  mechanize
   omniauth-facebook
   pg
   phantomjs
@@ -448,4 +422,5 @@ DEPENDENCIES
   sunspot_test
   travis
   uglifier (>= 1.3.0)
+  vcr
   yaml_db!
