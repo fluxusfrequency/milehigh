@@ -12,7 +12,6 @@ gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 gem 'sunspot_rails'
-gem 'sunspot_solr'
 gem 'mechanize'
 gem 'rolling_paper'
 gem 'json'
@@ -29,7 +28,10 @@ group :development, :test do
   gem 'brakeman', :require => false
   gem 'guard'
   gem 'guard-rspec'
+end
 
+group :development do
+  gem 'sunspot_solr'
 end
 
 group :test do
