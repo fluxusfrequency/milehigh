@@ -9,9 +9,9 @@ Milehigh::Application.routes.draw do
   get 'signout' => 'sessions#destroy', only: %i(get delete), as: :signout
   get '/search' => 'search#new'
   get 'my-profile' => 'users#show', as: "user_profile"
-  post '/search' => 'search#index'
+  post '/search' => 'search#index', as: "strain"
   post '/' => 'reviews#new'
-  resources :strains, only: [:show]
+  get '/strain/:slug' => 'strains#show', as: "strain_show"
   resources :stores, only: [:show, :index]
   resources :reviews
 

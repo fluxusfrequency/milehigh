@@ -1,1 +1,21 @@
+<% cache do @strain %>
 
+<h3><%= @strain.name %></br></h3>
+Category: <%= @strain.category %></br>
+Description: <%= @strain.description %></br>
+Overview: <%= @strain.overview %></br>
+Rating: <%= @strain.rating %></br>
+Effects:</br> <% @strain.effects.each do |effect| %>
+<%= effect["Name"] %>: 
+<%= effect["Score"] %></br>
+<% end %>
+Medical Uses:</br> <% @strain.medical_uses.each do |medical_use| %>
+<%= medical_use["Name"] %>: 
+<%= medical_use["Score"] %></br>
+<% end %>
+Side Effects:</br> <% @strain.side_effects.each do |side_effect| %>
+<%= side_effect["Name"] %>: 
+<%= side_effect["Score"] %></br>
+<% end %>
+
+<% end %>

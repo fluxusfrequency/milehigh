@@ -24,7 +24,7 @@
   <hr/>
   <h3>Strains</h3>
   <% @strains.each do |strain| %>
-    <p><%= link_to strain.name, "#" %></p>
+    <p><%= link_to strain.name, strain_show_path(strain.key) %></p>
   <% end %>
 </div>
 

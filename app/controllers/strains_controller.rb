@@ -1,7 +1,7 @@
 class StrainsController < ApplicationController
 
   def show
-    @strain = MenuStrain.find_by(params[:name])
+    @strain = MenuStrain.find_by_slug(params[:slug])
   end
 
 
