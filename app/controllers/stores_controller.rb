@@ -2,7 +2,7 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.find(params[:id])
-    @menu = JSON.parse(@store.menu)
+    @strains = MenuStrain.by_store(@store)
   end
 
   def index 
