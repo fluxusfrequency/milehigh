@@ -5,7 +5,7 @@ class Store < ActiveRecord::Base
   has_many :reviews
 
   def self.scrape_and_save_to_database
-    stores = Scraper.scrape_stores[:stores]
+    stores = Scraper.scrape_stores(Scraper.dispensary_urls)[:stores]
     stores.each_with_index do |store, index|
       create(store)
       puts "created store #{index}"

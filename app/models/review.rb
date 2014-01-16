@@ -9,23 +9,11 @@ class Review < ActiveRecord::Base
     all.order(created_at: :desc).limit(number)
   end
 
-  def self.thumbs_up?
+  def thumbs_up?
     rating == "Thumbs Up"
   end
 
-  def self.thumbs_down?
+  def thumbs_down?
     rating == "Thumbs Down"
-  end
-
-  def store_name
-
-  end
-
-  def category_name
-    category.try(:name)
-  end
-
-  def category_name=(name)
-    self.category = Category.find_by_name(name) if name.present?
   end
 end

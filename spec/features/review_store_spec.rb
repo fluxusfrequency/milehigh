@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe "review section" do
+
   it "appears" do
-    store = FactoryGirl.create(:store)
     visit root_path
     click_on 'Login With Facebook'
+    store = FactoryGirl.create(:store)
     expect(page).to have_content("Review Store")
   end
 
