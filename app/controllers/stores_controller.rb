@@ -5,4 +5,12 @@ class StoresController < ApplicationController
     @menu = JSON.parse(@store.menu)
   end
 
+  def index 
+    @search = Store.search do 
+      fulltext params[:search]
+    end
+    @stores = @search.results
+  end
+
+
 end

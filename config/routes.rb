@@ -11,7 +11,7 @@ Milehigh::Application.routes.draw do
   get 'my-profile' => 'users#show', as: "user_profile"
   post '/search' => 'search#index'
   post '/' => 'reviews#new'
-  resources :stores, only: [:show]
+  resources :stores, only: [:show, :index]
   resources :reviews
 end
 
