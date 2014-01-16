@@ -29,9 +29,6 @@ group :development, :test do
   gem 'brakeman', :require => false
   gem 'guard'
   gem 'guard-rspec'
-  gem 'guard-cane'
-  gem 'guard-reek', git: 'git://github.com/pericles/guard-reek.git'
-  gem 'guard-brakeman'
 
 end
 
@@ -46,7 +43,7 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'sunspot_test'
   gem 'vcr'
-  gem 'webmock'
+  # gem 'webmock'
 end
 
 group :production do
