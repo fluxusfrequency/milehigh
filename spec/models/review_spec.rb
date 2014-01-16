@@ -39,6 +39,11 @@ describe Review do
     expect(review2).to_not be_valid
   end
 
+  it "knows its rating" do
+    review = FactoryGirl.build(:review)
+    expect(review.thumbs_up?).to be
+    expect(review.thumbs_down?).not_to be
+  end
 
 
 end

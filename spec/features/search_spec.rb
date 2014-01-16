@@ -4,12 +4,8 @@ describe Search do
 
   describe 'single store' do
 
-    before :each do
-      login
-    end
-
-
     it 'searches by store name', :search => true do
+      login
       store = FactoryGirl.create(:store)
       Store.stub(:search).and_return(store)
       store.stub(:results).and_return([store])

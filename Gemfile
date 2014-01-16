@@ -44,8 +44,8 @@ group :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'sunspot_test'
-  gem 'vcr'
-  # gem 'webmock'
+  gem 'vcr', :require => false
+  gem 'webmock', :require => false
 end
 
 group :production do

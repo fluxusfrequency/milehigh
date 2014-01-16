@@ -12,10 +12,10 @@ module Scraper
     links.select {| l| l.match(/\/dispensary-info/) }
   end
 
-  def self.scrape_stores
+  def self.scrape_stores(urls)
     results = {:stores => []}
 
-    dispensary_urls.each_with_index do |url, i|
+    urls.each_with_index do |url, i|
       begin
         puts "scraping store #{i}"
         page = Nokogiri::HTML(open("http://www.leafly.com" + url))

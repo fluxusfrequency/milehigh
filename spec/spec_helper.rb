@@ -1,4 +1,8 @@
 ENV["RAILS_ENV"] ||= 'test'
+# require 'simplecov'
+# SimpleCov.start 'rails'
+# puts 'required simplecov'
+
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
@@ -21,7 +25,6 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before :suite do
-    # DatabaseCleaner.clean_with :truncation
     DatabaseCleaner.strategy = :truncation
   end
 
