@@ -17,7 +17,7 @@ FactoryGirl.define do
     hours "8-6pm"
     website "www.high-zone.com"
     phone_number "302-123-1234"
-    menu "purple kush, ak-47"
+    menu "[\"Banana Kush\", \"BDS Special\", \"Blue Dream\", \"Cheese\"]"
   end
 end
 

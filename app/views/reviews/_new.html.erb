@@ -1,49 +1,20 @@
-<div class="row well" id="new-review">
-  <h2>Review Store</h2>
+<h2>Review <%= @store.name %></h2>
+<%= form_for @store.reviews.new do |f| %>
 
-      <%= form_tag new_review_path, method: :get do %>
+  <%= f.hidden_field :store_id, :value => @store.id %>
 
-        <%= text_field_tag :store_name %>
-        <%= submit_tag 'Review Store' %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
 
-      <% end %>
 
-  <!-- Button trigger modal -->
+  <p>
+    <%= f.label "Your Thoughts: (140 Characters Maximum)" %>
+    <%= f.text_area :body %>
+  </p>
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel">Reviewing a store</h4>
-        </div>
-        <div class="modal-body">
-          <%= form_for Review.new do |f| %>
-
-            <p>
-              <%# f.label :store %>
-              <%# f.select :store, @store_names %>
-            </p>
-
-            <p>
-              <%= f.label :title %>
-              <%= f.text_field :title %>
-            </p>
-
-            <p>
-              <%= f.label "Your Thoughts: (140 Characters Maximum)" %>
-              <%= f.text_area :body %>
-            </p>
-
-        </div>
-        <div class="modal-footer">
-            <%= f.submit 'Thumbs Up', class:"btn btn-success", id: 'thumbs-up' %>
-            <%= f.submit 'Thumbs Down', class:"btn btn-danger", id: 'thumbs-down' %>
-          <% end %>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
-
-</div>
+  <%= f.submit 'Thumbs Up', class:"btn btn-success", id: 'thumbs-up' %>
+  <%= f.submit 'Thumbs Down', class:"btn btn-danger", id: 'thumbs-down' %>
+  
+<% end %>

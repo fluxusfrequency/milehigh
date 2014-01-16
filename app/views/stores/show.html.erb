@@ -15,9 +15,11 @@
   <br>
   <hr/>
   <h3>Menu</h3>
-  <% JSON.parse(@store.menu).each do |strain| %>
+  <% @menu.each do |strain| %>
     <p><%= strain %></p>
   <% end %>
 </div>
+
+<%= render partial: 'reviews/new' %>
 
      
