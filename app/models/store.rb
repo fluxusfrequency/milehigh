@@ -3,6 +3,7 @@ require 'json'
 class Store < ActiveRecord::Base
 
   has_many :reviews
+  validates :name, presence: true
 
   def self.scrape_and_save_to_database
     scraped = Scraper.scrape_stores(Scraper.dispensary_urls)[:stores]
