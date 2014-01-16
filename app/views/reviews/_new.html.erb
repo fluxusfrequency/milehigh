@@ -1,13 +1,12 @@
 <h2>Review <%= @store.name %></h2>
 <%= form_for @store.reviews.new do |f| %>
 
-  <%= f.hidden_field :store_id, :value => @store.id %>
+  <%= f.hidden_field :store_name, :value => @store.id %>
 
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </p>
-
 
   <p>
     <%= f.label "Your Thoughts: (140 Characters Maximum)" %>
@@ -16,5 +15,5 @@
 
   <%= f.submit 'Thumbs Up', class:"btn btn-success", id: 'thumbs-up' %>
   <%= f.submit 'Thumbs Down', class:"btn btn-danger", id: 'thumbs-down' %>
-  
+
 <% end %>

@@ -3,8 +3,17 @@
     <h2>The Buzz</h2>
     <%= render @reviews %>
   </div>
+  <br />
 
-  <%= render "reviews/find_store" %>
+  <div class="row" id="review-store-panel">
+    <%= render "reviews/find_store" %>
 
+    <div class="span7" id="review-store-form">
+      <%= render "reviews/new" %>
+    </div>
+
+  </div>
+
+  <br />
   <%= render "search/search" %>
 </div>
