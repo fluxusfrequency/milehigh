@@ -2,6 +2,9 @@ class Review < ActiveRecord::Base
   belongs_to :user
   belongs_to :store
 
+  scope :positive, -> { where(rating: "Thumbs Up") }
+  scope :negative, -> { where(rating: "Thumbs Down") }
+
   validates :store_id, :body, :title, :user_id, presence: true
   validates_inclusion_of :rating, :in => ['Thumbs Up', 'Thumbs Down']
 
@@ -16,4 +19,5 @@ class Review < ActiveRecord::Base
   def thumbs_down?
     rating == "Thumbs Down"
   end
+
 end

@@ -4,8 +4,8 @@
       There are no results for your search.
     </p>
   <% else %>
-    <% @results.each do |result| %>
-      <%= result.name %>
+    <% @stores.each do |store| %>
+      <%= link_to store.name, store_path(store.slug) %>
     <% end %>
   <% end %>
 </div>

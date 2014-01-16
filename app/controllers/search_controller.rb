@@ -9,7 +9,7 @@ class SearchController < ApplicationController
   end
 
   def show
-    @results = Search.by(params[:query])
+    @stores = Search.by(params[:query])
   end
 
   def index

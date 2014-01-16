@@ -1,8 +1,15 @@
 <div class="span4" >
-  <div class="story" >
-    <h3><%= review.title %></h3>
+  <div class="story" id="review-<%= review.id %>" >
+    <h4><%= review.store.name %></h4>
     <h4></h4>
-    <img src="http://www.placekitten.com/290/290" />
+    <div id='pos-review-count'>
+      <h5>Thumbs Up: <%= review.store.positive_count %></h5>
+    </div>  
+    <div id='neg-review-count'>
+      <h5>Thumbs Down: <%= review.store.negative_count %></h5>
+    </div>  
+    <img src="http://www.placekitten.com/290/120" />
+    <h4><%= review.title %></h4>
     <p>
       <%= review.body %>
     </p>
