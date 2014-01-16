@@ -1,24 +1,29 @@
 $(function() {
   var availableTags, storeName;
+
   availableTags = <%= Store.all.collect {|n| n.name} %>;
-  $( "#store-name" ).autocomplete({
+
+  $("#store_name").autocomplete({
     source: availableTags
   });
-  $("#review-store-button").click(function(e) {
+
+  $("#find-store-button").click(function(e) {
     e.prevent_default;
     console.log("yo");
     $('')
   });
-  // $("review-store-form").submit(function(e) {
-  //   e.prevent_default;
-  //   console.log("hey");
-  //   $('')
-  // });
-  // $("#review-modal-button").click(function() {
-  //   storeName = $("#store-name").val();
-  // });
+
+  $("#find-store-form").submit(function(e) {
+    storeName = $("#store_name").val();
+    $('#review-store-form h2').append(storeName);
+    $('#review-store-form').css('display', 'inline');
+    $('#review_store_name').val(storeName);
+    return false;
+  });
+
   // $("#thumbs-up").click(function(e) {
   //   e.prevent_default;
+  // }
 
   //   var reviewTitle, reviewBody, reviewRating, reviewData;
   //   reviewTitle = $("#review_title").val();

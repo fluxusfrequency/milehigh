@@ -20,14 +20,13 @@ describe "review section" do
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
     expect(page).to have_content("Review snoop's house")
-    # expect(current_path).to eq(store_path(store2))
     fill_in('Title', :with => 'awwwwwwwwesohm')
     fill_in('review_body', :with => 'truuuuuly delish nug')
     find('#thumbs-up').click
     expect(page).to have_content("Your review of #{store2.name} was successfully created!")
   end
 
-  it "has an error when params are missing" do
+  it "has an error when params are missing", :js => true do
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
     store2.reviews.create(FactoryGirl.attributes_for(:review))
@@ -37,7 +36,6 @@ describe "review section" do
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
     expect(page).to have_content("Review snoop's house")
-    # expect(current_path).to eq(store_path(store2))
     fill_in('Title', :with => '')
     fill_in('review_body', :with => 'truuuuuly delish nug')
     find('#thumbs-up').click

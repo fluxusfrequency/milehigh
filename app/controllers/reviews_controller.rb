@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   def create
     respond_to do |format|
       format.html do
-        store = Store.find(params[:review][:store_id])
+        store = Store.find_by(name: params[:review][:store_name])
         if store
           review = store.reviews.create(review_params)
           review.update_attributes(rating: params[:commit], user_id: current_user.id)
@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
           end
         end
 
-        redirect_to store_path(store)
+        redirect_to root_path
       end
       # format.json do
       #   found_store = Store.find_by(name: params[:review][:store])

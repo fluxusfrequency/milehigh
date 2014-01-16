@@ -1,9 +1,14 @@
-<h2>Review Store</h2>
+<div class="span5">
+  <h2>Review Store</h2>
 
-<%= form_tag new_review_path, method: :get do %>
+  <%= form_tag new_review_path, method: :get, id: "find-store-form" do %>
+    <p>
+      <%= text_field_tag :store_name %>
+    </p>
+    <p>
+      <%= submit_tag 'Review Store', id: "review-store-button", class:"btn btn-inverse" %>
+      <%# link_to 'Review Store', "#", id:"review-store-button" %>
+    </p>
 
-  <%= text_field_tag :store_name %>
-  <%= submit_tag 'Review Store', id:"review-store-button" %>
-  <%# link_to 'Review Store', "#", id:"review-store-button" %>
-
-<% end %>
+  <% end %>
+</div>
