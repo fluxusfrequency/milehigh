@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
         store = Store.find(params[:review][:store_id])
         if store
           review = store.reviews.create(review_params)
-          review.update_attributes(rating: params[:commit])
+          review.update_attributes(rating: params[:commit], user_id: current_user.id)
           if review.valid?
             flash[:notice] = "Your review of #{store.name} was successfully created!"
           else

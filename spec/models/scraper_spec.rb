@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Scraper do
-  xit "should only get dispensary links" do
+  it "should only get dispensary links" do
     VCR.use_cassette('model/dispensary_links') do
       result = Scraper.dispensary_urls
       expect(result.count).to be(dispensary_links.compact.count)
