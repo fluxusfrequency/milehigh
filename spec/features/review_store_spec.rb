@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "review section" do
-  xit "appears" do
+  it "appears" do
     store = FactoryGirl.create(:store)
     visit root_path
     click_on 'Login With Facebook'
@@ -9,7 +9,7 @@ describe "review section" do
   end
 
 
-  it "can create a new positive review", :js => true do
+  xit "can create a new positive review", :js => true do
     Capybara.current_driver = Capybara.javascript_driver
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
