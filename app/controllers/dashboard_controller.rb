@@ -2,8 +2,7 @@ class DashboardController < ApplicationController
   def index
     if current_user
       @review = Review.new
-      @reviews = Review.most_recent(3)
-
+      @reviews = Review.most_recent(6)
       @store_names = Store.all.collect {|n| n.name}
 
       @search_results = Search.by(params[:query])
