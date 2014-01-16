@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
   describe "guest visits site" do
 
     it "shows site information" do
