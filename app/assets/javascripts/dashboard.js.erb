@@ -4,6 +4,11 @@ $(function() {
   $( "#store-name" ).autocomplete({
     source: availableTags
   });
+  $("#review-store-button").click(function(e) {
+    e.prevent_default;
+    console.log("yo");
+    $('')
+  });
   // $("#review-modal-button").click(function() {
   //   storeName = $("#store-name").val();
   // });

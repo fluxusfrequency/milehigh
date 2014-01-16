@@ -3,6 +3,7 @@
 <%= form_tag new_review_path, method: :get do %>
 
   <%= text_field_tag :store_name %>
-  <%= submit_tag 'Review Store' %>
+  <%= submit_tag 'Review Store', id:"review-store-button" %>
+  <%# link_to 'Review Store', "#", id:"review-store-button" %>
 
 <% end %>

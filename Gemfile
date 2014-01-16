@@ -19,8 +19,6 @@ gem 'json'
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'pry-byebug'
-  gem 'better_errors'
-  gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'database_cleaner'
   gem 'cane'
@@ -31,6 +29,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'sunspot_solr'
 end
 
