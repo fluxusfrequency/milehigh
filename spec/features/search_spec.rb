@@ -7,7 +7,7 @@ describe Search do
       login
     end
 
-    it 'searches by store name', :js => true do
+    xit 'searches by store name', :js => true do
       store = FactoryGirl.create(:store)
       within(".longstory") do
         page.fill_in 'search-form', with: store.name

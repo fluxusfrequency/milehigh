@@ -1,6 +1,11 @@
 class ReviewsController < ApplicationController
   respond_to :json, :html
 
+  def new
+    @store = Store.find_by(name: params[:store_name])
+    redirect_to store_path(@store)
+  end
+
   def create
     respond_to do |format|
       format.html do
@@ -37,4 +42,5 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:title, :body, :store, :rating)
   end
+
 end
