@@ -46,6 +46,7 @@ group :test do
   gem 'sunspot_test'
   gem 'vcr', :require => false
   gem 'webmock', :require => false
+  gem 'json_spec'
 end
 
 group :production do
