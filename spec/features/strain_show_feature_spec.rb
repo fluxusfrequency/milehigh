@@ -4,8 +4,7 @@ require 'spec_helper'
 describe "strain show" do
 
   before do
-    visit '/welcome'
-    click_on 'Login With Facebook'
+    login
   end
 
   it "is reachable from store's menu page" do

@@ -4,8 +4,7 @@ describe "user profile" do
 
 
   it "displays a users information" do
-    visit root_path
-    click_on 'Login With Facebook'
+    login
     user = User.last
     click_on user.name
     expect(current_path).to eq(user_profile_path)

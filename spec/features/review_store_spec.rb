@@ -2,9 +2,11 @@ require 'spec_helper'
 
 describe "review section" do
 
+    before :each do
+      login
+    end
+
   it "appears" do
-    visit root_path
-    click_on 'Login With Facebook'
     store = FactoryGirl.create(:store)
     expect(page).to have_content("Review Store")
   end
@@ -13,9 +15,6 @@ describe "review section" do
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
     store2.reviews.create(FactoryGirl.attributes_for(:review))
-
-    visit root_path
-    click_on 'Login With Facebook'
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
     expect(page).to have_content("Review snoop's house")
@@ -32,9 +31,6 @@ describe "review section" do
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
     store2.reviews.create(FactoryGirl.attributes_for(:review))
-
-    visit root_path
-    click_on 'Login With Facebook'
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
     expect(page).to have_content("Review snoop's house")
@@ -51,9 +47,6 @@ describe "review section" do
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
     store2.reviews.create(FactoryGirl.attributes_for(:review))
-
-    visit root_path
-    click_on 'Login With Facebook'
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
     expect(page).to have_content("Review snoop's house")
@@ -70,9 +63,6 @@ describe "review section" do
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
     store2.reviews.create(FactoryGirl.attributes_for(:review))
-
-    visit root_path
-    click_on 'Login With Facebook'
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
     expect(page).to have_content("Review snoop's house")

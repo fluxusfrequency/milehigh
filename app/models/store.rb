@@ -35,6 +35,6 @@ class Store < ActiveRecord::Base
 
   searchable do
     text :name, :address, :menu,
-         :city, :hours, :zipcode
+         :city, :hours, :zipcode, :slug
   end
 end
