@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   has_many :reviews
 
   def facebook
-    @facebook ||= Koala::Facebook::API.new
+    @facebook ||= Koala::Facebook::API.new(oauth_token)
   end
 
   def self.from_omniauth(auth)
