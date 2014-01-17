@@ -19,10 +19,5 @@ describe Search do
     end
   end
 
-  def login
-    visit root_path
-    click_on 'Login With Facebook'
-  end
-
 
 end

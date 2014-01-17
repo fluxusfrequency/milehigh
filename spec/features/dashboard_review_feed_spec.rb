@@ -4,15 +4,8 @@ require 'spec_helper'
 
 describe "Review Feed" do
 
-  before :each do
-    visit root_path
-    click_on "Login With Facebook"
-  end
-
-
   it "has the title The Buzz" do
-    visit welcome_path
-    click_on "Login With Facebook"
+    login
     within('#review-feed') do
       expect(page).to have_content('The Buzz')
     end
@@ -65,10 +58,6 @@ describe "Review Feed" do
 
   end
 
-  def login
-    visit welcome_path
-    click_on "Login With Facebook"
-  end
 
 
 end

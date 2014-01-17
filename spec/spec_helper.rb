@@ -47,14 +47,14 @@ RSpec.configure do |config|
       :name => 'Ben Horne',
       :first_name => 'Ben',
       :last_name => 'Horne',
-      # :image => 'http://graph.facebook.com/1234567/picture?type=square',
+      :image => 'http://graph.facebook.com/1234567/picture?type=square',
       :urls => { :Facebook => 'http://www.facebook.com/jbloggs' },
       :location => 'Denver, Colorado',
       :verified => true
     },
     :credentials => {
       :token => 'ABCDEF...', # OAuth 2.0 access_token, which you may wish to store
-      :expires_at => 1321747205, # when the access token expires (it always will)
+      :expires_at => 1521747205, # when the access token expires (it always will)
       :expires => true # this will always be true
     },
     :extra => {
@@ -82,3 +82,9 @@ Capybara.register_driver :poltergeist do |app|
 end
 
 Capybara.javascript_driver = :poltergeist
+
+def login
+  Koala::Facebook::API.any_instance.stub(:get_picture).and_return('/')
+  visit root_path
+  click_on "Login With Facebook"
+end
