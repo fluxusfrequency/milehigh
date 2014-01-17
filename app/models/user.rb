@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   has_many :reviews
 
+  def facebook
+    @facebook ||= Koala::Facebook::API.new(oauth_token)
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
@@ -13,9 +17,16 @@ class User < ActiveRecord::Base
   end
 
   def find_avatar
-    graph = Koala::Facebook::API.new
-    avatar_path = graph.get_picture(uid, :type => 'square')
+    avatar_path = facebook.get_picture(uid, :type => 'square')
     self.update_attributes(:avatar => avatar_path)
   end
+
+  def friends
+    friend_data = facebook.get_connection("me", "friends")
+    friend_data.collect do |friend|
+      Friend.new(friend["name"], friend["id"], @facebook)
+    end
+  end
+
 end
 

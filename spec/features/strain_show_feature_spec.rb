@@ -27,18 +27,4 @@ describe "strain show" do
     expect(page).to have_content(strain.side_effects)
   end
 
-    # @key = data["Key"]
-    # @id = data["Id"]
-    # @name = data["Name"]
-    # @category = data["Category"]
-    # @description = data["Abstract"]
-    # @symbol = data["Symbol"]
-    # @overview = data["Overview"]
-    # @url = data["Url"]
-    # @rating = data["Rating"]
-    # @effects = data["Effects"] #returns an array of hashes for each effect
-    # @medical_uses = data["Medical"]
-    # @side_effects = data["Negative"]
-    # @reviews = data["Reviews"]
-
 end
