@@ -6,6 +6,18 @@ header h1 { color: #991818;}
 /* Lighter "hover" red */
 a:hover {color: #C40001;}
 
+.ui-menu-item .ui-corner-all {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  background-color: #FFF;
+/*  .ui-menu-item {
+    solid 1px #999;
+  }*/
+}
+
 /* DO NOT MODIFY BELOW THIS LINE */
 /* (unless you know what you are doing ;)) */
 

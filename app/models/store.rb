@@ -12,9 +12,12 @@ class Store < ActiveRecord::Base
     stores = []
     scraped.each_with_index do |store, index|
       created = create(store)
-      store.get_coordinates
       stores << created
       puts "created store #{index}"
+    end
+    all.each do |store|
+      store.get_coordinates
+      stores << store
     end
     stores
   end

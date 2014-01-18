@@ -9,12 +9,22 @@
   <meta name="description" content="Mile High Marijuana Store and Dispensary Reviews">
   <meta name="viewport" content="width=device-width">
 
+ <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <script src='//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.js'></script>
+  <link href='//api.tiles.mapbox.com/mapbox.js/v1.6.0/mapbox.css' rel='stylesheet' />
+  <style>   #map {
+    width:600px;
+    height:400px;
+  }</style>
+
   <title>Mile High</title>
 
   <%= stylesheet_link_tag    "bootstrap-2", media: "all" %>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= stylesheet_link_tag    "style", media: "all" %>
+  <%= stylesheet_link_tag    "reviews", media: "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag    "search"%>
   <%= csrf_meta_tags %>
 </head>
 
@@ -32,7 +42,7 @@
     </div>
   </div>
   <%= yield %>
-  <%= render 'layouts/footer' %>
 
+  <%= render 'layouts/footer' %>
 </body>
 </html>
