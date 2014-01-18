@@ -17,16 +17,28 @@ describe Api::V1::ReviewsController, :search => true do
   end
 
   describe 'POST /api/v1/review' do 
-    it 'returns a new review' do 
+    it 'returns an error message if submitting new review with invalid store' do 
       post :create, format: :json, review: {
         "user_id" => "10",
-        "store_id" => "1234",
+        "store_id" => "11",
         "title" => "Awesome weed",
         "body" => "So good",
         "rating" => "Thumbs Up"
       }
       hash = JSON.parse(response.body)
-      expect(hash).to eq 10
+      expect(hash).to eq ['not a valid store']
+    end
+
+    it 'returns review when valid review created' do 
+      post :create, format: :json, review: {
+        "user_id" => "10",
+        "store_id" => "#{store.id}",
+        "title" => "Awesome weed",
+        "body" => "So good",
+        "rating" => "Thumbs Up"
+      }
+      hash = JSON.parse(response.body)
+      expect(hash.length).to eq 8
     end
 
     xit "provides a useful error if user doesn't exist"

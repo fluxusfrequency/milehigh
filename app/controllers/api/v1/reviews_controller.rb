@@ -7,22 +7,30 @@ class Api::V1::ReviewsController < ApplicationController
   end
 
   def create
-    review = Review.create(review_params)
+    @errors ||= []
+    @review = Review.new(review_params)
     check_for_store
-    if @errors.empty? && User.find(review_params[:user_id])
-      respond_with review
+    if @errors.empty?
+      @review.save!
+      respond_with @review
     else
-      render json: {errors: @errors}, status: 500
-
+      render :json => @errors, status: 500
     end
+    @errors = []
   end
 
   private
 
   def check_for_store
-    if @store = Store.find_by(id: params[:store_id]).nil?
+    if Store.find_by(id: @review.store_id).nil?
+      @errors << "not a valid store"
+    end
+  end
+
+  def check_for_user
+    if @user = User.find(review_params[:user_id]).nil?
       @errors ||= []
-      @errors << "nope"
+      @errors << "not a valid user"
     end
   end
 
