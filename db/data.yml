@@ -1,5 +1,26 @@
 
 ---
+reviews:
+  columns:
+  - id
+  - user_id
+  - store_id
+  - rating
+  - title
+  - body
+  - created_at
+  - updated_at
+  records: 
+  - - '6'
+    - '3'
+    - '69'
+    - Thumbs Up
+    - asdf
+    - asdf
+    - '2014-01-20 18:05:21.651667'
+    - '2014-01-20 18:05:21.651667'
+
+---
 leafly_stores:
   columns:
   - id
