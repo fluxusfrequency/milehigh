@@ -19,6 +19,11 @@ class Api::V1::ReviewsController < ApplicationController
     @errors = []
   end
 
+  def show
+    @review = Review.find_by(id: params[:id])
+    respond_with @review
+  end
+
   private
 
   def check_for_store
@@ -27,12 +32,12 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
-  def check_for_user
-    if @user = User.find(review_params[:user_id]).nil?
-      @errors ||= []
-      @errors << "not a valid user"
-    end
-  end
+  # def check_for_user
+  #   if @user = User.find(review_params[:user_id]).nil?
+  #     @errors ||= []
+  #     @errors << "not a valid user"
+  #   end
+  # end
 
   def review_params
      params.require(:review).permit(:store_id, :user_id, :body, :title, :rating)

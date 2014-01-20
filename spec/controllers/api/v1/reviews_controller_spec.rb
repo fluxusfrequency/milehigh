@@ -41,9 +41,16 @@ describe Api::V1::ReviewsController, :search => true do
       expect(hash.length).to eq 8
     end
 
-    xit "provides a useful error if user doesn't exist"
-    xit "provides a useful error if store doesn't exist"
-    xit ""
+  end
+
+  describe 'GET /api/v1/review/:id' do 
+    it 'returns the attributes for a review' do 
+      get :show, id: review2.id, format: :json
+      hash = JSON.parse(response.body)
+      expect(hash["id"]).to eq review2.id
+      expect(hash["title"]).to eq review2.title
+      expect(hash["body"]).to eq review2.body
+    end
   end
 
 
