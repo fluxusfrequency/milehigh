@@ -52,7 +52,7 @@ var addToMap = function(store) {
         coordinates: [parseFloat(store["lng"]), parseFloat(store["lat"])]
     },
     properties: {
-        title: "<a href='/'>" + store["name"] + '</a>',
+        title: store["name"],
         description: store["address"],
         // one can customize markers by adding simplestyle properties
         // http://mapbox.com/developers/simplestyle/
@@ -60,6 +60,12 @@ var addToMap = function(store) {
         'marker-color': '#f0a'
     }
   }).addTo(map);
+};
+
+var createMap = function() {
+
+  console.log(L.mapbox.map())
+  L.mapbox.map('main-map', 'examples.map-20v6611k').setView([39.7391667, -104.984167], 12);
 };
 
 $(function() {
@@ -76,6 +82,7 @@ $(function() {
       dataType: 'json',
       data: queryData,
       success: function(response) {
+        // createMap();
         for (store in response) {
           addToMap(response[store]);
         }
@@ -86,8 +93,20 @@ $(function() {
           $('#flash-section').html(errors);
         }
       }
+    }).done(function(response) {
+      addResults(response)
     })
   });
 });
+
+var addResults = function(response) {
+  $('#search-results').html('');
+  for (store in response) {
+    console.log(response)
+    var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + response[store]["name"] + '</a><br>'
+    $('#search-results').append(storeLink);
+
+  }
+}
 
 
