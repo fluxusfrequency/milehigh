@@ -6,6 +6,7 @@ class Search
   def self.by(input)
     search = Store.search do
       fulltext input
+      paginate :per_page => 9
     end
     search.results
   end
