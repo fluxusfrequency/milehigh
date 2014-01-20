@@ -1,14 +1,17 @@
 <div role="main" class="container topstories" id="content">
+
   <div class="row" id='review-feed'>
-    <h2>The Buzz</h2>
+    <div class="span12">
+      <h2>The Buzz</h2>
+    </div>
     <%= render @reviews %>
   </div>
   <br />
 
-  <div class="row" id="review-store-panel">
+  <div class="row">
     <%= render "reviews/find_store" %>
 
-    <div class="span7" id="review-store-form">
+    <div class="span5 well" id="review-store-form">
       <%= render "reviews/new" %>
     </div>
 
@@ -16,5 +19,5 @@
 
   <br />
   <%= render "search/search" %>
-  
+
 </div>
