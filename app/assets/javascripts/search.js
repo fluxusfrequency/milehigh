@@ -40,7 +40,7 @@
 
 // });
 
-var addToMap = function(store) {
+var addToMap = function(store, counter) {
   L.mapbox.markerLayer({
     // this feature is in the GeoJSON format: see geojson.org
     // for the full specification
@@ -57,7 +57,8 @@ var addToMap = function(store) {
         // one can customize markers by adding simplestyle properties
         // http://mapbox.com/developers/simplestyle/
         'marker-size': 'large',
-        'marker-color': '#f0a'
+        'marker-color': '#f0a',
+        'marker-symbol': counter
     }
   }).addTo(map);
 };
@@ -83,8 +84,10 @@ $(function() {
       data: queryData,
       success: function(response) {
         // createMap();
+        var counter = 1;
         for (store in response) {
-          addToMap(response[store]);
+          addToMap(response[store], counter);
+          counter++;
         }
       },
       error: function(response) {
@@ -101,11 +104,13 @@ $(function() {
 
 var addResults = function(response) {
   $('#search-results').html('');
+  var counter = 1;
   for (store in response) {
     console.log(response)
-    var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + response[store]["name"] + '</a><br>'
-    $('#search-results').append(storeLink);
-
+    var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + counter + '. ' + response[store]["name"] + '</a><br>'
+    var storeAddress = '<p>' + response[store]["address"] + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '</p>'
+    $('#search-results').append(storeLink + storeAddress);
+    counter++;
   }
 }
 
