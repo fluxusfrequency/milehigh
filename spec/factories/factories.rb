@@ -18,6 +18,8 @@ FactoryGirl.define do
     website "www.high-zone.com"
     phone_number "302-123-1234"
     menu "[\"Banana Kush\", \"BDS Special\", \"Blue Dream\", \"Cheese\"]"
+    lat "39"
+    lng "-104"
   end
 end
 

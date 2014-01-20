@@ -1,22 +1,22 @@
 <div class="span4" >
-  <div class="story" id="review-<%= review.id %>" >
+
+  <div class="story" id="review-<%= review.id %>">
     <h4><%= review.store.name %></h4>
-    <h4></h4>
-    <div id='pos-review-count'>
-      <h5>Thumbs Up: <%= review.store.positive_count %></h5>
-    </div>  
-    <div id='neg-review-count'>
-      <h5>Thumbs Down: <%= review.store.negative_count %></h5>
-    </div>  
+
     <img src="http://www.placekitten.com/290/120" />
-    <h4><%= review.title %></h4>
+    <h5>Title: <%= review.title %></h5>
     <p>
-      <%= review.body %>
+      Rating: <%= review.rating %>
     </p>
     <p>
-      <%= review.rating %>
+      Review: <%= review.body %>
     </p>
-    <%= link_to 'Store Details', store_path(review.store.slug), class: "btn btn-inverse pull-left" %>
+
+    <div id='pos-review-count'>
+      <%= image_tag('aok.png', size: "36x36") %><%= review.store.positive_count %>
+      <%= image_tag('thumbs-down.png', size: "30x30") %><%= review.store.negative_count %>
+      <%= link_to 'Store Details', store_path(review.store.slug), class: "btn btn-success pull-right" %>
+    </div>
   </div>
 </div>
 

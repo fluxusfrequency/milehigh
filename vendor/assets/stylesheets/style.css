@@ -6,6 +6,18 @@ header h1 { color: #991818;}
 /* Lighter "hover" red */
 a:hover {color: #C40001;}
 
+.ui-menu-item .ui-corner-all {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  background-color: #FFF;
+/*  .ui-menu-item {
+    solid 1px #999;
+  }*/
+}
+
 /* DO NOT MODIFY BELOW THIS LINE */
 /* (unless you know what you are doing ;)) */
 
@@ -22,7 +34,20 @@ header h1 { margin: 10px 10px 10px 0px; margin-top: 35px; padding-left: 0; font-
 header .menu { float: right; margin-top: 40px; border-top: 1px solid #C9D1D3; border-bottom: 1px solid #C9D1D3; padding: 8px; }
 header .menu a { margin-right: 10px; margin-left: 10px; }
 
-.topstories .story img { border: 1px solid #333; padding: 3px; width: 290px; margin-bottom: 5px;}
+.topstories .story img { padding: 3px }
+
+.topstories .story .btn {
+  padding: 3px;
+  margin-top: 7px;
+  margin-right: 8px;
+  color: black;
+}
+
+.story {
+  border: 1px solid #C9D1D3;
+  padding: 10px;
+  margin-bottom: 20px;
+}
 
 .name { float: right; margin-top: 7px; padding: 8px; }
 
@@ -50,3 +75,7 @@ footer .container { background-color:  #AAB1B3;}
 
 #placeholder { margin: 20px 10px;}
 #store-name { margin-right: 10px; }
+
+.well { padding-left: 10px;}
+
+#map {border: 1px solid #C9D1D3;}
