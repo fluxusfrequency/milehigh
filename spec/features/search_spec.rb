@@ -9,7 +9,7 @@ describe Search do
       store = FactoryGirl.create(:store)
       Store.stub(:search).and_return(store)
       store.stub(:results).and_return([store])
-      within(".longstory") do
+      within("#longstory") do
         page.fill_in 'search-form', with: store.name
       end
       click_on 'Search'

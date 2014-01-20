@@ -34,10 +34,10 @@ describe "Review Feed" do
     login
 
     within("#review-#{review.id}") do
-      within("#pos-review-count") do
+      within("#review-counts") do
         expect(page).to have_content(store.positive_count)
       end
-      within("#neg-review-count") do
+      within("#review-counts") do
         expect(page).to have_content(store.negative_count)
       end
     end
@@ -48,10 +48,10 @@ describe "Review Feed" do
     visit root_path
 
     within("#review-#{review.id}") do
-      within("#pos-review-count") do
+      within("#review-counts") do
         expect(page).to have_content(store.positive_count)
       end
-      within("#neg-review-count") do
+      within("#review-counts") do
         expect(page).to have_content(store.negative_count)
       end
     end

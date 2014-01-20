@@ -12,7 +12,7 @@
       Review: <%= review.body %>
     </p>
 
-    <div id='pos-review-count'>
+    <div id='review-counts'>
       <%= image_tag('aok.png', size: "36x36") %><%= review.store.positive_count %>
       <%= image_tag('thumbs-down.png', size: "30x30") %><%= review.store.negative_count %>
       <%= link_to 'Store Details', store_path(review.store.slug), class: "btn btn-success pull-right" %>
