@@ -65,12 +65,16 @@ $(function() {
 
 var addResults = function(response) {
   $('#search-results').html('');
-  var counter = 1;
-  for (var store in response) {
-    var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + counter + '. ' + response[store]["name"] + '</a><br>';
-    var storeAddress = '<p>' + response[store]["address"] + ", " + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '</p>';
-    $('#search-results').append(storeLink + storeAddress);
-    counter++;
+  if (response.length === 0) {
+    $('#search-results').append("Sorry, no stores matched your search.");
+  } else {
+    var counter = 1;
+    for (var store in response) {
+      var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + counter + '. ' + response[store]["name"] + '</a><br>';
+      var storeAddress = '<p>' + response[store]["address"] + ", " + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '</p>';
+      $('#search-results').append(storeLink + storeAddress);
+      counter++;
+    }
   }
 };
 
