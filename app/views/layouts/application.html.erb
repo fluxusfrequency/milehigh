@@ -28,6 +28,7 @@
 
 <body>
   <%= render "layouts/header" %>
+
   <div class="container">
     <div id="flash-section">
       <% flash.each do |name, msg| %>
@@ -37,6 +38,7 @@
       <% end %>
     </div>
   </div>
+
   <%= yield %>
 
   <%= render 'layouts/footer' %>
