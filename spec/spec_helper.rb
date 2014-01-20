@@ -85,6 +85,10 @@ Capybara.javascript_driver = :poltergeist
 
 def login
   Koala::Facebook::API.any_instance.stub(:get_picture).and_return('/')
+  Koala::Facebook::API.any_instance.stub(:get_connection).and_return([])
+  User.any_instance.stub(:all_friends).and_return([])
+  User.any_instance.stub(:friend_reviews).and_return([])
+  Friend.any_instance.stub(:picture_url).and_return('/')
   visit root_path
   click_on "Login With Facebook"
 end

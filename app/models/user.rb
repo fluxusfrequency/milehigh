@@ -21,11 +21,22 @@ class User < ActiveRecord::Base
     self.update_attributes(:avatar => avatar_path)
   end
 
-  def friends
-    friend_data = facebook.get_connection("me", "friends")
-    friend_data.collect do |friend|
+  def all_friends
+    @friend_data ||= facebook.get_connection("me", "friends")
+    @friend_data.collect do |friend|
       Friend.new(friend["name"], friend["id"], @facebook)
     end
+  end
+
+  def friends_on_milehigh
+    all_friend_ids = all_friends.map {|f| f.id}
+    User.all.select {|user| all_friend_ids.include? user.uid}
+  end
+
+  def friend_reviews
+    friends_on_milehigh.collect do |user|
+      user.reviews
+    end.first.sort_by{|s| s.created_at}.reverse
   end
 
 end

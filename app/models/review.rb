@@ -8,8 +8,10 @@ class Review < ActiveRecord::Base
   validates :store_id, :body, :title, :user_id, presence: true
   validates_inclusion_of :rating, :in => ['Thumbs Up', 'Thumbs Down']
 
-  def self.most_recent(number)
-    all.order(created_at: :desc).limit(number)
+  def self.most_recent(number, user)
+    reviews = all.order(created_at: :desc)
+    friend_reviews = user.friend_reviews
+    (reviews - friend_reviews - user.reviews).take(number)
   end
 
   def thumbs_up?

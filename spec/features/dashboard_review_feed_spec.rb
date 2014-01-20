@@ -4,6 +4,11 @@ require 'spec_helper'
 
 describe "Review Feed" do
 
+  before :each do
+    @user = FactoryGirl.create(:user)
+    @user2 = FactoryGirl.create(:user)
+  end
+
   it "has the title The Buzz" do
     login
     within('#review-feed') do
@@ -11,11 +16,12 @@ describe "Review Feed" do
     end
   end
 
-  it "has the six most recent reviews", :js => true do
+  it "has the 3 most recent reviews by the public", :js => true do
     store = FactoryGirl.create(:store)
-    review = store.reviews.create(FactoryGirl.attributes_for(:review, :title => 'my Braaaain hurts'))
-    5.times do
-      store.reviews.create(FactoryGirl.attributes_for(:review))
+    review = store.reviews.create(FactoryGirl.attributes_for(:review,
+             :title => 'my Braaaain hurts', :user_id => @user.id))
+    2.times do
+      store.reviews.create(FactoryGirl.attributes_for(:review, user_id: @user2.id))
     end
     login
     within('#review-feed') do
