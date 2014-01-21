@@ -12,9 +12,7 @@ describe "strain show" do
     strain = MenuStrain.by_store(store).first
     visit store_path(store.slug)
     expect(page).to have_content(store.name)
-    within ('#menu-icon-container') do
-      click_link(strain.name)
-    end
+    click_link(strain.name)
     expect(current_path).to include(strain.key)
     expect(page).to have_content(strain.name)
     expect(page).to have_content(strain.category)

@@ -55,10 +55,10 @@ describe "Review Feed" do
 
     within("#review-#{review.id}") do
       within("#review-counts") do
-        expect(page).to have_content(store.positive_count)
+        expect(page).to have_content(store.percent_positive)
       end
       within("#review-counts") do
-        expect(page).to have_content(store.negative_count)
+        expect(page).to have_content(store.percent_negative)
       end
     end
 
