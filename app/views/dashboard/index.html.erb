@@ -4,21 +4,25 @@
     <div class="span12">
       <h2>The Buzz</h2>
     </div>
-    
-    <div id='friend-feed'>
-      <h4>Your Budz:</h4>
+    <div class='span12'>
+      <hr />
+      <h3>Your Budz:</h3>
+    </div>
+    <div id='friend-feed' >
       <%= render partial: "reviews/review", collection: @friend_reviews %>
     </div>
-
-    <legend></legend>
-
+    <div class='span12'>
+      <hr />
+      <h3>Your Public Feed:</h3>
+    </div>
     <div id='public-feed'>
-      <h4>Your Public Feed:</h4>
       <%= render @reviews %>
     </div>
-    <legend></legend>
+    <div class='span12'>
+      <hr />
+    </div>
   </div>
-  
+
   <br />
 
   <div class="row">

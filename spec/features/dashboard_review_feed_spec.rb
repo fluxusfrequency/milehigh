@@ -5,7 +5,7 @@ require 'spec_helper'
 describe "Review Feed" do
 
   before :each do
-    @user = FactoryGirl.create(:user)
+    @user = FactoryGirl.create(:user, name: 'Billy Bear')
     @user2 = FactoryGirl.create(:user)
   end
 
@@ -59,6 +59,19 @@ describe "Review Feed" do
       end
       within("#review-counts") do
         expect(page).to have_content(store.negative_count)
+      end
+    end
+
+  end
+
+  it "shows the user name of the creator of the review" do
+    store = FactoryGirl.create(:store)
+    review = store.reviews.create(FactoryGirl.attributes_for(:review,
+              :rating => 'Thumbs Up', :user_id => @user.id))
+    login
+    within('#public-feed') do
+      within("#review-#{review.id}") do
+        expect(page).to have_content(review.user.name)
       end
     end
 
