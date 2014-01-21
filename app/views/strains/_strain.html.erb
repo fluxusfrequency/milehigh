@@ -1,0 +1,4 @@
+<div class="span2 menu-icon">
+  <%= link_to image_tag("pot-icon-#{rand(4) + 1}.jpg", size: "100x100"), strain_show_path(strain.key) %>
+  <h5><%= link_to strain.name, strain_show_path(strain.key) %></h5>
+</div>
