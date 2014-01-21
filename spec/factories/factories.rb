@@ -21,5 +21,15 @@ FactoryGirl.define do
     lat "39"
     lng "-104"
   end
+
+  factory :user do
+    provider "facebook"
+    uid "12456"
+    name "Bryana Knight"
+    oauth_token "GABCDEF..."
+    oauth_expires_at 'Thu, 22 Mar 2018 19:33:25 UTC +00:00'
+    avatar "/"
+  end
+
 end
 

@@ -1,8 +1,9 @@
 require 'spec_helper'
-
+require 'pry'
 describe "review section" do
 
     before :each do
+      @user = FactoryGirl.create(:user)
       login
     end
 
@@ -14,15 +15,17 @@ describe "review section" do
   it "can create a new positive review", :js => true do
     store = FactoryGirl.create(:store)
     store2 = FactoryGirl.create(:store, name: "snoop's house")
-    store2.reviews.create(FactoryGirl.attributes_for(:review))
+    store2.reviews.create(FactoryGirl.attributes_for(:review, user_id: @user.id))
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
     expect(page).to have_content("Review snoop's house")
     fill_in('Title', :with => 'awwwwwwwwesohm')
     fill_in('review_body', :with => 'truuuuuly delish nug')
     find('#thumbs-up').click
+    Review.last.update_attributes(user_id: @user.id)
     expect(page).to have_content("Your review of #{store2.name} was successfully created!")
-    within("#review-feed") do
+    visit root_path
+    within("#public-feed") do
       expect(page).to have_content("awwwwwwwwesohm")
     end
   end
@@ -53,8 +56,12 @@ describe "review section" do
     fill_in('Title', :with => 'awwwwwwwwesohm')
     fill_in('review_body', :with => 'truuuuuly delish nug')
     find('#thumbs-down').click
+    Review.last.update_attributes(user_id: @user.id)
+
     expect(page).to have_content("Your review of #{store2.name} was successfully created!")
-    within("#review-feed") do
+    visit root_path
+
+    within("#public-feed") do
       expect(page).to have_content("awwwwwwwwesohm")
     end
   end
