@@ -103,8 +103,28 @@ footer .container { background-color:  #AAB1B3;}
   line-height: 0px;
   display: inline-block;
 }
-#review-store { margin-left: 25px; padding-top: 0px;}
-#store-info { margin-right: 45px;}
+#review-store { }
+#store-info {
+  margin-right: 45px;
+  height: 255px;
+}
 
-#menu-icon-container { margin: 0;}
-#menu-icon { margin: 0; display: inline-block;}
+.menu-icon {
+  margin-bottom: 15px;
+  /*display: inline-block;*/
+}
+
+.strain-icon a, .strain-icon-container {
+  display: inline-block;
+}
+
+.strain-title {
+  display: inline-block;
+  vertical-align: -webkit-baseline-middle;
+  margin-top: -15px;
+}
+
+#read-reviews {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}

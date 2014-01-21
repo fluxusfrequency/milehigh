@@ -1,50 +1,71 @@
 <div class="container">
   <div class="row">
-    <div class="span12">
-      <h1 class="modal-title" id="storeShowModalLabel"><%= @store.name %></h1>
+
+    <div id="store-info" class="well span7">
+      <h1><%= @store.name %></h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>Address: </td>
+            <td><%= @store.address %>
+            <%= @store.city %>
+            <%= @store.state %>
+            <%= @store.zipcode %></td>
+          </tr>
+          <tr><td></td></tr>
+          <tr><td></td></tr>
+          <tr>
+            <td>Hours: </td>
+            <td><%= @store.hours %></td>
+          </tr>
+          <tr><td></td></tr>
+          <tr><td></td></tr>
+          <tr>
+            <td>Website: </td>
+            <td> <%= @store.website %></td>
+          </tr>
+          <tr><td></td></tr>
+          <tr><td></td></tr>
+          <tr>
+            <td>Phone Number: </td>
+            <td><%= @store.phone_number %></td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <br />
+      <a href="#store-menu">Menu</a> -
+      <a href="#read-reviews">Read Reviews</a> -
+      <a href="#review-store">Review This Store</a>
     </div>
+
     <div class="span4" id="map-container">
       <div id='single-store-map' class='light'></div>
     </div>
-    <div class="span7 well" id="review-store">
-      <%= render partial: 'reviews/new' %>
-    </div>
   </div>
 
-  <div id="store-info" class="well">
-    <h3>Store Information</h3>
-    <table>
-      <tbody>
-        <tr>
-          <td>Address: </td>
-          <td><%= @store.address %>
-          <%= @store.city %>
-          <%= @store.state %>
-          <%= @store.zipcode %></td>
-        </tr>
-        <tr>
-          <td>Hours: </td>
-          <td><%= @store.hours %></td>
-        </tr>
-        <tr>
-          <td>Website: </td>
-          <td> <%= @store.website %></td>
-        </tr>
-        <tr>
-          <td>Phone Number: </td>
-          <td><%= @store.phone_number %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
   <div class="row">
     <div class="span12" id="store-menu">
       <h3>Strains on the Menu</h3>
       <br />
     </div>
-    <div class="span12" id="menu-icon-container">
-      <%= render partial: 'strains/strain', collection: @strains %>
+
+    <%= render partial: 'strains/strain', collection: @strains %>
+  </div>
+
+  <div class="row">
+    <div class="span12" id="read-reviews">
+      <h3>Read Reviews</h3>
+    </div>
+    <div id="read-reviews">
+      <%= render partial: 'reviews/review', collection: @reviews %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span7 well" id="review-store">
+      <%= render partial: 'reviews/new' %>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<h2>Review <%= @store.name %></h2>
+<h3>Review <%= @store.name %></h3>
 <%= form_for @store.reviews.new do |f| %>
 
   <%= f.hidden_field :store_name, :value => @store.name %>
