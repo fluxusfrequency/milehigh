@@ -1,21 +1,74 @@
 <% cache do @strain %>
 
-<h3><%= @strain.name %></br></h3>
-Category: <%= @strain.category %></br>
-Description: <%= @strain.description %></br>
-Overview: <%= @strain.overview %></br>
-Rating: <%= @strain.rating %></br>
-Effects:</br> <% @strain.effects.each do |effect| %>
-<%= effect["Name"] %>: 
-<%= effect["Score"] %></br>
-<% end %>
-Medical Uses:</br> <% @strain.medical_uses.each do |medical_use| %>
-<%= medical_use["Name"] %>: 
-<%= medical_use["Score"] %></br>
-<% end %>
-Side Effects:</br> <% @strain.side_effects.each do |side_effect| %>
-<%= side_effect["Name"] %>: 
-<%= side_effect["Score"] %></br>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div id="store-info" class="well span7">
+      <div class="strain-icon-container">
+        <%= link_to image_tag("pot-icon-#{rand(4) + 1}.jpg", size: "70x60"), strain_show_path(@strain.key), class:'strain-icon' %>
+      </div>
+      <div class="strain-title">
+        <h3><%= @strain.name %></h3>
+        <p>Category: <%= @strain.category %><br/>
+          Rating: <%= @strain.rating %>/10</p>
+      </div>
+      <br/>
+      <br/>    
 
-<% end %>
+      <table>
+        <tbody>
+          <tr>
+            <td><strong>Description:   </strong></td>
+            <td><%= @strain.description %></td>
+          <tr>
+            <td><strong>Overview:   </strong></td>
+            <td> <%= @strain.overview %></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div><br>
+
+    <div class="strain-efffects">
+
+      <h4>Effects</h4>
+      <table>
+        <tbody>
+          <tr>
+            <% @strain.effects.each do |effect| %>
+            <td><strong><%= effect["Name"] %></strong></td>
+            <td>  <%= effect["Score"]%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+      <h4>Medical Uses</h4>
+      <table>
+        <tbody>
+          <tr>
+            <% @strain.medical_uses.each do |medical_use| %>
+            <td><strong><%= medical_use["Name"] %></strong></td>
+            <td>  <%= medical_use["Score"]%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <h4>Side Effects</h4>
+      <table>
+        <tbody>
+          <tr>
+            <% @strain.side_effects.each do |side_effect| %>
+            <td><strong><%= side_effect["Name"] %></strong></td>
+            <td>  <%= side_effect["Score"]%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>
