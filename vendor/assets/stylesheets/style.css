@@ -78,6 +78,31 @@ footer .container { background-color:  #AAB1B3;}
 
 .well { padding-left: 10px;}
 
+#map {border: 1px solid #C9D1D3;}
+
+.avatar {
+  display: inline-block;
+}
+
+.user-name {
+  display: inline-block;
+  vertical-align: bottom;
+  margin: 0 0 2px 0;
+}
+
+.review-body {
+  height: 3em;
+}
+
+.story .icon {
+  float: right;
+  margin-top: 19px;
+}
+
+.story h6 {
+  line-height: 0px;
+  display: inline-block;
+}
 #review-store { margin-left: 25px; padding-top: 0px;}
 #store-info { margin-right: 45px;}
 

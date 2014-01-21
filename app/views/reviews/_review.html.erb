@@ -1,18 +1,28 @@
 <div class="span4" >
 
   <div class="story" id="review-<%= review.id %>">
-    <h4><%= review.store.name %></h4>
+    <h4><%= link_to review.store.name, store_path(review.store.slug) %></h4>
 
     <img src="http://www.placekitten.com/290/120" />
-    <h5>Title: <%= review.title %></h5>
-    <p>
-      Rating: <%= review.rating %>
-    </p>
-    <p>
-      Review: <%= review.body %>
+    <%= image_tag review.user.avatar, :class => 'avatar' %>
+
+    <h4 class='user-name'><%= review.user.name %></h4>
+
+    <% if review.rating == "Thumbs Up" %>
+      <%= image_tag('aok.png', size: "36x36", class: 'icon') %>
+    <% else %>
+      <%= image_tag('thumbs-down.png', size: "30x30", class: 'icon') %>
+    <% end %>
+
+    <h5><%= review.title %></h5>
+    <p class='review-body'>
+      <%= review.body %>
     </p>
 
+    <hr>
+
     <div id='review-counts'>
+      <h6>Total Score:</h6>
       <%= image_tag('aok.png', size: "36x36") %><%= review.store.positive_count %>
       <%= image_tag('thumbs-down.png', size: "30x30") %><%= review.store.negative_count %>
       <%= link_to 'Store Details', store_path(review.store.slug), class: "btn btn-success pull-right" %>
