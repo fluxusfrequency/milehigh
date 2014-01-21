@@ -113,7 +113,7 @@ footer .container { background-color:  #AAB1B3;}
   height: 255px;
 }
 
-#store-info td {
+#strain-info td {
   vertical-align: top;
 } 
 
@@ -137,6 +137,10 @@ footer .container { background-color:  #AAB1B3;}
 #read-reviews {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+#strain-stores {
+  margin-top: -10px;
 }
 
 
