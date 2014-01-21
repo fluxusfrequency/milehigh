@@ -1,5 +1,6 @@
 $(function() {
-  var availableTags, storeName;
+  var availableTags, storeName, storeAddress, storeCity, storeState,
+      storeZipcode, storeHours, storeWebsite, storePhoneNumber;
 
   availableTags = <%= Store.all.collect {|n| n.name} %>;
 
@@ -7,74 +8,52 @@ $(function() {
     source: availableTags
   });
 
-  $("#find-store-button").click(function(e) {
-    e.prevent_default;
-    console.log("yo");
-    $('')
-  });
-
   $("#find-store-form").submit(function(e) {
+    e.preventDefault();
     storeName = $("#store_name").val();
-    $('#review-store-form h2').append(storeName);
+    $('#review-store-form h3').append(storeName);
     $('#review-store-form').css('display', 'inline');
+
+    if (storeName !== "") {
+      var queryData = { query: storeName };
+      getStoreInfo(queryData)
+      setTimeout(function() {
+        $('#review-store-info h3').html(storeName + " - Store Info");
+        $('#store-address').html(storeAddress + ", " + storeCity + ", " +
+          storeState + ", " + storeZipcode);
+        $('#store-hours').html(storeHours);
+        $('#store-website').html(storeWebsite);
+        $('#store-phone-number').html(storePhoneNumber);
+        $('#review-store-info').css('display', 'inline');
+      }, 100);
+    }
     $('#review_store_name').val(storeName);
     return false;
   });
 
-  // $("#thumbs-up").click(function(e) {
-  //   e.prevent_default;
-  // }
+  var getStoreInfo = function(queryData) {
+    $.ajax({
+      url: '/api/v1/stores/' + slugify(storeName),
+      type: 'GET',
+      dataType: 'json',
+      data: queryData,
+      success: function(response) {
+        storeAddress = response.address;
+        storeCity    = response.city;
+        storeState   = response.state;
+        storeZipcode = response.zipcode;
+        storeHours   = response.hours;
+        storeWebsite = response.website;
+        storePhoneNumber = response.phone_number;
+      }
+    });
+  }
 
-  //   var reviewTitle, reviewBody, reviewRating, reviewData;
-  //   reviewTitle = $("#review_title").val();
-  //   reviewBody = $("#review_body").val();
-  //   reviewRating = "Thumbs Up";
-  //   reviewData = { review: { store: storeName , title: reviewTitle, body: reviewBody, rating: reviewRating } };
-
-  //   $.ajax({
-  //     url: '/reviews',
-  //     type: 'POST',
-  //     dataType: 'json',
-  //     data: reviewData,
-  //     success: function() {
-  //       window.history.back();
-  //     },
-  //     error: function() {
-  //       var errors = response.responseJSON;
-  //       if(errors) {
-  //         $('#flash-section').html(errors);
-  //       }
-  //     }
-  //   });
-
-  // });
-
-  // $("#thumbs-down").click(function(e) {
-  //   e.prevent_default;
-
-  //   var reviewTitle, reviewBody, reviewRating, reviewData;
-  //   reviewTitle = $("#review_title").val();
-  //   reviewBody = $("#review_body").val();
-  //   reviewRating = "Thumbs Down";
-  //   reviewData = { review: { store: storeName , title: reviewTitle, body: reviewBody, rating: reviewRating } };
-
-  //   $.ajax({
-  //     url: '/reviews',
-  //     type: 'POST',
-  //     dataType: 'json',
-  //     data: reviewData,
-  //     success: function() {
-  //       window.history.back();
-  //     },
-  //     error: function() {
-  //       var errors = response.responseJSON;
-  //       if(errors) {
-  //         $('#flash-section').html(errors);
-  //       }
-  //     }
-  //   });
-
-  // });
+  var slugify = function(name) {
+    return name.toLowerCase()
+    .replace(/ /g,'-')
+    .replace(/[^\w-]+/g,'');
+  }
 
 });
 

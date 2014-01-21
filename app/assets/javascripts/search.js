@@ -34,6 +34,7 @@ var createMap = function() {
 $(function() {
   $("#search-button").click(function(e) {
     var queryString, queryData;
+    debugger;
     e.preventDefault();
     queryString = $("#search-form").val();
     queryData = { query : queryString };
