@@ -17,3 +17,5 @@
 
 /coverage
 /solr
+/log/sunspot-solr-development.log.lck
+log/sunspot-solr-development.log.1

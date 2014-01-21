@@ -78,4 +78,8 @@ footer .container { background-color:  #AAB1B3;}
 
 .well { padding-left: 10px;}
 
-#map {border: 1px solid #C9D1D3;}
+#review-store { margin-left: 25px; padding-top: 0px;}
+#store-info { margin-right: 45px;}
+
+#menu-icon-container { margin: 0;}
+#menu-icon { margin: 0; display: inline-block;}
