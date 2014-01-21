@@ -113,6 +113,12 @@ footer .container { background-color:  #AAB1B3;}
   height: 255px;
 }
 
+#strain-info td {
+  vertical-align: top;
+}
+
+
+
 .menu-icon {
   margin-bottom: 15px;
   /*display: inline-block;*/
@@ -167,3 +173,8 @@ footer .container { background-color:  #AAB1B3;}
 #review_body {
   height: 100px;
 }
+
+#strain-stores {
+  margin-top: -10px;
+}
+
