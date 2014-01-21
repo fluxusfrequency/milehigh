@@ -47,6 +47,26 @@ class Store < ActiveRecord::Base
     reviews.negative.count
   end
 
+  def percent_positive
+    (positive_count / reviews.count)*100
+  end
+
+  def percent_negative
+    (negative_count / reviews.count)*100
+  end
+
+  def mostly_positive?
+    percent_positive > 50
+  end
+
+  def total_reviews
+    reviews.count
+  end
+
+  def photo
+    @photo ||= "dispensary-#{(rand(4) + 1)}.jpg"
+  end
+
   searchable do
     text :name, :slug, :menu
   end

@@ -22,4 +22,8 @@ class Review < ActiveRecord::Base
     rating == "Thumbs Down"
   end
 
+  def store_photo
+    @photo ||= store.photo
+  end
+
 end
