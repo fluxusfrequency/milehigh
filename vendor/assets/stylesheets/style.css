@@ -84,10 +84,14 @@ footer .container { background-color:  #AAB1B3;}
   display: inline-block;
 }
 
-.user-name {
+.review-title {
   display: inline-block;
-  vertical-align: bottom;
-  margin: 0 0 2px 0;
+  vertical-align: top;
+  margin: 0;
+}
+
+.user-name {
+  font-size: 0.7em;
 }
 
 .review-body {
