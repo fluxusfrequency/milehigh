@@ -71,8 +71,9 @@ var addResults = function(response) {
     var counter = 1;
     for (var store in response) {
       var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + counter + '. ' + response[store]["name"] + '</a><br>';
-      var storeAddress = '<p>' + response[store]["address"] + ", " + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '</p>';
-      $('#search-results').append(storeLink + storeAddress);
+      var storeAddress = '<p>' + response[store]["address"] + ", " + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '<br />';
+      var storeMenu = JSON.parse(response[store]["menu"]).slice(0,3) + '...' + '</p>';
+      $('#search-results').append(storeLink + storeAddress + storeMenu);
       counter++;
     }
   }

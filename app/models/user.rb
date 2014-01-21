@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   end
 
   def friend_reviews
+    return [] if friends_on_milehigh.empty?
     friends_on_milehigh.collect do |user|
       user.reviews
     end.first.sort_by{|s| s.created_at}.reverse
