@@ -1,34 +1,5 @@
 
 ---
-reviews:
-  columns:
-  - id
-  - user_id
-  - store_id
-  - rating
-  - title
-  - body
-  - created_at
-  - updated_at
-  records:
-  - - '6'
-    - '3'
-    - '69'
-    - Thumbs Up
-    - Great Buds
-    - This was a very nice experience. Very heady with raspberry and rose petal overtones. Recommended.
-    - '2014-01-20 18:05:21.651667'
-    - '2014-01-20 18:05:21.651667'
-  - - '7'
-    - '1'
-    - '69'
-    - Thumbs Down
-    - Poor Buds
-    - This was a very bad experience. Very skunky without much of a buzz. Not recommended.
-    - '2014-01-20 18:05:21.651667'
-    - '2014-01-20 18:05:21.651667'
-
----
 users:
   columns:
   - id
@@ -43,12 +14,12 @@ users:
   records:
   - - '1'
     - '2014-01-17 18:27:32.377953'
-    - '2014-01-18 20:27:45.361491'
+    - '2014-01-22 16:08:17.80133'
     - facebook
     - '4404823'
-    - Ben Lewis
-    - CAAJp1xF4mB0BAOcQVtnow7eQW3U2K5YhbLbo3rTTI2R55z5O8tG99chKAL5lb1GLsk8YU0mNjDKteZAgYOn2yS31ysnEgutxLXkFHOBwub7XZBu5JVFouLGk7Sp9aad6HMnItoynMrxFEjGQvTRm0mKkM4iiELHKYftpDFP4uaucYg9ynE
-    - '2014-03-19 20:19:51'
+    - Ben Horne
+    - CAAUd5wZAvxQcBANIeZBQIgbfFiSnWZAoDdEr42PLa4I47ccfeUfoZCfNGaUFMHkyAz0WzZBxoBTGtCqkrVlP1s8o6l3zVz7ZAgZBjqnKOYWdE3rKCe9L4DFZBZBuaqlPttpZACkCLNhz1JaYGY3VUIRKFdakMZBYpB59N659AxDYmEKD54OJo7pMtgV
+    - '2014-03-22 17:57:02'
     - https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/186282_4404823_1982702436_q.jpg
   - - '2'
     - '2014-01-17 18:27:32.377953'
@@ -68,6 +39,24 @@ users:
     - CAAJp1xF4mB0BAOcQVtnow7eQW3U2K5YhbLbo3rTTI2R55z5O8tG99chKAL5lb1GLsk8YU0mNjDKteZAgYOn2yS31ysnEgutxLXkFHOBwub7XZBu5JVFouLGk7Sp9aad6HMnItoynMrxFEjGQvTRm0mKkM4iiELHKYftpDFP4uaucYg9ynE
     - '2014-03-19 20:19:51'
     - https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn2/186282_4404823_1982702436_q.jpg
+  - - '4'
+    - '2014-01-22 01:09:28.078364'
+    - '2014-01-22 01:27:36.589049'
+    - facebook
+    - '1226190496'
+    - Bryana Knight
+    - CAAUd5wZAvxQcBAJgXAXqvjvgXu8eX0zDaDZAG7qV3N6wtZBatPxsBLZBlTeY7CZA3E68ZAutD33G6zu00gD02vy8ep3ZC0luQ63MwjEXDohoGgXLJ69raSHpjvx2y6eM81o4Yb1tgKpCZB7JYUjEhaRfaDJSWnqFKj1cW1ZCdyVg3AG4H7DUdyQZBkFELIb4s8PRoZD
+    - '2014-03-23 01:09:26'
+    - https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/1076807_1226190496_1136866552_q.jpg
+  - - '5'
+    - '2014-01-22 01:43:55.371766'
+    - '2014-01-22 01:47:05.567201'
+    - facebook
+    - '124700802'
+    - Tyler Long
+    - CAAUd5wZAvxQcBAP4LNbCUtkwSZAnCdDYHKBZB6Fo8nTXvMa0JOnhuZBHe510KvvUMqqZAJXdutLDY26UvZClDdAiKO1ASshQ7APbGnlRCGVr91mD8UEcv2JaL1RerXlwpyo1IYMntOPGlTPGimZCYD713dt6vmZAC11xp6GhlCp1ZBzW2h5gnSOZBT
+    - '2014-03-23 01:43:54'
+    - https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash2/1076212_124700802_1732607452_q.jpg
 
 ---
 stores:
@@ -344,6 +333,7 @@ stores:
       100mg", "Sweet Mary Jane Hey Sugar 600mg", "Sweet Mary Jane Key Lime Kickers
       150mg", "Sweet Mary Jane Mint Chill 151mg", "Sweet Mary Jane OMG Brownie Cheesecake
       150mg", "Sweet Mary Jane Pop Star Caramel Corn 150mg", "Sweet Mary Jane Pumpkin
+      150mg", "Sweet Mary Jane Pop Star Caramel Corn 150mg", "Sweet Mary Jane Pumpkin
       Smashing 150mg", "Sweet Mary Jane Weedies 150mg", "The Growing Kitch Perfect
       Peace Pain Pill", "The Growing Kitchen Chill Pills Variety 100mg", "The Growing
       Kitchen Deep Rest Sleep Aid", "The Growing Kitchen Fantastic Brownies 100mg",
@@ -352,7 +342,7 @@ stores:
       Choco-Log 200mg", "Wana Hot Cocoa 200mg", "Wana Mint Dream 50mg", "Wana Mint
       Variety 150mg", "Wana Peaches & Cream Roll 100mg", "Wana Peanut Butter Krisp
       50mg", "Blue Sensi Kush Wax", "Bubble Hash", "CO2 Oil Syringe", "CO2 Vape Cartridge",
-      "Grape Stomper Ice Wax", "Happy Camper Wax", "IVXX BHO Hash Oil", "IVXX CBD
+      "Grape Stomper Ice Wax", "Happy Camper Wax", "IVXX BHO Hashish Oil", "IVXX CBD
       BHO Hash Oil", "Kief", "Rocky Mountain Blend Pie Crust", "Rocky Mountain Blend
       Wax", "Sage N Sour Budder", "Sage N Sour Caviar", "710 Kan", "Apothecanna Calming
       Pain Creme 2 oz", "Apothecanna Extra Strength Pain Creme 2 oz", "Apothecanna
@@ -2159,3 +2149,74 @@ stores:
     - '2014-01-18 21:24:13.199661'
     - '39.6733019'
     - '-104.9737813'
+
+---
+reviews:
+  columns:
+  - id
+  - user_id
+  - store_id
+  - rating
+  - title
+  - body
+  - created_at
+  - updated_at
+  records:
+  - - '6'
+    - '3'
+    - '69'
+    - Thumbs Up
+    - Great Buds
+    - This was a very nice experience. Very heady with raspberry and rose petal overtones.
+      Recommended.
+    - '2014-01-20 18:05:21.651667'
+    - '2014-01-20 18:05:21.651667'
+  - - '7'
+    - '1'
+    - '69'
+    - Thumbs Down
+    - Poor Buds
+    - This was a very bad experience. Very skunky without much of a buzz. Not recommended.
+    - '2014-01-20 18:05:21.651667'
+    - '2014-01-20 18:05:21.651667'
+  - - '8'
+    - '1'
+    - '122'
+    - Thumbs Up
+    - Pretty great!
+    - Wonderful service and attention to detail
+    - '2014-01-22 01:13:55.238828'
+    - '2014-01-22 01:13:55.238828'
+  - - '9'
+    - '4'
+    - '72'
+    - Thumbs Down
+    - Harsh Buzz
+    - 'Did not enjoy this. I wouldn''t come back. '
+    - '2014-01-22 01:28:11.695696'
+    - '2014-01-22 01:28:11.695696'
+  - - '11'
+    - '4'
+    - '106'
+    - Thumbs Up
+    - Would go back again
+    - LOVED the crew! Super nice & helpful!! & they said this is one of there smallest
+      locations!!! It was like a clean, organized "weedland"!!
+    - '2014-01-22 01:39:08.268272'
+    - '2014-01-22 01:39:08.268272'
+  - - '12'
+    - '5'
+    - '72'
+    - Thumbs Down
+    - HARSHING MY MELLLLLLLLLLLLLLLOW!
+    - "#swag, #this_place_is_bunk, #not_chron\r\n"
+    - '2014-01-22 01:44:49.604481'
+    - '2014-01-22 01:44:49.604481'
+  - - '13'
+    - '5'
+    - '72'
+    - Thumbs Up
+    - Bomb nuggets and hot budtenders
+    - Love this place! Bomb-diggit
+    - '2014-01-22 01:46:07.493935'
+    - '2014-01-22 01:46:07.493935'

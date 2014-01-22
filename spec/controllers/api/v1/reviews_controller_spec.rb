@@ -6,9 +6,9 @@ describe Api::V1::ReviewsController, :search => true do
   let!(:review2) { FactoryGirl.create(:review, store_id: store.id) }
   let!(:review3) { FactoryGirl.create(:review, store_id: store.id) }
 
-  describe "GET /api/v1/reviews" do 
+  describe "GET /api/v1/reviews" do
 
-    it "returns a list of reviews" do 
+    it "returns a list of reviews" do
       get :index, format: :json
       body = JSON.parse(response.body)
       expect(body.length).to eq Review.all.count
@@ -16,8 +16,8 @@ describe Api::V1::ReviewsController, :search => true do
     end
   end
 
-  describe 'POST /api/v1/review' do 
-    it 'returns an error message if submitting new review with invalid store' do 
+  describe 'POST /api/v1/review' do
+    it 'returns an error message if submitting new review with invalid store' do
       post :create, format: :json, review: {
         "user_id" => "10",
         "store_id" => "11",
@@ -29,7 +29,7 @@ describe Api::V1::ReviewsController, :search => true do
       expect(hash).to eq ['not a valid store']
     end
 
-    it 'returns review when valid review created' do 
+    it 'returns review when valid review created' do
       post :create, format: :json, review: {
         "user_id" => "10",
         "store_id" => "#{store.id}",
@@ -43,8 +43,8 @@ describe Api::V1::ReviewsController, :search => true do
 
   end
 
-  describe 'GET /api/v1/review/:id' do 
-    it 'returns the attributes for a review' do 
+  describe 'GET /api/v1/review/:id' do
+    it 'returns the attributes for a review' do
       get :show, id: review2.id, format: :json
       hash = JSON.parse(response.body)
       expect(hash["id"]).to eq review2.id
@@ -53,8 +53,4 @@ describe Api::V1::ReviewsController, :search => true do
     end
   end
 
-
 end
-
-
-
