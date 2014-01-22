@@ -52,11 +52,11 @@ class Store < ActiveRecord::Base
   end
 
   def percent_positive
-    (positive_count / reviews.count)*100
+    ((positive_count.to_f / reviews.count.to_f)*100.00).floor
   end
 
   def percent_negative
-    (negative_count / reviews.count)*100
+    ((negative_count.to_f / reviews.count.to_f)*100.00).floor
   end
 
   def mostly_positive?
