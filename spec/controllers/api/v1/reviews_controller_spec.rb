@@ -1,4 +1,5 @@
 require 'api_spec_helper'
+require 'pry'
 
 describe Api::V1::ReviewsController, :search => true do
   let!(:store) { FactoryGirl.create(:store) }
@@ -50,6 +51,15 @@ describe Api::V1::ReviewsController, :search => true do
       expect(hash["id"]).to eq review2.id
       expect(hash["title"]).to eq review2.title
       expect(hash["body"]).to eq review2.body
+    end
+  end
+
+  describe 'GET /api/v1/review/store/:slug' do
+    it "returns all the reviews for the store with given slug" do
+      get :for_store, slug: store.slug, format: :json
+      results = JSON.parse(response.body)
+      expect(results.first['slug']).to eq(store.slug)
+      expect(results.last['title']).to eq(review3.title)
     end
   end
 

@@ -16,6 +16,7 @@ gem 'mechanize'
 gem 'rolling_paper'
 gem 'json'
 # gem 'rsolr'
+gem 'nugz'
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'

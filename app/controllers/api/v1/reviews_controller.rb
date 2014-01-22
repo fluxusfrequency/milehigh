@@ -24,6 +24,12 @@ class Api::V1::ReviewsController < ApplicationController
     respond_with @review
   end
 
+  def for_store
+    store = Store.find_by(slug: params[:slug])
+    response = [{"slug" => store.slug}] + store.reviews.to_a
+    render :json => response
+  end
+
   private
 
   def check_for_store
