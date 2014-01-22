@@ -231,3 +231,30 @@ footer .container { background-color:  #AAB1B3;}
   padding-right: 8px;
   display: inline-block;
 }
+
+#user-review-counts .number {
+  padding-left: 14px;
+  padding-right: 25px;
+  display: inline-block;
+}
+
+#user-review-counts img {
+  padding-left: 2px;
+  padding-right: 8px;
+}
+
+#user-info {
+  margin-top: -13px;
+  margin-bottom: 15px;
+}
+
+#user-info h5 {
+  margin-bottom: -2px;
+  font-weight: normal;
+}
+
+#user-profile {
+  padding-bottom: 5px;
+}
+
+
