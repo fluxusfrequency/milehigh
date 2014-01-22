@@ -11,7 +11,7 @@ $(function() {
   $("#find-store-form").submit(function(e) {
     e.preventDefault();
     storeName = $("#store_name").val();
-    $('#review-store-form h3').append(storeName);
+    $('#review-store-form h3').html("Review " + storeName);
     $('#review-store-form').css('display', 'inline');
 
     if (storeName !== "") {
@@ -38,13 +38,13 @@ $(function() {
       dataType: 'json',
       data: queryData,
       success: function(response) {
-        storeAddress = response.address;
-        storeCity    = response.city;
-        storeState   = response.state;
-        storeZipcode = response.zipcode;
-        storeHours   = response.hours;
-        storeWebsite = response.website;
-        storePhoneNumber = response.phone_number;
+        storeAddress = response.address || "";
+        storeCity    = response.city || "";
+        storeState   = response.state || "";
+        storeZipcode = response.zipcode || "";
+        storeHours   = response.hours || "";
+        storeWebsite = response.website || "";
+        storePhoneNumber = response.phone_number || "";
       }
     });
   }
