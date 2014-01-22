@@ -1,5 +1,6 @@
 /* Modify these elements for a different highlight colour */
 /* Main Red */
+
 a { color: #991818;}
 header h1 { color: #991818;}
 
@@ -70,7 +71,7 @@ footer .container { background-color:  #AAB1B3;}
 #new-review { margin: 60px 0; padding: 15px;}
 #new-review h2 { margin: 0px 0 20px 0; padding: 0;}
 
-#logo-image { display: inline; margin: 10px 0 10px 0; padding: 0;}
+#logo-image > img { display: inline; margin: 10px 0 10px 0; padding: 0; height: 90px; width: 90px;}
 #logo-banner { display: inline; margin: 0 0 0 10px; padding: 0;}
 
 #placeholder { margin: 20px 10px;}
@@ -176,6 +177,16 @@ footer .container { background-color:  #AAB1B3;}
 
 #strain-stores {
   margin-top: -10px;
+}
+
+#trademark {
+  font-family: 'Vast Shadow', cursive;
+  text-transform: uppercase;
+}
+
+#trademark > a:hover {
+  text-decoration: none;
+  color: #991818;
 }
 
 #review-counts a {
