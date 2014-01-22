@@ -10,10 +10,10 @@
   </span>
   <div class="row">
     <div class="span-4">
-      <%= image_tag 'logo-leaf.jpg', size:'90x90', id:'logo-image' %>
+      <%= link_to image_tag('logo-leaf.jpg'), '/', id:'logo-image' %>
     </div>
     <div class="span-8" id="logo-banner">
-      <h1><%= link_to 'Mile High', '/' %></h1>
+      <h1 id="trademark"><%= link_to 'Mile High', '/' %></h1>
       <span class="tagline">
         Weed... It's green, sticky and <s>illegal</s> legal in Colorado!
       </span>
