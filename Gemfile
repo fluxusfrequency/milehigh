@@ -15,7 +15,6 @@ gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1
 gem 'mechanize'
 gem 'rolling_paper'
 gem 'json'
-gem 'coveralls', require: false
 # gem 'rsolr'
 # gem 'nugz'
 

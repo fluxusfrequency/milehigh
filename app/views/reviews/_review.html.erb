@@ -1,17 +1,19 @@
 <% cache review do %>
   <div class="span4" >
 
-    <div class="story" id="review-<%= review.id %>">
+    <div class="story" id="review-<%= review.id %>">`
       <h3><%= link_to review.store.name, store_path(review.store.slug) %></h3>
       <%= image_tag review.store_photo %>
       <div>
         <%= image_tag review.user.avatar, :class => 'avatar' %>
-        <h3 class="review-title"><%= review.title %></h3>
-      <% if review.rating == "Thumbs Up" %>
-        <%= image_tag('Thumbs-Up.png', size: "50x50", class: 'icon') %>
-      <% else %>
-        <%= image_tag('ThumbsDown.png', size: "50x50", class: 'icon') %>
-      <% end %>
+        <% if review.rating == "Thumbs Up" %>
+          <%= image_tag('Thumbs-Up.png', size: "50x50", class: 'icon') %>
+        <% else %>
+          <%= image_tag('ThumbsDown.png', size: "50x50", class: 'icon') %>
+        <% end %>
+        <div>
+          <h3 class="review-title"><%= review.title %></h3>
+        </div>
       </div>
       <p class='user-name'><%= review.user.name %></p>
 

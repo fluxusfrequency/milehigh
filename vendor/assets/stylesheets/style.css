@@ -3,10 +3,11 @@
 
 
 
- html * {
+/*h3 {
   font-family: 'Life Savers', cursive;
   font-weight: 2000;
- }
+ }*/
+
 a { color: #991818;}
 header h1 { color: #991818;}
 
@@ -48,6 +49,10 @@ header .menu a { margin-right: 10px; margin-left: 10px; }
   margin-top: 7px;
   margin-right: 8px;
   color: black;
+}
+
+#budz {
+  font-family: 'Life Savers', cursive;
 }
 
 .story {
