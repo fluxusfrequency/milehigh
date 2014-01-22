@@ -1,15 +1,25 @@
 <div class="container">
-  <div class="span4" >
-    <h4><%= current_user.name %></h4>
-      <div class="story" >  
-        <div class= "profile-image">
-          <%= image_tag current_user.avatar, :height => '100', :width => '100' %>
-        </div>
-        <div id="user-info"> 
-          <p>Accont created:<%= current_user.created_at.strftime("%m/%d/%Y") %></p>
-          <p>Thumbs Up Reviews: <%= @thumbs_up_review_count %></p>
-          <p>Thumbs Down Reviews: <%= @thumbs_down_review_count %></p>
-        </div>
-      </div>
+  <div class = "row">
+    <div class="span4" >
+          <div class= "profile-image">
+            <%= image_tag current_user.avatar, :height => '100', :width => '100' %>
+          </div>
+          <div id="user-info"> 
+            <h4><%= current_user.name %></h4>
+            Account created:<%= current_user.created_at.strftime("%m/%d/%Y") %></br>
+            Thumbs Up Reviews: <%= @thumbs_up_review_count %></br>
+            Thumbs Down Reviews: <%= @thumbs_down_review_count %></br>
+          </div>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="span12" id="read-reviews">
+      <h5>My Reviews</h5>
+    </div>
+    <div id="read-reviews">
+      <%= render partial: 'reviews/review', collection: @reviews %>
+    </div>
+  </div>
+
 </div>

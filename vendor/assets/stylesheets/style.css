@@ -1,6 +1,7 @@
 /* Modify these elements for a different highlight colour */
 /* Main Red */
 
+
 a { color: #991818;}
 header h1 { color: #991818;}
 
@@ -93,6 +94,10 @@ footer .container { background-color:  #AAB1B3;}
 
 .user-name {
   font-size: 0.7em;
+}
+
+#user-info {
+  font-size: 1em;
 }
 
 .review-body {
