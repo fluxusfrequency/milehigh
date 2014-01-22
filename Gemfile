@@ -11,10 +11,11 @@ gem 'puma'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
-gem 'sunspot_rails'
+# gem 'sunspot_rails'
 gem 'mechanize'
 gem 'rolling_paper'
 gem 'json'
+# gem 'rsolr'
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
@@ -31,7 +32,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'sunspot_solr'
+  # gem 'sunspot_solr'
 end
 
 group :test do
@@ -43,13 +44,13 @@ group :test do
   gem 'database_cleaner', :require => false, :group => :test
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
-  gem 'sunspot_test'
+  # gem 'sunspot_test'
   gem 'vcr', :require => false
   gem 'webmock', :require => false
   gem 'json_spec'
 end
 
 group :production do
-  gem 'sunspot_solr'
+  # gem 'sunspot_solr'
   gem 'rails_12factor'
 end

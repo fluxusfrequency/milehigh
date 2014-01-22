@@ -22,6 +22,10 @@ class Store < ActiveRecord::Base
     stores
   end
 
+  def self.find_by_strain(strain)
+    all.select { |store| store.menu.include?(strain.name)}
+  end
+
   def get_coordinates
     store_address = "#{self.address.strip.gsub(' ', '+')}+#{self.city}+#{self.state}"
     response = Faraday.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{store_address}&sensor=false")
@@ -47,7 +51,24 @@ class Store < ActiveRecord::Base
     reviews.negative.count
   end
 
-  searchable do
-    text :name, :slug, :menu
+  def percent_positive
+    (positive_count / reviews.count)*100
   end
+
+  def percent_negative
+    (negative_count / reviews.count)*100
+  end
+
+  def mostly_positive?
+    percent_positive > 50
+  end
+
+  def total_reviews
+    reviews.count
+  end
+
+  def photo
+    @photo ||= "dispensary-#{(rand(4) + 1)}.jpg"
+  end
+
 end

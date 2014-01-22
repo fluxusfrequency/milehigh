@@ -5,7 +5,7 @@ class Review < ActiveRecord::Base
   scope :positive, -> { where(rating: "Thumbs Up") }
   scope :negative, -> { where(rating: "Thumbs Down") }
 
-  validates :store_id, :body, :title, :user_id, presence: true
+  validates :store, :body, :title, :user_id, presence: true
   validates_inclusion_of :rating, :in => ['Thumbs Up', 'Thumbs Down']
 
   def self.most_recent(number, user)
@@ -20,6 +20,10 @@ class Review < ActiveRecord::Base
 
   def thumbs_down?
     rating == "Thumbs Down"
+  end
+
+  def store_photo
+    @photo ||= store.photo
   end
 
 end

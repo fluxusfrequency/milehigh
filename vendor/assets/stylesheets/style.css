@@ -1,5 +1,6 @@
 /* Modify these elements for a different highlight colour */
 /* Main Red */
+
 a { color: #991818;}
 header h1 { color: #991818;}
 
@@ -34,7 +35,7 @@ header h1 { margin: 10px 10px 10px 0px; margin-top: 35px; padding-left: 0; font-
 header .menu { float: right; margin-top: 40px; border-top: 1px solid #C9D1D3; border-bottom: 1px solid #C9D1D3; padding: 8px; }
 header .menu a { margin-right: 10px; margin-left: 10px; }
 
-.topstories .story img { padding: 3px }
+.avatar { padding-top: 7px }
 
 .topstories .story .btn {
   padding: 3px;
@@ -55,7 +56,7 @@ header .menu a { margin-right: 10px; margin-left: 10px; }
 .categories a { display: inline-block; color: #333; margin-right: 20px; margin-left: 20px; padding: 10px; }
 .categories h2 { display: block; text-align: left; }
 
-h3 { line-height: 30px; margin: 2px;}
+h3 { line-height: 30px; margin: 0px;}
 .tagline { color: #AAB1B3; }
 p { text-align: justify;}
 
@@ -70,7 +71,7 @@ footer .container { background-color:  #AAB1B3;}
 #new-review { margin: 60px 0; padding: 15px;}
 #new-review h2 { margin: 0px 0 20px 0; padding: 0;}
 
-#logo-image { display: inline; margin: 10px 0 10px 0; padding: 0;}
+#logo-image > img { display: inline; margin: 10px 0 10px 0; padding: 0; height: 90px; width: 90px;}
 #logo-banner { display: inline; margin: 0 0 0 10px; padding: 0;}
 
 #placeholder { margin: 20px 10px;}
@@ -86,7 +87,7 @@ footer .container { background-color:  #AAB1B3;}
 
 .review-title {
   display: inline-block;
-  vertical-align: top;
+  vertical-align: bottom;
   margin: 0;
 }
 
@@ -100,7 +101,7 @@ footer .container { background-color:  #AAB1B3;}
 
 .story .icon {
   float: right;
-  margin-top: 19px;
+  margin-top: 5px;
 }
 
 .story h6 {
@@ -112,6 +113,12 @@ footer .container { background-color:  #AAB1B3;}
   margin-right: 45px;
   height: 255px;
 }
+
+#strain-info td {
+  vertical-align: top;
+}
+
+
 
 .menu-icon {
   margin-bottom: 15px;
@@ -131,4 +138,57 @@ footer .container { background-color:  #AAB1B3;}
 #read-reviews {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.percent {
+  font-size: 1em;
+  margin-left: 3px;
+}
+
+.ui-menu {
+  background-color: white;
+  border: 1px solid gray;
+  width: 34%;
+}
+
+.ui-menu-item .ui-corner-all {
+  border: 0px;
+}
+
+#review-store-info {
+  margin-right: 0;
+  display: none;
+  width: 540px;
+  padding-bottom: 31px;
+}
+
+#review-store-form {
+  width: 899px;
+  padding: 10px;
+}
+
+#review_title, #review_body {
+  width: 60%;
+}
+
+#review_body {
+  height: 100px;
+}
+
+#strain-stores {
+  margin-top: -10px;
+}
+
+#trademark {
+  font-family: 'Vast Shadow', cursive;
+  text-transform: uppercase;
+}
+
+#trademark > a:hover {
+  text-decoration: none;
+  color: #991818;
+}
+
+#review-counts a {
+  margin: 0px;
 }
