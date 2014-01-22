@@ -1,0 +1,245 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=123%20High%20St%20Denver%20CO&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 22 Jan 2014 23:46:48 GMT
+      Expires:
+      - Thu, 23 Jan 2014 23:46:48 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "123",
+                       "short_name" : "123",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "High Street",
+                       "short_name" : "High St",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Country Club",
+                       "short_name" : "Country Club",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "80218",
+                       "short_name" : "80218",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "123 High Street, Denver, CO 80218, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 39.7187835,
+                          "lng" : -104.9653897
+                       },
+                       "southwest" : {
+                          "lat" : 39.7187834,
+                          "lng" : -104.9654081
+                       }
+                    },
+                    "location" : {
+                       "lat" : 39.7187835,
+                       "lng" : -104.9654081
+                    },
+                    "location_type" : "RANGE_INTERPOLATED",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.7201324302915,
+                          "lng" : -104.9640499197085
+                       },
+                       "southwest" : {
+                          "lat" : 39.7174344697085,
+                          "lng" : -104.9667478802915
+                       }
+                    }
+                 },
+                 "types" : [ "street_address" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Wed, 22 Jan 2014 23:46:46 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=1%20Broadway%20Suite%20A-150%20Denver%20CO&sensor=false
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Wed, 22 Jan 2014 23:46:48 GMT
+      Expires:
+      - Thu, 23 Jan 2014 23:46:48 GMT
+      Cache-Control:
+      - public, max-age=86400
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - '*'
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      Alternate-Protocol:
+      - 443:quic
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "150",
+                       "short_name" : "150",
+                       "types" : [ "subpremise" ]
+                    },
+                    {
+                       "long_name" : "1",
+                       "short_name" : "1",
+                       "types" : [ "street_number" ]
+                    },
+                    {
+                       "long_name" : "Broadway",
+                       "short_name" : "Broadway",
+                       "types" : [ "route" ]
+                    },
+                    {
+                       "long_name" : "Baker",
+                       "short_name" : "Baker",
+                       "types" : [ "neighborhood", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Denver",
+                       "short_name" : "Denver",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Colorado",
+                       "short_name" : "CO",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    },
+                    {
+                       "long_name" : "80203",
+                       "short_name" : "80203",
+                       "types" : [ "postal_code" ]
+                    }
+                 ],
+                 "formatted_address" : "1 Broadway #150, Denver, CO 80203, USA",
+                 "geometry" : {
+                    "location" : {
+                       "lat" : 39.7168451,
+                       "lng" : -104.9877644
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 39.7181940802915,
+                          "lng" : -104.9864154197085
+                       },
+                       "southwest" : {
+                          "lat" : 39.7154961197085,
+                          "lng" : -104.9891133802915
+                       }
+                    }
+                 },
+                 "partial_match" : true,
+                 "types" : [ "subpremise" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: 
+  recorded_at: Wed, 22 Jan 2014 23:46:46 GMT
+recorded_with: VCR 2.8.0
