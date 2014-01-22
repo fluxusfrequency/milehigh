@@ -7,6 +7,8 @@ class Review < ActiveRecord::Base
 
   validates :store, :body, :title, :user_id, presence: true
   validates_inclusion_of :rating, :in => ['Thumbs Up', 'Thumbs Down']
+  validates :title, length: { in: 1..32 }
+  validates :body, length: { in: 1..140 }
 
   def self.most_recent(number, user)
     reviews = all.order(created_at: :desc)
