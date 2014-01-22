@@ -1,4 +1,5 @@
 <h3>Review <%= @store.name %></h3>
+<br />
 <%= form_for @store.reviews.new do |f| %>
 
   <%= f.hidden_field :store_name, :value => @store.name %>
@@ -9,7 +10,7 @@
   </p>
 
   <p>
-    <%= f.label "Your Thoughts: (140 Characters Maximum)" %>
+    <%= f.label "Your Thoughts: (140 Chars Max)" %>
     <%= f.text_area :body %>
   </p>
 

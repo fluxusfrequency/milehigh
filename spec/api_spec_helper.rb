@@ -3,7 +3,7 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
-require 'sunspot_test/rspec'
+# require 'sunspot_test/rspec'
 require 'json_spec'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }

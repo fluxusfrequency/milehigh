@@ -71,7 +71,4 @@ class Store < ActiveRecord::Base
     @photo ||= "dispensary-#{(rand(4) + 1)}.jpg"
   end
 
-  searchable do
-    text :name, :slug, :menu
-  end
 end

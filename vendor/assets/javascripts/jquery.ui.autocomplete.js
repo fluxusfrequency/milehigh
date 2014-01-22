@@ -584,10 +584,9 @@ $.extend( $.ui.autocomplete, {
 $.widget( "ui.autocomplete", $.ui.autocomplete, {
 	options: {
 		messages: {
-			noResults: "No stores found.",
-			results: function( amount ) {
-				return amount + ( amount > 1 ? " stores" : " store" ) +
-					" found.";
+			noResults: "",
+			results: function() {
+				return "";
 			}
 		}
 	},

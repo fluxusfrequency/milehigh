@@ -7,34 +7,18 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    respond_to do |format|
-      format.html do
-        store = Store.find_by(name: params[:review][:store_name])
-        if store
-          review = store.reviews.create(review_params)
-          review.update_attributes(rating: params[:commit], user_id: current_user.id)
-          if review.valid?
-            flash[:notice] = "Your review of #{store.name} was successfully created!"
-          else
-            flash[:error] = "Errors prevented your review from being created: #{review.errors.full_messages}"
-          end
-        end
-
-        redirect_to root_path
+    store = Store.find_by(name: params[:review][:store_name])
+    if store
+      review = store.reviews.create(review_params)
+      review.update_attributes(rating: params[:commit], user_id: current_user.id)
+      if review.valid?
+        flash[:notice] = "Your review of #{store.name} was successfully created!"
+      else
+        flash[:error] = "Errors prevented your review from being created: #{review.errors.full_messages}"
       end
-      # format.json do
-      #   found_store = Store.find_by(name: params[:review][:store])
-      #   if found_store
-      #     review = found_store.reviews.build(
-      #       title: params[:review][:title],
-      #       body: params[:review][:body],
-      #       rating: params[:review][:rating],
-      #       store: found_store)
-      #     review.save
-      #   end
-      #   respond_with review
-      # end
     end
+
+    redirect_to store_path(store.slug)
   end
 
   private
