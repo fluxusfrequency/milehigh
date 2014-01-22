@@ -32,7 +32,7 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'sunspot_solr'
+  # gem 'sunspot_solr'
 end
 
 group :test do
@@ -44,13 +44,13 @@ group :test do
   gem 'database_cleaner', :require => false, :group => :test
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
-  gem 'sunspot_test'
+  # gem 'sunspot_test'
   gem 'vcr', :require => false
   gem 'webmock', :require => false
   gem 'json_spec'
 end
 
 group :production do
-  gem 'sunspot_solr'
+  # gem 'sunspot_solr'
   gem 'rails_12factor'
 end

@@ -10,8 +10,8 @@ $(function() {
         dataType: 'json',
         data: queryData,
         success: function(response) {
-          console.log(response[0]["lat"]);
-          console.log(response[0]["lng"]);
+          // console.log(response[0]["lat"]);
+          // console.log(response[0]["lng"]);
           var map = L.mapbox.map('single-store-map', 'examples.map-20v6611k').setView([response[0]["lat"], response[0]["lng"]], 16);
           addToMap(response[0], map);
 
