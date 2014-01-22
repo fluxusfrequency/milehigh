@@ -13,7 +13,10 @@ describe "user profile" do
 
     thumbs_up_review_count = user.reviews.where(rating: "Thumbs Up").count
     thumbs_down_review_count = user.reviews.where(rating: "Thumbs Down").count
-    expect(page).to have_content("Thumbs Up Reviews: #{thumbs_up_review_count}")
-    expect(page).to have_content("Thumbs Down Reviews: #{thumbs_down_review_count}")
+    expect(page).to have_content('Total Reviews')
+    within('#user-review-counts') do
+      expect(page).to have_content("#{thumbs_up_review_count}")
+      expect(page).to have_content("#{thumbs_down_review_count}")
+    end
   end
 end
