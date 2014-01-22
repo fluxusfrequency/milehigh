@@ -11,7 +11,7 @@ users:
   - oauth_token
   - oauth_expires_at
   - avatar
-  records: 
+  records:
   - - '1'
     - '2014-01-17 18:27:32.377953'
     - '2014-01-22 16:08:17.80133'
@@ -76,7 +76,7 @@ stores:
   - updated_at
   - lat
   - lng
-  records: 
+  records:
   - - '68'
     - local-product-of-colorado
     - Local Product Of Colorado
@@ -333,6 +333,7 @@ stores:
       100mg", "Sweet Mary Jane Hey Sugar 600mg", "Sweet Mary Jane Key Lime Kickers
       150mg", "Sweet Mary Jane Mint Chill 151mg", "Sweet Mary Jane OMG Brownie Cheesecake
       150mg", "Sweet Mary Jane Pop Star Caramel Corn 150mg", "Sweet Mary Jane Pumpkin
+      150mg", "Sweet Mary Jane Pop Star Caramel Corn 150mg", "Sweet Mary Jane Pumpkin
       Smashing 150mg", "Sweet Mary Jane Weedies 150mg", "The Growing Kitch Perfect
       Peace Pain Pill", "The Growing Kitchen Chill Pills Variety 100mg", "The Growing
       Kitchen Deep Rest Sleep Aid", "The Growing Kitchen Fantastic Brownies 100mg",
@@ -341,7 +342,7 @@ stores:
       Choco-Log 200mg", "Wana Hot Cocoa 200mg", "Wana Mint Dream 50mg", "Wana Mint
       Variety 150mg", "Wana Peaches & Cream Roll 100mg", "Wana Peanut Butter Krisp
       50mg", "Blue Sensi Kush Wax", "Bubble Hash", "CO2 Oil Syringe", "CO2 Vape Cartridge",
-      "Grape Stomper Ice Wax", "Happy Camper Wax", "IVXX BHO Hash Oil", "IVXX CBD
+      "Grape Stomper Ice Wax", "Happy Camper Wax", "IVXX BHO Hashish Oil", "IVXX CBD
       BHO Hash Oil", "Kief", "Rocky Mountain Blend Pie Crust", "Rocky Mountain Blend
       Wax", "Sage N Sour Budder", "Sage N Sour Caviar", "710 Kan", "Apothecanna Calming
       Pain Creme 2 oz", "Apothecanna Extra Strength Pain Creme 2 oz", "Apothecanna
@@ -2160,7 +2161,7 @@ reviews:
   - body
   - created_at
   - updated_at
-  records: 
+  records:
   - - '6'
     - '3'
     - '69'

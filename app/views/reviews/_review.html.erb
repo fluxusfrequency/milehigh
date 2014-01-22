@@ -9,7 +9,7 @@
     <% if review.rating == "Thumbs Up" %>
       <%= image_tag('Thumbs-Up.png', size: "50x50", class: 'icon') %>
     <% else %>
-      <%= image_tag('Thumbs-Down.png', size: "50x50", class: 'icon') %>
+      <%= image_tag('ThumbsDown.png', size: "50x50", class: 'icon') %>
     <% end %>
     </div>
     <p class='user-name'><%= review.user.name %></p>
@@ -26,7 +26,7 @@
         <div class="percent">
           <%= review.store.percent_positive %>%
       <% else %>
-        <%= image_tag('Thumbs-Down.png', size: "30x30") %>
+        <%= image_tag('ThumbsDown.png', size: "30x30") %>
         <div class="percent">
           <%= review.store.percent_negative %>%
       <% end %>
