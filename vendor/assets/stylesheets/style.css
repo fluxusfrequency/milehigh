@@ -140,8 +140,8 @@ footer .container { background-color:  #AAB1B3;}
 }
 
 .percent {
-  font-size: 0.8em;
-  margin-left: 6px;
+  font-size: 1em;
+  margin-left: 3px;
 }
 
 .ui-menu {
@@ -178,3 +178,6 @@ footer .container { background-color:  #AAB1B3;}
   margin-top: -10px;
 }
 
+#review-counts a {
+  margin: 0px;
+}
