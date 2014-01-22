@@ -5,7 +5,7 @@
             <%= image_tag current_user.avatar, :height => '100', :width => '100' %>
           </div>
           <div id="user-info"> 
-            <h4><%= current_user.name %></h4>
+            <h4 id="user-profile"><%= current_user.name %></h4>
             Account created:<%= current_user.created_at.strftime("%m/%d/%Y") %></br>
             Thumbs Up Reviews: <%= @thumbs_up_review_count %></br>
             Thumbs Down Reviews: <%= @thumbs_down_review_count %></br>
