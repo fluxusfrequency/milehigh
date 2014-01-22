@@ -31,5 +31,8 @@ FactoryGirl.define do
     avatar "/"
   end
 
+  factory :friend do
+  end
+
 end
 
