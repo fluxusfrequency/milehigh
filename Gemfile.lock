@@ -201,9 +201,6 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     ntlm-http (0.1.1)
-    nugz (1.0.0)
-      faraday
-      json
     oauth2 (0.8.1)
       faraday (~> 0.8)
       httpauth (~> 0.1)
@@ -402,7 +399,6 @@ DEPENDENCIES
   json_spec
   koala (~> 1.8.0rc1)
   mechanize
-  nugz
   omniauth-facebook
   pg
   phantomjs
