@@ -209,3 +209,8 @@ footer .container { background-color:  #AAB1B3;}
 #review-counts a {
   margin: 0px;
 }
+
+#review-counts img {
+  padding-left: 2px;
+  padding-right: 8px;
+}
