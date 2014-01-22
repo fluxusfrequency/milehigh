@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     self.update_attributes(:avatar => avatar_path)
   end
 
+  def find_large_avatar
+    avatar_path = facebook.get_picture(uid, :type => 'large')
+  end
+
   def all_friends
     @friend_data ||= facebook.get_connection("me", "friends")
     @friend_data.collect do |friend|
