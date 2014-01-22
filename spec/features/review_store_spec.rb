@@ -1,10 +1,10 @@
 require 'spec_helper'
-require 'pry'
 describe "review section" do
 
     before :each do
       @user = FactoryGirl.create(:user)
       login
+      Strain.stub(:all_strains).and_return([])
     end
 
   it "appears on button click", :js => true do

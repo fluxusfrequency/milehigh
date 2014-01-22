@@ -13,7 +13,7 @@
             Rating: <%= @strain.rating %>/10</p>
         </div>
         <br/>
-        <br/>    
+        <br/>
 
         <table>
           <tbody>
@@ -33,10 +33,12 @@
           <tbody>
             <tr>
               <td><strong>Effects:   </strong></td>
-              <td><% @strain.effects.each do |effect| %>
-              <span style="margin-left:30px;"><strong><%= effect["Name"] %></strong>
-              <%= effect["Score"]%></span></br>
-            <% end %></td>
+              <% unless @strain.effects.empty? %>
+                <td><% @strain.effects.each do |effect| %>
+                  <span style="margin-left:30px;"><strong><%= effect["Name"] %></strong>
+                  <%= effect["Score"]%></span></br>
+                <% end %></td>
+              <% end %>
             </tr>
           </tbody>
         </table>
@@ -46,10 +48,12 @@
           <tbody>
             <tr>
               <td><strong>Medical:   </strong></td>
-              <td><% @strain.medical_uses.each do |medical_use| %>
-              <span style="margin-left:25px;"><strong><%= medical_use["Name"] %></strong>
-              <%= medical_use["Score"]%></span></br>
-            <% end %></td>
+              <% unless @strain.medical_uses.empty? %>
+                <td><% @strain.medical_uses.each do |medical_use| %>
+                  <span style="margin-left:25px;"><strong><%= medical_use["Name"] %></strong>
+                  <%= medical_use["Score"]%></span></br>
+                <% end %></td>
+              <% end %>
             </tr>
           </tbody>
         </table>
@@ -57,11 +61,13 @@
         <table>
           <tbody>
             <tr>
-              <td><strong>Side Effects:   </strong></td>
-              <td><% @strain.side_effects.each do |side_effect| %>
-              <span style="margin-left:10px;"><strong><%= side_effect["Name"] %></strong>
-              <%= side_effect["Score"]%></span></br>
-            <% end %></td>
+              <% unless @strain.side_effects.empty? %>
+                <td><strong>Side Effects:   </strong></td>
+                <td><% @strain.side_effects.each do |side_effect| %>
+                  <span style="margin-left:10px;"><strong><%= side_effect["Name"] %></strong>
+                  <%= side_effect["Score"]%></span></br>
+                <% end %></td>
+              <% end %>
             </tr>
           </tbody>
         </table>

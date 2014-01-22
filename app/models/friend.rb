@@ -1,5 +1,5 @@
 class Friend
-  attr_reader :name, :id
+  attr_reader :name, :id, :token
 
   def initialize(name, id, token)
     @name = name
@@ -8,7 +8,7 @@ class Friend
   end
 
   def picture_url
-    @token.get_picture(id)
+    token.get_picture(id)
   end
 
 end

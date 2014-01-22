@@ -5,5 +5,4 @@ class StrainsController < ApplicationController
     @stores = Store.find_by_strain(@strain)
   end
 
-
 end
