@@ -11,10 +11,11 @@ gem 'puma'
 gem 'omniauth-facebook'
 gem "koala", "~> 1.8.0rc1"
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
-gem 'sunspot_rails'
+# gem 'sunspot_rails'
 gem 'mechanize'
 gem 'rolling_paper'
 gem 'json'
+# gem 'rsolr'
 
 group :development, :test do
   gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
