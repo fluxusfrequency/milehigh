@@ -33,7 +33,6 @@ describe "review section" do
     store2.reviews.create(FactoryGirl.attributes_for(:review, user_id: @user.id))
     fill_in("store_name", :with => "snoop's house")
     click_on 'Review Store'
-    expect(page).to have_content("Review Store")
     fill_in('Title', :with => 'awwwwwwwwesohm')
     fill_in('review_body', :with => 'truuuuuly delish nug')
     find('#thumbs-up').click
