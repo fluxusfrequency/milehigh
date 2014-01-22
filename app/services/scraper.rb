@@ -1,6 +1,3 @@
-require 'mechanize'
-require 'open-uri'
-
 module Scraper
 
   def self.dispensary_urls
@@ -59,6 +56,22 @@ module Scraper
 
     results
 
+  end
+
+  def self.scrape_and_save_to_database
+    scraped = Scraper.scrape_stores(Scraper.dispensary_urls)[:stores]
+
+    stores = []
+    scraped.each_with_index do |store, index|
+      created = Store.create(store)
+      stores << created
+      puts "created store #{index}"
+    end
+    Store.all.each do |store|
+      Coordinator.get_coordinates(store)
+      stores << store
+    end
+    stores
   end
 
 end
