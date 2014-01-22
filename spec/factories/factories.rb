@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :review do
     user_id 1
-    store
+    store_id 1
     rating "Thumbs Up"
     title "SOOOO GREAT!"
     body "Really, it's that great"
