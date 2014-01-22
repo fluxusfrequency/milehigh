@@ -3,6 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'sunspot/rails/tasks'
-
 Milehigh::Application.load_tasks
