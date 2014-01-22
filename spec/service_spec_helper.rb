@@ -33,3 +33,8 @@ RSpec.configure do |config|
   end
 
 end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr/services'
+  c.hook_into :webmock
+end

@@ -1,10 +1,5 @@
 require 'service_spec_helper'
 
-VCR.configure do |c|
-  c.cassette_library_dir = 'spec/vcr/model'
-  c.hook_into :webmock
-end
-
 describe Scraper do
 
   # let(:scraped) do
