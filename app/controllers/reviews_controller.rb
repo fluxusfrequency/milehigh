@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  respond_to :json, :html
+  respond_to :html
 
   def new
     @store = Store.find_by(name: params[:store_name])

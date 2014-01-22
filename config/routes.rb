@@ -21,6 +21,7 @@ Milehigh::Application.routes.draw do
       get 'stores/:slug' => 'stores#show', as: "api_v1_store"
       put 'stores/:slug' => 'stores#update', as: "api_v1_store_update"
       delete 'stores/:slug' => 'stores#destroy', as: "api_v1_store_destroy"
+      get 'reviews/store/:slug' => 'reviews#for_store', as: "api_v1_reviews_for_store"
       resources :stores
       resources :reviews
     end
