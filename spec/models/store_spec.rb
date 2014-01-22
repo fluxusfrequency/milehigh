@@ -37,7 +37,9 @@ describe Store do
 
   it "can run the scraper" do
     store = FactoryGirl.create(:store)
+    Scraper.stub(:dispensary_urls).and_return([])
     Scraper.stub(:scrape_stores).and_return(scraped)
+
     stores = Store.scrape_and_save_to_database
     expect(stores).to be_a_kind_of(Array)
     expect(stores.first).to be_a_kind_of(Store)

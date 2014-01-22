@@ -1,15 +1,15 @@
 <div class="span4" >
 
   <div class="story" id="review-<%= review.id %>">
-    <h4><%= link_to review.store.name, store_path(review.store.slug) %></h4>
+    <h3><%= link_to review.store.name, store_path(review.store.slug) %></h3>
     <%= image_tag review.store_photo %>
     <div>
       <%= image_tag review.user.avatar, :class => 'avatar' %>
-      <h4 class="review-title"><%= review.title %></h4>
+      <h3 class="review-title"><%= review.title %></h3>
     <% if review.rating == "Thumbs Up" %>
-      <%= image_tag('aok.png', size: "67x67", class: 'icon') %>
+      <%= image_tag('Thumbs-Up.png', size: "50x50", class: 'icon') %>
     <% else %>
-      <%= image_tag('thumbs-down.png', size: "60x60", class: 'icon') %>
+      <%= image_tag('Thumbs-Down.png', size: "50x50", class: 'icon') %>
     <% end %>
     </div>
     <p class='user-name'><%= review.user.name %></p>
@@ -22,19 +22,15 @@
 
     <div id='review-counts'>
       <% if review.store.mostly_positive? %>
-        <%= image_tag('aok.png', size: "36x36") %><br/>
-        <div>
+        <%= image_tag('Thumbs-Up.png', size: "36x36") %><br/>
+        <div class="percent">
           <%= review.store.percent_positive %>%
       <% else %>
-        <%= image_tag('thumbs-down.png', size: "30x30") %>
-        <%= review.store.percent_negative %>%
+        <%= image_tag('Thumbs-Down.png', size: "30x30") %>
+        <div class="percent">
+          <%= review.store.percent_negative %>%
       <% end %>
       <p class="pull-right"><%= review.store.total_reviews %> Total Reviews</p></div>
     </div>
   </div>
 </div>
-
-
-
-
-

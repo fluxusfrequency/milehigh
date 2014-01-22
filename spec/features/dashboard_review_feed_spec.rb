@@ -34,7 +34,7 @@ describe "Review Feed" do
     end
   end
 
-  it "has the rating count for a store on a review", :js => true do
+  xit "has the rating count for a store on a review", :js => true do
     store = FactoryGirl.create(:store)
     review = store.reviews.create(FactoryGirl.attributes_for(:review, :rating => 'Thumbs Up'))
     login

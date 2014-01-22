@@ -14,6 +14,7 @@
     <div class='span12'>
       <hr />
       <h3>Your Public Feed:</h3>
+      <br />
     </div>
     <div id='public-feed'>
       <%= render @reviews %>
@@ -26,9 +27,14 @@
   <br />
 
   <div class="row">
-    <%= render "reviews/find_store" %>
+    <div class="span4 well">
+      <%= render "reviews/find_store" %>
+    </div>
+    <div class="span7 well" id="review-store-info">
+      <%= render "stores/store", store: Store.new %>
+    </div>
 
-    <div class="span5 well" id="review-store-form">
+    <div class="span11 well" id="review-store-form">
       <%= render "reviews/new" %>
     </div>
 

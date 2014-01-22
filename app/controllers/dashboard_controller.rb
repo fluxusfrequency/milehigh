@@ -6,7 +6,9 @@ class DashboardController < ApplicationController
       @reviews = Review.most_recent(3, current_user)
       @store = Store.new
       @store_names = Store.all.collect {|n| n.name}
-      @search_results = Search.by(params[:query])
+      if params[:query]
+        @search_results = Search.by(params[:query])
+      end
     else
       redirect_to welcome_path
     end

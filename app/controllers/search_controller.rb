@@ -13,8 +13,9 @@ class SearchController < ApplicationController
   end
 
   def index
-    @result = Search.by(params["query"])
-    render :json => @result
+    @results = Search.by(params["query"])
+
+    render :json => @results.take(9)
   end
 
 end
