@@ -11,16 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121181937) do
+ActiveRecord::Schema.define(version: 20140122165824) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "dispensaries", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
@@ -31,6 +25,10 @@ ActiveRecord::Schema.define(version: 20140121181937) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "reviews", ["rating"], name: "index_reviews_on_rating", using: :btree
+  add_index "reviews", ["store_id"], name: "index_reviews_on_store_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
 
   create_table "stores", force: true do |t|
     t.string   "slug"
@@ -48,6 +46,9 @@ ActiveRecord::Schema.define(version: 20140121181937) do
     t.string   "lat"
     t.string   "lng"
   end
+
+  add_index "stores", ["lat"], name: "index_stores_on_lat", using: :btree
+  add_index "stores", ["lng"], name: "index_stores_on_lng", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
