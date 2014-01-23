@@ -73,13 +73,15 @@
         </table>
       </div><br>
       </div>
-      <div id="strain-stores" class="span4">
-        <h4>Find <%= @strain.name %> here:</h4>
-        <% @stores.each do |store| %>
-          <p><%= link_to store.name, store_path(store.slug) %><br/>
-          <%= store.address %></p>
-        <% end %>
-      </div>
+      <% unless @stores.empty? %>
+        <div id="strain-stores" class="span4">
+          <h4>Find <%= @strain.name %> here:</h4>
+          <% @stores.each do |store| %>
+            <p><%= link_to store.name, store_path(store.slug) %><br/>
+            <%= store.address %></p>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>

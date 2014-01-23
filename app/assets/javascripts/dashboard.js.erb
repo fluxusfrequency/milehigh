@@ -25,7 +25,7 @@ $(function() {
         $('#store-website').html(storeWebsite);
         $('#store-phone-number').html(storePhoneNumber);
         $('#review-store-info').css('display', 'inline');
-      }, 100);
+      }, 400);
     }
     $('#review_store_name').val(storeName);
     return false;
@@ -38,13 +38,13 @@ $(function() {
       dataType: 'json',
       data: queryData,
       success: function(response) {
-        storeAddress = response.address || "";
-        storeCity    = response.city || "";
-        storeState   = response.state || "";
-        storeZipcode = response.zipcode || "";
-        storeHours   = response.hours || "";
-        storeWebsite = response.website || "";
-        storePhoneNumber = response.phone_number || "";
+        storeAddress = response.address;
+        storeCity    = response.city;
+        storeState   = response.state;
+        storeZipcode = response.zipcode;
+        storeHours   = response.hours;
+        storeWebsite = response.website;
+        storePhoneNumber = response.phone_number;
       }
     });
   }
