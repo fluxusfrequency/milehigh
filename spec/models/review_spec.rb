@@ -51,5 +51,10 @@ describe Review do
     expect(review.thumbs_down?).not_to be
   end
 
+  it "clips the title" do
+    review = FactoryGirl.build(:review, title: 'HARSHING MY MELLLLLLLLLLLLLLLOW!')
+    expect(review).to be_valid
+    expect(review.short_title).to eq("HARSHING MY MELLLLL...")
+  end
 
 end

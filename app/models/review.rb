@@ -28,4 +28,8 @@ class Review < ActiveRecord::Base
     @photo ||= store.photo
   end
 
+  def short_title
+    @short_title ||= title[0..18] + "..." 
+  end
+
 end

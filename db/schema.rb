@@ -16,21 +16,6 @@ ActiveRecord::Schema.define(version: 20140122165824) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "leafly_stores", force: true do |t|
-    t.string   "slug"
-    t.string   "name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zipcode"
-    t.string   "hours"
-    t.string   "website"
-    t.string   "phone_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "menu"
-  end
-
   create_table "reviews", force: true do |t|
     t.integer  "user_id"
     t.integer  "store_id"

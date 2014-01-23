@@ -11,7 +11,7 @@
         <%= image_tag('ThumbsDown.png', size: "50x50", class: 'icon') %>
       <% end %>
       <div>
-        <h4 class="review-title"><%= review.title %></h4>
+        <h4 class="review-title"><%= review.short_title %></h4>
       </div>
       <p class='user-name'>
         <%= review.user.name %> - <%= time_ago_in_words(review.created_at) + ' ago' %>
