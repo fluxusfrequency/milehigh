@@ -2,17 +2,17 @@
 
   <div class="row" id='review-feed'>
 
-    <% unless @friend_reviews.empty? %>
       <div class='span12'>
         <%= image_tag 'the-buzz-logo.png', size:'233x61', id:'the-buzz-logo' %>
         <hr />
-        <h3 id="budz">What your budz are saying...</h3>
-        <br />
+        <% unless @friend_reviews.empty? %>
+          <h3 id="budz">What your budz are saying...</h3>
+          <br />
+        </div>
+        <div id='friend-feed' >
+          <%= render partial: "reviews/review", collection: @friend_reviews %>
+        <% end %>
       </div>
-      <div id='friend-feed' >
-        <%= render partial: "reviews/review", collection: @friend_reviews %>
-      </div>
-    <% end %>
 
     <% unless @reviews.empty? %>
       <div class='span12'>
