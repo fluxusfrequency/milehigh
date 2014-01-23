@@ -34,7 +34,6 @@ var createMap = function() {
 $(function() {
   $("#search-button").click(function(e) {
     var queryString, queryData;
-    debugger;
     e.preventDefault();
     queryString = $("#search-form").val();
     queryData = { query : queryString };
@@ -73,11 +72,22 @@ var addResults = function(response) {
     for (var store in response) {
       var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + counter + '. ' + response[store]["name"] + '</a><br>';
       var storeAddress = '<p>' + response[store]["address"] + ", " + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '<br />';
-      var storeMenu = JSON.parse(response[store]["menu"]).slice(0,3) + '...' + '</p>';
+      var storeMenu = parseMenu(response[store]) + '...' + '</p>';
       $('#search-results').append(storeLink + storeAddress + storeMenu);
       counter++;
     }
   }
+};
+
+// 39
+
+function parseMenu(store) {
+  var menu = JSON.parse(store["menu"]);
+  var newMenu = '';
+  for(var i =0; i<5; i++) {
+    newMenu += (menu[i] + ', ')
+  };
+  return newMenu.substring(0,40);
 };
 
 var clearMarkers = function() {
