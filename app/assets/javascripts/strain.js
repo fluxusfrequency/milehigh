@@ -52,16 +52,14 @@ $(function() {
     };
 
     var addResults = function(response) {
-      $('#strain-stores p').html('');
+      $('#strain-stores p').remove();
       var counter = 1;
         for (var store in response) {
-          console.log(response[store]);
           var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + counter + '. ' + response[store]["name"] + '</a><br>';
           var storeAddress = '<p>' + response[store]["address"] + ", " + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '<br />';
           $('#strain-stores').append(storeLink + storeAddress); 
           counter++;
         }
-      // }
     };
 
   })();
