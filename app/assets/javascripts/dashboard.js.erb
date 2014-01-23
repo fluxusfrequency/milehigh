@@ -41,8 +41,10 @@ $(function() {
         $('#store-hours').html(storeHours);
         $('#store-website').html("<a href='" + storeWebsite + "'>" + storeWebsite + "</a>");
         $('#store-phone-number').html(storePhoneNumber);
-        $('#review-store-info').css('display', 'inline');
-        $('#review-store-form').css('display', 'inline');
+        setTimeout(function(){
+          $('#review-store-info').css('display', 'inline');
+          $('#review-store-form').css('display', 'inline');
+        }, 500);
       }
     });
   }
