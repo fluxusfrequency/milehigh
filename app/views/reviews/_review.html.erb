@@ -15,7 +15,9 @@
           <h4 class="review-title"><%= review.title %></h4>
         </div>
       </div>
-      <p class='user-name'><%= review.user.name %></p>
+      <p class='user-name'>
+        <%= review.user.name %> - <%= time_ago_in_words(review.created_at) + ' ago' %>
+      </p>
 
         <p class='review-body'>
           <%= review.body %>
