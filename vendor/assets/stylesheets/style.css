@@ -124,7 +124,8 @@ footer .container { background-color:  #AAB1B3;}
 }
 
 .review-body {
-  height: 3em;
+  height: 4em;
+  padding-bottom: 2px;
 }
 
 .story .icon {
