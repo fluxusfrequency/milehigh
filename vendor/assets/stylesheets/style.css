@@ -73,7 +73,7 @@ header .menu a { margin-right: 10px; margin-left: 10px; }
 
 h3 { line-height: 30px; margin: 0px;}
 .tagline { color: #AAB1B3; }
-p { text-align: justify;}
+p { text-align: justify; padding-bottom: 10px;}
 
 .profile-image { float: left;}
 
