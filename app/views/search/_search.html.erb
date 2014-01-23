@@ -1,10 +1,10 @@
 <div class="row" >
   <div class="span4 well" id="longstory">
-    <h2>Search Stores & Strains</h2>
+    <h2>Search for Stores</h2>
 
     <%= form_tag stores_path, method: :get do %>
       <p>
-        <%= text_field_tag :search, params[:search], id: "search-form" %>
+        <%= text_field_tag :search, params[:search], id: "search-form", placeholder: "Enter store, strain or zipcode" %>
       </p>
       <p>
         <%= submit_tag 'Search', name: nil, id: "search-button", class: "btn btn-inverse pull-left" %>

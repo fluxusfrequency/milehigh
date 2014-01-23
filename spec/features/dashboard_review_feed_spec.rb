@@ -12,7 +12,7 @@ describe "Review Feed" do
   it "has the title The Buzz" do
     login
     expect(page).to have_content('Find a Store to Review')
-    expect(page).to have_content('Search Stores & Strains')
+    expect(page).to have_content('Search for Stores')
   end
 
   it "has the 3 most recent reviews by the public", :js => true do
