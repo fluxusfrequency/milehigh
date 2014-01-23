@@ -2,7 +2,7 @@
 
   <div class="story" id="review-<%= review.id %>">
     <h3><%= link_to review.store.name, store_path(review.store.slug) %></h3>
-    <%= image_tag review.store_photo %>
+    <%= link_to (image_tag review.store_photo), store_path(review.store.slug), class: "review-photo" %>
     <div>
       <%= image_tag review.user.avatar, :class => 'avatar' %>
       <% if review.rating == "Thumbs Up" %>
