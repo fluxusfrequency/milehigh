@@ -4,8 +4,8 @@
 
       <div class='span12'>
         <%= image_tag 'the-buzz-logo.png', size:'233x61', id:'the-buzz-logo' %>
-        <hr />
         <% unless @friend_reviews.empty? %>
+          <hr />
           <h3 id="budz">What your Facebook budz are saying...</h3>
           <br />
         </div>
@@ -32,7 +32,7 @@
   <br />
 
   <div class="row">
-    <div class="span4 well">
+    <div class="span4 well" id='review'>
       <%= render "reviews/find_store" %>
     </div>
     <div class="span7 well" id="review-store-info">

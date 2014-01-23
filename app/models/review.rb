@@ -29,7 +29,7 @@ class Review < ActiveRecord::Base
   end
 
   def short_title
-    @short_title ||= title[0..18] + "..." 
+    @short_title ||= title.length > 25 ? title[0..23] + "..." : title
   end
 
 end

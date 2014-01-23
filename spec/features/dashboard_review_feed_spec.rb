@@ -9,7 +9,15 @@ describe "Review Feed" do
     @user2 = FactoryGirl.create(:user)
   end
 
-  it "has the title The Buzz" do
+  it "has links to the search forms" do
+    login
+    within("#header-main") do
+      expect(page).to have_content('Review A Store')
+      expect(page).to have_content('Search')
+    end
+  end
+
+  it "has the search forms" do
     login
     expect(page).to have_content('Find a Store to Review')
     expect(page).to have_content('Search for Stores')
@@ -81,7 +89,6 @@ describe "Review Feed" do
     review = store.reviews.create(FactoryGirl.attributes_for(:review,
              :title => 'my Braaaain hurts', :user_id => @user.id))
     login
-    # save_and_open_page
     within('#review-feed') do
       expect(page).to have_content(review.title)
     end

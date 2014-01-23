@@ -73,7 +73,7 @@ header .menu a { margin-right: 10px; margin-left: 10px; }
 
 h3 { line-height: 30px; margin: 0px;}
 .tagline { color: #AAB1B3; }
-p { text-align: justify;}
+p { text-align: justify; padding-bottom: 10px;}
 
 .profile-image { float: left;}
 
@@ -205,6 +205,7 @@ footer .container { background-color:  #AAB1B3;}
 
 #strain-stores {
   margin-top: -10px;
+  padding-right: 20px;
 }
 
 #trademark * {
@@ -288,4 +289,27 @@ footer {
 footer p {
   font-size: 14px;
   color: #999999;
+}
+
+.strain-effects {
+  margin-top: 15px;
+  margin-left: 140px;
+}
+
+.strain-title {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+.strain-effects .score {
+  padding-left: 10px;
+}
+
+#nav-links {
+  padding-top: 10px;
+}
+
+#nav-links a {
+  font-size: 1.2em;
+  margin-right: 17.5px;
 }

@@ -23,23 +23,21 @@
 
       <hr>
 
-    </div>
-
-    <div id='review-counts'>
-      <%= image_tag('Thumbs-Up.png', size: "36x36") %>
-      <%= image_tag('ThumbsDown.png', size: "36x36") %></br>
-      <div class="percent">
-        <%= review.store.percent_positive %>%
+      <div id='review-counts'>
+        <%= image_tag('Thumbs-Up.png', size: "36x36") %>
+        <%= image_tag('ThumbsDown.png', size: "36x36") %></br>
+        <div class="percent">
+          <%= review.store.percent_positive %>%
+        </div>
+        <div class="percent">
+          <%= review.store.percent_negative %>%
+        </div>
+          <% if review.store.total_reviews == 1 %>
+            <p class="pull-right"><%= review.store.total_reviews %> Total Review</p>
+          <% else %>
+            <p class="pull-right"><%= review.store.total_reviews %> Total Reviews</p>
+          <% end %>
       </div>
-      <div class="percent">
-        <%= review.store.percent_negative %>%
-      </div>
-      <% if review.store.total_reviews > 1 %>
-        <p class="pull-right"><%= review.store.total_reviews %> Total Reviews</p>
-      <% else %>
-        <p class="pull-right"><%= review.store.total_reviews %> Total Review</p>
-      <% end %>
     </div>
   </div>
-
 </div>

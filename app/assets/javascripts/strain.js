@@ -12,6 +12,7 @@ $(function() {
         success: function(response) {
           var map = L.mapbox.map('strain-map', 'examples.map-20v6611k').setView([39.7391667, -104.984167], 11);
           var counter = 1
+          addResults(response);
           for(store in response) {
             addToMap(response[store], counter, map);
             counter++;
@@ -24,7 +25,7 @@ $(function() {
           }
         }
       }).done(function(response) {
-        addResults(response);
+        
       });
     });
     var addToMap = function(store, counter, map) {
@@ -51,16 +52,14 @@ $(function() {
     };
 
     var addResults = function(response) {
-      $('#strain-stores p').html('');
+      $('#strain-stores p').remove();
       var counter = 1;
         for (var store in response) {
-          console.log(response[store]);
           var storeLink = '<a href="/stores/' + response[store]["slug"] + '" >' + counter + '. ' + response[store]["name"] + '</a><br>';
           var storeAddress = '<p>' + response[store]["address"] + ", " + response[store]["city"] + ', ' + response[store]["state"] + response[store]["zipcode"] + '<br />';
           $('#strain-stores').append(storeLink + storeAddress); 
           counter++;
         }
-      // }
     };
 
   })();
