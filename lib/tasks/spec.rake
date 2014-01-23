@@ -10,4 +10,11 @@ namespace :spec do
   task :services do
     system 'rspec spec/services'
   end
+
+  task :all do
+    system 'rspec spec/models'
+    system 'rspec spec/features'
+    system 'rspec spec/controllers'
+    system 'rspec spec/services'
+  end
 end

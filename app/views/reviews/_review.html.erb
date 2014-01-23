@@ -1,27 +1,27 @@
-<% cache review do %>
-  <div class="span4" >
+<div class="span4" >
 
-    <div class="story" id="review-<%= review.id %>">
-      <h3><%= link_to review.store.name, store_path(review.store.slug) %></h3>
-      <%= image_tag review.store_photo %>
+  <div class="story" id="review-<%= review.id %>">
+    <h3><%= link_to review.store.name, store_path(review.store.slug) %></h3>
+    <%= link_to (image_tag review.store_photo), store_path(review.store.slug), class: "review-photo" %>
+    <div>
+      <%= image_tag review.user.avatar, :class => 'avatar' %>
+      <% if review.rating == "Thumbs Up" %>
+        <%= image_tag('Thumbs-Up.png', size: "50x50", class: 'icon') %>
+      <% else %>
+        <%= image_tag('ThumbsDown.png', size: "50x50", class: 'icon') %>
+      <% end %>
       <div>
-        <%= image_tag review.user.avatar, :class => 'avatar' %>
-        <% if review.rating == "Thumbs Up" %>
-          <%= image_tag('Thumbs-Up.png', size: "50x50", class: 'icon') %>
-        <% else %>
-          <%= image_tag('ThumbsDown.png', size: "50x50", class: 'icon') %>
-        <% end %>
-        <div>
-          <h4 class="review-title"><%= review.title %></h4>
-        </div>
+        <h4 class="review-title"><%= review.short_title %></h4>
       </div>
-      <p class='user-name'><%= review.user.name %></p>
+      <p class='user-name'>
+        <%= review.user.name %> - <%= time_ago_in_words(review.created_at) + ' ago' %>
+      </p>
 
-        <p class='review-body'>
-          <%= review.body %>
-        </p>
+      <p class='review-body'>
+        <%= review.body %>
+      </p>
 
-        <hr>
+      <hr>
 
       <div id='review-counts'>
         <%= image_tag('Thumbs-Up.png', size: "36x36") %>
@@ -39,6 +39,5 @@
           <% end %>
       </div>
     </div>
-
   </div>
-<% end %>
+</div>

@@ -9,11 +9,18 @@ describe "Review Feed" do
     @user2 = FactoryGirl.create(:user)
   end
 
-  it "has the title The Buzz" do
+  it "has links to the search forms" do
     login
-    within('#review-feed') do
-      expect(page).to have_content('The Buzz')
+    within("#header-main") do
+      expect(page).to have_content('Review A Store')
+      expect(page).to have_content('Search')
     end
+  end
+
+  it "has the search forms" do
+    login
+    expect(page).to have_content('Find a Store to Review')
+    expect(page).to have_content('Search for Stores')
   end
 
   it "has the 3 most recent reviews by the public", :js => true do
@@ -75,6 +82,20 @@ describe "Review Feed" do
       end
     end
 
+  end
+
+  it "has a clickable photo", :js => true do
+    store = FactoryGirl.create(:store)
+    review = store.reviews.create(FactoryGirl.attributes_for(:review,
+             :title => 'my Braaaain hurts', :user_id => @user.id))
+    login
+    within('#review-feed') do
+      expect(page).to have_content(review.title)
+    end
+    within("#review-#{review.id}") do
+      find(".review-photo").click
+    end
+    expect(page).to have_content("Strains on the Menu")
   end
 
 

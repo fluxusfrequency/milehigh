@@ -23,7 +23,7 @@
             <tr><td></td></tr>
             <tr>
               <td>Website: </td>
-              <td> <%= @store.website %></td>
+              <td> <%= link_to @store.website, @store.website %></td>
             </tr>
             <tr><td></td></tr>
             <tr><td></td></tr>
@@ -54,6 +54,8 @@
 
       <%= render partial: 'strains/strain', collection: @strains %>
     </div>
+<% end %>
+    
 
     <div class="row">
       <div class="span12" id="read-reviews">
@@ -70,6 +72,5 @@
       </div>
     </div>
   </div>
-<% end %>
 <%= javascript_include_tag    "store"%>
 

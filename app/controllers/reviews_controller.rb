@@ -16,9 +16,11 @@ class ReviewsController < ApplicationController
       else
         flash[:error] = "Errors prevented your review from being created: #{review.errors.full_messages}"
       end
+      redirect_to store_path(store.slug)
+    else
+      redirect_to :back, :notice => "Please enter a valid review."
     end
 
-    redirect_to store_path(store.slug)
   end
 
   private

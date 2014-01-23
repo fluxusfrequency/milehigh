@@ -1,34 +1,38 @@
 <div role="main" class="container topstories" id="content">
 
   <div class="row" id='review-feed'>
-    <div class="span12", id="buzz">
-      <h2>The Buzz</h2>
-    </div>
-    <div class='span12'>
-      <hr />
-      <h3 id="budz">What your budz are saying...</h3>
-      <br /> 
-    </div>
-    <div id='friend-feed' >
-      <%= render partial: "reviews/review", collection: @friend_reviews %>
-    </div>
-    <div class='span12'>
-      <hr />
-      <h3 id="budz">What other people are saying...</h3>
-      <br />
-    </div>
-    <div id='public-feed'>
-      <%= render @reviews %>
-    </div>
-    <div class='span12'>
-      <hr />
-    </div>
+
+      <div class='span12'>
+        <%= image_tag 'the-buzz-logo.png', size:'233x61', id:'the-buzz-logo' %>
+        <% unless @friend_reviews.empty? %>
+          <hr />
+          <h3 id="budz">What your Facebook budz are saying...</h3>
+          <br />
+        </div>
+        <div id='friend-feed' >
+          <%= render partial: "reviews/review", collection: @friend_reviews %>
+        <% end %>
+      </div>
+
+    <% unless @reviews.empty? %>
+      <div class='span12'>
+        <hr />
+        <h3 id="budz">What other people are saying...</h3>
+        <br />
+      </div>
+      <div id='public-feed'>
+        <%= render @reviews %>
+      </div>
+      <div class='span12'>
+        <hr />
+      </div>
+    <% end %>
   </div>
 
   <br />
 
   <div class="row">
-    <div class="span4 well">
+    <div class="span4 well" id='review'>
       <%= render "reviews/find_store" %>
     </div>
     <div class="span7 well" id="review-store-info">
