@@ -76,6 +76,21 @@ describe "Review Feed" do
 
   end
 
+  it "has a clickable photo", :js => true do
+    store = FactoryGirl.create(:store)
+    review = store.reviews.create(FactoryGirl.attributes_for(:review,
+             :title => 'my Braaaain hurts', :user_id => @user.id))
+    login
+    # save_and_open_page
+    within('#review-feed') do
+      expect(page).to have_content(review.title)
+    end
+    within("#review-#{review.id}") do
+      find(".review-photo").click
+    end
+    expect(page).to have_content("Strains on the Menu")
+  end
+
 
 
 end
