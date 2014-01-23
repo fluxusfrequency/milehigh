@@ -13,22 +13,9 @@ $(function() {
     storeName = $("#store_name").val();
     $('#review-store-form h3').html("Review " + storeName);
 
-    setTimeout(function() {
-      $('#review-store-form').css('display', 'inline');
-    }, 500);
-
     if (storeName !== "") {
       var queryData = { query: storeName };
-      getStoreInfo(queryData)
-      setTimeout(function() {
-        $('#review-store-info h3').html(storeName + " - Store Info");
-        $('#store-address').html(storeAddress + ", " + storeCity + ", " +
-          storeState + ", " + storeZipcode);
-        $('#store-hours').html(storeHours);
-        $('#store-website').html("<a href='" + storeWebsite + "'>" + storeWebsite + "</a>");
-        $('#store-phone-number').html(storePhoneNumber);
-        $('#review-store-info').css('display', 'inline');
-      }, 500);
+      getStoreInfo(queryData);
     }
     $('#review_store_name').val(storeName);
     return false;
@@ -48,6 +35,14 @@ $(function() {
         storeHours   = response.hours;
         storeWebsite = response.website;
         storePhoneNumber = response.phone_number;
+        $('#review-store-info h3').html(storeName + " - Store Info");
+        $('#store-address').html(storeAddress + ", " + storeCity + ", " +
+          storeState + ", " + storeZipcode);
+        $('#store-hours').html(storeHours);
+        $('#store-website').html("<a href='" + storeWebsite + "'>" + storeWebsite + "</a>");
+        $('#store-phone-number').html(storePhoneNumber);
+        $('#review-store-info').css('display', 'inline');
+        $('#review-store-form').css('display', 'inline');
       }
     });
   }
