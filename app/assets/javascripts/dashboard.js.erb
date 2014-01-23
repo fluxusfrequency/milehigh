@@ -22,7 +22,7 @@ $(function() {
         $('#store-address').html(storeAddress + ", " + storeCity + ", " +
           storeState + ", " + storeZipcode);
         $('#store-hours').html(storeHours);
-        $('#store-website').html(storeWebsite);
+        $('#store-website').html("<a href='" + storeWebsite + "'>" + storeWebsite + "</a>");
         $('#store-phone-number').html(storePhoneNumber);
         $('#review-store-info').css('display', 'inline');
       }, 400);
