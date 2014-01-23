@@ -29,54 +29,55 @@
       </div>
       </br>
       <div class="strain-effects span10">
-        <div class='list span3'>
-          <table>
-            <tbody>
-                <tr><strong>Effects</strong></tr>
-                <tr>
-                <% unless @strain.effects.empty? %>
-                  <td><% @strain.effects.each do |effect| %>
-                    <span><%= effect["Name"] %></span>
-                    <span> - <%= effect["Score"].to_s%></span></br>
-                  <% end %></td>
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class='list span3'>
-          <table>
-            <tbody>
-                <tr><strong>Medical</strong></tr>
-              <tr>
-                <% unless @strain.medical_uses.empty? %>
-                  <td><% @strain.medical_uses.each do |medical_use| %>
-                    <span><%= medical_use["Name"] %></span>
-                    <span> - <%= medical_use["Score"].to_s%></span></br>
-                  <% end %></td>
-                <% end %>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class='list span3'>
-          <table>
-            <tbody>
-              <% unless @strain.side_effects.empty? %>
-                <tr><strong>Side Effects</strong></tr>
-                <tr>
-                  <td>
-                    <% @strain.side_effects.each do |side_effect| %>
-                      <span><%= side_effect["Name"] %></span>
-                      <span> - <%= side_effect["Score"].to_s%></span></br>
-                    <% end %>
-                  </td>
+        <% unless @strain.effects.empty? %>
+          <div class='list span3'>
+            <table>
+              <tbody>
+                  <tr><strong>Effects</strong></tr>
+                  <tr>
+                    <td><% @strain.effects.each do |effect| %>
+                      <span><%= effect["Name"] %></span>
+                      <span> - <%= effect["Score"].to_s%></span></br>
+                    <% end %></td>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+              </tbody>
+            </table>
+          </div>
+        <% end %>
+
+        <% unless @strain.medical_uses.empty? %>
+          <div class='list span3'>
+            <table>
+              <tbody>
+                  <tr><strong>Medical</strong></tr>
+                <tr>
+                    <td><% @strain.medical_uses.each do |medical_use| %>
+                      <span><%= medical_use["Name"] %></span>
+                      <span> - <%= medical_use["Score"].to_s%></span></br>
+                    <% end %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        <% end %>
+
+        <% unless @strain.side_effects.empty? %>
+          <div class='list span3'>
+            <table>
+              <tbody>
+                  <tr><strong>Side Effects</strong></tr>
+                  <tr>
+                    <td>
+                      <% @strain.side_effects.each do |side_effect| %>
+                        <span><%= side_effect["Name"] %></span>
+                        <span> - <%= side_effect["Score"].to_s%></span></br>
+                      <% end %>
+                    </td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        <% end %>
       </div><br>
     </div>
     <hr>
