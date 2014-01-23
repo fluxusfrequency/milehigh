@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 
   def friends_on_milehigh
     all_friend_ids = all_friends.map {|f| f.id}
-    User.where(all_friend_ids.include?(uid))
+    User.all.select{ |user| all_friend_ids.include?(user.uid) }
   end
 
   def friend_reviews
