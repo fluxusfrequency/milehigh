@@ -19,10 +19,12 @@
       </span>
     </div>
   </div>
-  <div class="row">
-    <div class="span-4">
-      <a href='#review'>Review A Store</a>
-      <a href='#search'>Search</a>
+  <% if request.original_url == root_url %>
+    <div class="row">
+      <div class="span-4 pull-right" id='nav-links'>
+        <a href='#review'>Review A Store</a>
+        <a href='#search'>Search</a>
+      </div>
     </div>
-  </div>
+  <% end %> 
 </header>

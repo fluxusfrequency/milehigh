@@ -11,8 +11,8 @@ describe Search do
       store.stub(:results).and_return([store])
       within("#longstory") do
         page.fill_in 'search-form', with: store.name
+        click_on 'Search'
       end
-      click_on 'Search'
       within('#search-results') do
         expect(page).to have_content(store.name)
       end

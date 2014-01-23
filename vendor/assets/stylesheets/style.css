@@ -302,3 +302,12 @@ footer p {
 .strain-effects .score {
   padding-left: 10px;
 }
+
+#nav-links {
+  padding-top: 10px;
+}
+
+#nav-links a {
+  font-size: 1.2em;
+  margin-right: 17.5px;
+}
