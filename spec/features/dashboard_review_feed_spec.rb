@@ -12,7 +12,7 @@ describe "Review Feed" do
   it "has the title The Buzz" do
     login
     within('#review-feed') do
-      expect(page).to have_content('The Buzz')
+      expect(page).to have_content('What your budz are saying...')
     end
   end
 
