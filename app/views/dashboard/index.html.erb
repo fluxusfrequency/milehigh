@@ -1,13 +1,11 @@
 <div role="main" class="container topstories" id="content">
 
   <div class="row" id='review-feed'>
-    <div class="span12", id="buzz">
-      <h2>The Buzz</h2>
-    </div>
     <div class='span12'>
+      <%= image_tag 'the-buzz-logo.png', size:'233x61', id:'the-buzz-logo' %>
       <hr />
       <h3 id="budz">What your budz are saying...</h3>
-      <br /> 
+      <br />
     </div>
     <div id='friend-feed' >
       <%= render partial: "reviews/review", collection: @friend_reviews %>
