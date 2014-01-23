@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def all_friends
-    @friend_data ||= facebook.get_connection("me", "friends")
+    @friend_data = facebook.get_connection("me", "friends")
     @friend_data.collect do |friend|
       Friend.new(friend["name"], friend["id"], @facebook)
     end
@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
 
   def friends_on_milehigh
     all_friend_ids = all_friends.map {|f| f.id}
-    User.all.select {|user| all_friend_ids.include? user.uid}
+    User.where(all_friend_ids.include?(uid))
   end
 
   def friend_reviews
