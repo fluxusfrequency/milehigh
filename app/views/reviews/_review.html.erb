@@ -32,7 +32,11 @@
         <div class="percent">
           <%= review.store.percent_negative %>%
         </div>
+        <% if review.store.total_reviews > 1 %>
           <p class="pull-right"><%= review.store.total_reviews %> Total Reviews</p>
+        <% else %>
+          <p class="pull-right"><%= review.store.total_reviews %> Total Review</p>
+        <% end %>
       </div>
     </div>
 
