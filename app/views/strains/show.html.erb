@@ -13,17 +13,20 @@
           </div>
           <br/>
           <br/>
-
           <table>
             <tbody>
-              <tr>
-                <td><strong>Description:   </strong></td>
-                <td><%= @strain.description %></td>
-              </tr>
-              <tr>
-                <td><strong>Overview:   </strong></td>
-                <td> <%= @strain.overview %></td>
-              </tr>
+              <% unless @strain.description.nil? %>
+                <tr>
+                  <td><strong>Description:   </strong></td>
+                  <td><%= @strain.description %></td>
+                </tr>
+              <% end %>
+              <% unless @strain.overview == '' %>
+                <tr>
+                  <td><strong>Overview:   </strong></td>
+                  <td> <%= @strain.overview %></td>
+                </tr>
+              <% end %>
             </tbody>
           </table>
       </div>
