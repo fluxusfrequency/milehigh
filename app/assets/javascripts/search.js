@@ -27,7 +27,6 @@ var addToMap = function(store, counter) {
 };
 
 var createMap = function() {
-  console.log(L.mapbox.map())
   L.mapbox.map('main-map', 'examples.map-20v6611k').setView([39.7391667, -104.984167], 12);
 };
 
