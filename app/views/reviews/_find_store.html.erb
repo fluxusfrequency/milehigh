@@ -2,7 +2,7 @@
 
 <%= form_tag new_review_path, method: :get, id: "find-store-form" do %>
   <p>
-    <%= text_field_tag :store_name %>
+    <%= text_field_tag :store_name, params[:store_name], placeholder: "Enter store"  %>
   </p>
   <p>
     <%= submit_tag 'Review Store', id: "review-store-button", class:"btn btn-inverse" %>
