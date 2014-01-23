@@ -2,7 +2,7 @@
 
   <div class="row" id='review-feed'>
 
-    <% unless @friend_reviews.empty? %>
+    <%# unless @friend_reviews.empty? %>
       <div class='span12'>
         <%= image_tag 'the-buzz-logo.png', size:'233x61', id:'the-buzz-logo' %>
         <hr />
@@ -12,7 +12,7 @@
       <div id='friend-feed' >
         <%= render partial: "reviews/review", collection: @friend_reviews %>
       </div>
-    <% end %>
+    <%# end %>
 
     <% unless @reviews.empty? %>
       <div class='span12'>
