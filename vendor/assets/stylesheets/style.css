@@ -289,3 +289,16 @@ footer p {
   font-size: 14px;
   color: #999999;
 }
+
+.strain-effects {
+  margin-top: 15px;
+  margin-left: 140px;
+}
+
+.strain-title {
+  margin-left: 10px;
+  margin-top: 4px;
+}
+.strain-effects .score {
+  padding-left: 10px;
+}
