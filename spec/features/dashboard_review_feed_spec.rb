@@ -81,7 +81,6 @@ describe "Review Feed" do
     review = store.reviews.create(FactoryGirl.attributes_for(:review,
              :title => 'my Braaaain hurts', :user_id => @user.id))
     login
-    # save_and_open_page
     within('#review-feed') do
       expect(page).to have_content(review.title)
     end
