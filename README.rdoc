@@ -1,6 +1,6 @@
-An open source app that helps people find the nearest retail marijuana stores in their neighborhood (currently, 
-support is only available for Denver). Users can see information about the strains available at local shops, review
-stores, and read what their Facebook friends are saying about stores in their area.
+An open source app that helps people find the nearest Denver retail marijuana stores in their neighborhood. 
+Users can see information about the strains available at local shops, review
+stores, and read what their Facebook friends are saying.
 
 Site address: http://www.milehighbuzz.co/
 
@@ -8,24 +8,23 @@ Built for gSchool[1] by Ben Horne, Darryl Pequeen, Bryana Knight, and Ben Lewis.
 
 
 
-This app exposes a RESTful API with stores and reviews at:
+This app exposes an API with stores and reviews at:
 http://www.milehighbuzz.co/api/v1/stores
 and
 http://www.milehighbuzz.co/api/v1/reviews
 
+We wrote a gem to consume our API called nugz:
+http://rubygems.org/gems/nugz
 
-
-It also makes use of a custom gem called Rolling Paper, written to consume the Leafly API:
+It also makes use of a custom gem called Rolling Paper that we wrote to consume the Leafly API:
 http://rubygems.org/gems/rolling_paper
 
 
 
-The consumes these apis:
+The app consumes these apis from other companies:
 
 Leafly
 http://www.leafly.com/api/documentation
 
 Yelp
 http://www.yelp.com/developers/documentation
-
-*Support for Twitter under development.
