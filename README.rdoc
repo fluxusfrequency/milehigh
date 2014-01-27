@@ -8,7 +8,8 @@ Built for gSchool[1] by Ben Horne, Darryl Pequeen, Bryana Knight, and Ben Lewis.
 
 
 
-This app exposes an API with stores and reviews at:
+This app exposes an API with stores and reviews at (see the *nugz* gem documentation below for more details):
+
 http://www.milehighbuzz.co/api/v1/stores
 and
 http://www.milehighbuzz.co/api/v1/reviews
